@@ -1,0 +1,39 @@
+name: Research backtest
+
+# Run by hand: long point-in-time backtests that need SEC + price downloads.
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "research/<name>.py to run"
+        required: true
+        default: "steven_backtest"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run research script
+        env:
+          SEC_CONTACT: ${{ secrets.SEC_CONTACT }}
+          SCRIPT: ${{ inputs.script }}
+        run: |
+          case "$SCRIPT" in *[!a-z0-9_]*) echo "bad script name"; exit 1;; esac
+          python3 "research/$SCRIPT.py"
+      - name: Save results
+        run: |
+          git config user.name "gss-wire-bot"
+          git config user.email "gss-wire-bot@users.noreply.github.com"
+          git add research
+          git diff --cached --quiet && exit 0
+          git commit -m "Research: ${{ inputs.script }} results"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
