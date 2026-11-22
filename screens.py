@@ -244,10 +244,11 @@ def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep):
     fr = Frames(lambda u: (sleep(0.15), fetch_sec(u))[1])
     funda, (y, q) = fundamentals(fr, today)
     tick = json.loads(fetch_sec(TICKERS))
-    cik2t, t2cik = {}, {}
+    cik2t, t2cik, names = {}, {}, {}
     for v in tick.values():
         cik2t.setdefault(int(v["cik_str"]), v["ticker"])
         t2cik[v["ticker"]] = int(v["cik_str"])
+        names.setdefault(int(v["cik_str"]), v.get("title", ""))
     rows, need_px = {}, set()
     for cik, m in funda.items():
         t = cik2t.get(cik)
@@ -259,7 +260,7 @@ def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep):
             continue
         alive = [s for s, rules in SCREENS.items() if could_pass(m, rules)]
         if alive or tracked:
-            rows[t] = dict(m, cik=cik)
+            rows[t] = dict(m, cik=cik, name=names.get(cik, ""))
             need_px.add(t)
     for t in always:
         if t not in rows:
