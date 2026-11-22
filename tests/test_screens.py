@@ -112,6 +112,17 @@ class ScreenTests(unittest.TestCase):
         self.assertIn("GOOD", self.res["passes"]["Quality"])
         self.assertIn("GOOD", self.res["passes"]["Growth"])
 
+    def test_no_debt_label_is_unknown_not_zero(self):
+        self.assertIsNone(screens.de_ratio(None, 5e9))
+        self.assertEqual(screens.de_ratio(0.0, 5e9), 0.0)
+
+    def test_late_filer_falls_back_a_quarter(self):
+        s = build()
+        for k in [k for k in s.f if k[1] == "CY2026Q3"]:
+            s.f[k].pop(1, None)
+        res = screens.run(s, fake_px, TODAY, sleep=lambda x: None)
+        self.assertEqual(res["rows"]["GOOD"]["period"], "CY2026Q2")
+
     def test_bank_unknowns_and_small_skipped(self):
         b = self.res["rows"]["BANK"]
         self.assertIsNone(b["de"])

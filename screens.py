@@ -36,8 +36,15 @@ REV = ["Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax", "Sales
 NI = ["NetIncomeLoss"]
 EPS = ["EarningsPerShareDiluted", "EarningsPerShareBasicAndDiluted"]
 EQUITY = ["StockholdersEquity", "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest"]
-DEBT_PARTS = {"lt": ["LongTermDebt", "LongTermDebtNoncurrent"], "ltc": ["LongTermDebtCurrent"],
-              "st": ["ShortTermBorrowings", "CommercialPaper"]}
+DEBT_PARTS = {
+    # long-term debt in total (current + noncurrent), else its noncurrent part
+    "lt": ["LongTermDebt", "LongTermDebtAndCapitalLeaseObligations", "DebtLongtermAndShorttermCombinedAmount",
+           "LongTermDebtNoncurrent", "LongTermDebtAndCapitalLeaseObligationsNoncurrent", "SeniorLongTermNotes",
+           "UnsecuredLongTermDebt", "LongTermNotesPayable", "OtherLongTermDebtNoncurrent", "DebtInstrumentCarryingAmount"],
+    "ltc": ["LongTermDebtCurrent", "LongTermDebtAndCapitalLeaseObligationsCurrent", "DebtCurrent"],
+    "st": ["ShortTermBorrowings", "CommercialPaper", "NotesPayableCurrent"],
+}
+TOTAL_FORMS = {"LongTermDebt", "LongTermDebtAndCapitalLeaseObligations", "DebtLongtermAndShorttermCombinedAmount"}
 CA, CL = ["AssetsCurrent"], ["LiabilitiesCurrent"]
 SHARES = [("dei", "EntityCommonStockSharesOutstanding"), ("us-gaap", "CommonStockSharesOutstanding")]
 
@@ -137,7 +144,17 @@ def cagr(new, old, years):
 
 
 def fundamentals(fr, today):
+    """Metrics as of the latest quarter; companies that haven't filed it yet use the quarter before."""
     y, q = quarter_periods(today)
+    cur, _ = fundamentals_at(fr, y, q)
+    prev, _ = fundamentals_at(fr, *back(y, q, 1))
+    out = dict(prev)
+    for cik, m in cur.items():
+        out[cik] = m
+    return out, (y, q)
+
+
+def fundamentals_at(fr, y, q):
     ni, rev, eps = ttm(fr, NI, "USD", y, q), ttm(fr, REV, "USD", y, q), ttm(fr, EPS, "USD-per-shares", y, q)
     py, pq = back(y, q, 4)
     eps_prev = ttm(fr, EPS, "USD-per-shares", py, pq)
@@ -151,6 +168,10 @@ def fundamentals(fr, today):
     for part, names in DEBT_PARTS.items():
         for cik, v in instant(fr, names, "USD", y, q).items():
             debt.setdefault(cik, {})[part] = v
+    total_lt = instant(fr, sorted(TOTAL_FORMS), "USD", y, q)
+    for cik, d in debt.items():
+        if cik in total_lt and d.get("lt") == total_lt[cik]:
+            d["ltc"] = 0.0  # total already includes the current portion
     ca, cl = instant(fr, CA, "USD", y, q), instant(fr, CL, "USD", y, q)
     shares = {}
     for tax, c in SHARES:
@@ -170,7 +191,7 @@ def fundamentals(fr, today):
             "revenue": r, "netIncome": n, "epsTTM": eps.get(cik), "equity": e, "shares": shares.get(cik),
             "roe": None if (n is None or not avg_eq) else 100 * n / avg_eq,
             "margin": None if (n is None or not r or r <= 0) else 100 * n / r,
-            "de": de_ratio(total_debt, e, classified=(cik in ca and cik in cl)),
+            "de": de_ratio(total_debt, e),
             "debtTagged": d is not None,
             "cr": None if (cik not in ca or not cl.get(cik)) else ca[cik] / cl[cik],
             "epsYr": growth(eps.get(cik), eps_prev.get(cik)),
@@ -182,13 +203,11 @@ def fundamentals(fr, today):
     return out, (y, q)
 
 
-def de_ratio(total_debt, equity, classified):
-    """Debt/equity. No debt tags: treat as debt-free only for companies with a classified balance sheet
-    (current assets/liabilities), since banks and insurers fund themselves in ways these tags miss."""
-    if equity is None or equity <= 0:
+def de_ratio(total_debt, equity):
+    """Debt/equity. If no standard debt label is found the answer is unknown, never zero:
+    companies label debt in many ways, and guessing zero would let indebted companies pass."""
+    if equity is None or equity <= 0 or total_debt is None:
         return None
-    if total_debt is None:
-        return 0.0 if classified else None
     return total_debt / equity
 
 
