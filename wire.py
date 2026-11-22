@@ -388,7 +388,9 @@ def append_log(lines):
 
 def main():
     topic = os.environ.get("NTFY_TOPIC", "").strip()
-    tg_token = os.environ.get("TELEGRAM_TOKEN", "").strip()
+    tg_token = os.environ.get("TELEGRAM_TOKEN", "").strip().strip("<>").strip()
+    if tg_token.lower().startswith("bot") and tg_token[3:4].isdigit():
+        tg_token = tg_token[3:]  # pasted with the 'bot' prefix
     tg_chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
     if not topic and not (tg_token and tg_chat):
         print("No NTFY_TOPIC or TELEGRAM_TOKEN/TELEGRAM_CHAT_ID secret; nothing to send to.", file=sys.stderr)
