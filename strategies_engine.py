@@ -70,8 +70,14 @@ def pick(strategy, rows):
 
 
 def beta(closes, spy_closes):
-    """Beta from aligned daily closes: {date: close}. Uses up to the last 252 common days."""
-    days = sorted(set(closes) & set(spy_closes))[-253:]
+    """Beta vs SPY from aligned daily closes ({date: close}), up to the last 2 years, shrunk toward 1
+    as in Frazzini & Pedersen's 'Betting Against Beta' (0.6 x raw + 0.4 x 1): raw daily betas are noisy."""
+    raw = raw_beta(closes, spy_closes)
+    return None if raw is None else 0.6 * raw + 0.4
+
+
+def raw_beta(closes, spy_closes):
+    days = sorted(set(closes) & set(spy_closes))[-505:]
     if len(days) < 120:
         return None
     r = [closes[days[i]] / closes[days[i - 1]] - 1 for i in range(1, len(days))]

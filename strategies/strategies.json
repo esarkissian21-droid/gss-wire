@@ -4,7 +4,7 @@
   {
    "id": "buffett-v1",
    "name": "Buffett-style: cheap, safe, high quality, large",
-   "description": "Based on Frazzini, Kabiller & Pedersen, 'Buffett's Alpha' (2018): Berkshire's returns are explained by owning cheap, safe (low-beta), high-quality, large companies, plus leverage (not used here). Quality = profitable, growing, low debt. Cheap = low price-to-book. Safe = low beta vs the S&P 500. Ranked on all three equally; top 10, at most 3 from any one industry (SEC industry code), so it can't turn into an insurance fund.",
+   "description": "Based on Frazzini, Kabiller & Pedersen, 'Buffett's Alpha' (2018): Berkshire's returns are explained by owning cheap, safe (low-beta), high-quality, large companies, plus leverage (not used here). Quality = profitable, growing, low debt. Cheap = low price-to-book. Safe = low beta vs the S&P 500 (2 years of daily prices, shrunk toward 1 as in 'Betting Against Beta'). Ranked on all three equally; top 10, at most 3 from any one industry (SEC industry code), so it can't turn into an insurance fund.",
    "createdOn": "2026-11-22",
    "startDate": "2026-11-29",
    "prefilters": [

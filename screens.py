@@ -248,7 +248,7 @@ def could_pass(m, rules):
 def yahoo_daily(sym, fetch):
     """Latest price, 200-day average, 52-week change, and the daily close history {date: close}."""
     now = int(time.time())
-    url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?period1={now - 430 * 86400}"
+    url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?period1={now - 760 * 86400}"
            f"&period2={now}&interval=1d")
     j = json.loads(fetch(url))["chart"]["result"][0]
     raw = j["indicators"]["quote"][0]["close"]

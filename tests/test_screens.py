@@ -147,7 +147,8 @@ class StrategyTests(unittest.TestCase):
         import strategies_engine as se
         spy = {f"d{i:03d}": 100 * (1 + 0.01 * (1 if i % 2 else -1)) for i in range(200)}
         stock = {k: 100 * (1 + 0.02 * (1 if int(k[1:]) % 2 else -1)) for k in spy}
-        self.assertAlmostEqual(se.beta(stock, spy), 2.0, places=1)
+        self.assertAlmostEqual(se.raw_beta(stock, spy), 2.0, places=1)
+        self.assertAlmostEqual(se.beta(stock, spy), 0.6 * 2.0 + 0.4, places=1)
 
     def test_strategy_picks_logged_and_scored_later(self):
         import strategies_engine as se
