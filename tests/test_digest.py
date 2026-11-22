@@ -98,5 +98,30 @@ class ForwardTests(unittest.TestCase):
         self.assertIn("no signals yet", msg)
 
 
+    def test_frozen_forecasts_logged_and_brier_scored(self):
+        pred = json.load(open(digest.PRED_PATH))
+        ws = weeks(60, 14)
+        p = make_prices(ws, lambda i: 92.0 if i - 60 < 13 else 85.0)  # in 90+ zone, ratio lower 13 weeks later
+        ledger, *_ = digest.forward_step(RULES, p, {}, [], "h", pred)
+        pr = [r for r in ledger if r["kind"] == "pred"]
+        self.assertEqual(pr[0]["week"], START.isoformat())
+        self.assertEqual(pr[0]["zone"], "90+")
+        o = pr[0]["out"]["13"]
+        self.assertTrue(o["lower"])
+        self.assertAlmostEqual(o["brier"], (pr[0]["p"]["13"] - 1) ** 2, places=3)
+        fs = digest.forward_summary(ledger)
+        self.assertLess(fs["brier"]["13"]["model"], 0.25)
+
+    def test_digest_shows_model_odds(self):
+        digest.PRED = json.load(open(digest.PRED_PATH))
+        ws = weeks(3, 0)
+        p = make_prices(ws, lambda i: [80.0, 79.57, 85.85][i])
+        cfg = json.load(open(os.path.join(os.path.dirname(digest.RULES_PATH), "..", "config.json")))
+        msg = digest.build_digest(cfg, p, dt.date(2026, 11, 22), [], [], [])
+        self.assertIn("Model odds ratio is lower in a year: 53%", msg)
+        self.assertIn("thin evidence", msg)
+        digest.PRED = None
+
+
 if __name__ == "__main__":
     unittest.main()

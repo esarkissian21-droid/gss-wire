@@ -1,0 +1,91 @@
+{
+ "version": "p1",
+ "frozenOn": "2026-11-22",
+ "startWeek": "2026-11-27",
+ "purpose": "Frozen probability forecasts for the blind forward test. Each completed week, look up the ratio's zone and record P(ratio lower after 13/26/52 weeks). Scored with the Brier score against a 50% coin flip and the long-run base rate. Do not edit; add p2 with a new start week instead.",
+ "method": "World Bank monthly-average gold/silver ratio 1972-01 to 2026-10. Zone base rates using non-overlapping effective sample sizes (months / horizon), shrunk toward 50% as (k_eff+1)/(n_eff+2). 13/26/52 weeks map to 3/6/12 months.",
+ "baseRateLower": {
+  "13": 0.453,
+  "26": 0.423,
+  "52": 0.393
+ },
+ "zones": [
+  {
+   "zone": "below 60",
+   "lo": 0,
+   "hi": 60,
+   "pLower": {
+    "13": 0.418,
+    "26": 0.367,
+    "52": 0.295
+   },
+   "nEff52": 23.7
+  },
+  {
+   "zone": "60-66",
+   "lo": 60,
+   "hi": 66,
+   "pLower": {
+    "13": 0.405,
+    "26": 0.321,
+    "52": 0.43
+   },
+   "nEff52": 5.8
+  },
+  {
+   "zone": "66-72",
+   "lo": 66,
+   "hi": 72,
+   "pLower": {
+    "13": 0.407,
+    "26": 0.352,
+    "52": 0.422
+   },
+   "nEff52": 6.5
+  },
+  {
+   "zone": "72-81",
+   "lo": 72,
+   "hi": 81,
+   "pLower": {
+    "13": 0.512,
+    "26": 0.527,
+    "52": 0.476
+   },
+   "nEff52": 9.9
+  },
+  {
+   "zone": "81-86",
+   "lo": 81,
+   "hi": 86,
+   "pLower": {
+    "13": 0.392,
+    "26": 0.456,
+    "52": 0.529
+   },
+   "nEff52": 3.7
+  },
+  {
+   "zone": "86-90",
+   "lo": 86,
+   "hi": 90,
+   "pLower": {
+    "13": 0.658,
+    "26": 0.682,
+    "52": 0.536
+   },
+   "nEff52": 2.7
+  },
+  {
+   "zone": "90+",
+   "lo": 90,
+   "hi": 999,
+   "pLower": {
+    "13": 0.769,
+    "26": 0.781,
+    "52": 0.682
+   },
+   "nEff52": 1.7
+  }
+ ]
+}

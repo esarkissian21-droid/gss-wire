@@ -25,9 +25,11 @@ import wire
 HERE = os.path.dirname(os.path.abspath(__file__))
 FWD = os.path.join(HERE, "forward")
 RULES_PATH = os.path.join(FWD, "rules_frozen.json")
+PRED_PATH = os.path.join(FWD, "predictions_v1.json")
 LEDGER_PATH = os.path.join(FWD, "ledger.jsonl")
 FSTATE_PATH = os.path.join(FWD, "state.json")
 UA = "Mozilla/5.0 (gss-wire weekly digest; personal research)"
+PRED = None  # loaded in main()
 
 
 # ---------------------------------------------------------------- data
@@ -94,7 +96,14 @@ def write_ledger(rows):
             f.write(json.dumps(r, sort_keys=True) + "\n")
 
 
-def forward_step(rules, prices, fstate, ledger, rhash):
+def zone_of(pred, r):
+    for z in pred["zones"]:
+        if z["lo"] <= r < z["hi"]:
+            return z
+    return None
+
+
+def forward_step(rules, prices, fstate, ledger, rhash, pred=None):
     """Log new signals for completed weeks >= startWeek, then score anything whose horizon has passed."""
     start = dt.date.fromisoformat(rules["startWeek"])
     ratio = {d: prices["GC=F"][d] / prices["SI=F"][d] for d in prices.get("GC=F", {}) if d in prices.get("SI=F", {})}
@@ -151,6 +160,12 @@ def forward_step(rules, prices, fstate, ledger, rhash):
             if checks:
                 new.append({"id": f"f-{w}-momentum", "kind": "momentum", "week": w.isoformat(), "spyAt": spy[w],
                             "checks": checks, "rules": rhash, "out": {}})
+        # frozen probability forecast for this week
+        if pred and w >= dt.date.fromisoformat(pred["startWeek"]):
+            z = zone_of(pred, now)
+            if z:
+                new.append({"id": f"f-{w}-pred", "kind": "pred", "week": w.isoformat(), "ratioAt": round(now, 3),
+                            "zone": z["zone"], "p": z["pLower"], "base": pred["baseRateLower"], "model": pred["version"], "out": {}})
         fstate["lastWeek"] = w.isoformat()
     ledger = ledger + new
 
@@ -162,6 +177,8 @@ def forward_step(rules, prices, fstate, ledger, rhash):
             hs = rules["ratio"]["horizonsWeeks"]
         elif row["kind"] == "bigweek":
             hs = rules["bigWeek"]["horizonsWeeks"]
+        elif row["kind"] == "pred":
+            hs = [int(h) for h in row["p"]]
         else:
             hs = rules["momentum"]["horizonsWeeks"]
         for h in hs:
@@ -169,7 +186,13 @@ def forward_step(rules, prices, fstate, ledger, rhash):
             if k in row["out"]:
                 continue
             wh = w0 + dt.timedelta(weeks=h)
-            if row["kind"] == "ratio":
+            if row["kind"] == "pred":
+                if wh not in ratio:
+                    continue
+                y = 1.0 if ratio[wh] < row["ratioAt"] else 0.0
+                p, b = row["p"][k], row["base"][k]
+                row["out"][k] = {"lower": bool(y), "brier": round((p - y) ** 2, 4), "baseBrier": round((b - y) ** 2, 4)}
+            elif row["kind"] == "ratio":
                 if wh not in ratio:
                     continue
                 later = ratio[wh]
@@ -205,7 +228,14 @@ def forward_summary(ledger):
     for r in scored:
         k = max(r["out"], key=int)  # longest horizon reached so far
         right += bool(r["out"][k]["right"])
-    return {"logged": len(ledger), "signals": len(sig), "scored": len(scored), "right": right}
+    preds = {}
+    for r in ledger:
+        if r["kind"] == "pred":
+            for k, o in r["out"].items():
+                preds.setdefault(k, []).append(o)
+    brier = {k: {"n": len(v), "model": round(sum(o["brier"] for o in v) / len(v), 4),
+                 "base": round(sum(o["baseBrier"] for o in v) / len(v), 4), "coin": 0.25} for k, v in preds.items()}
+    return {"logged": len(ledger), "signals": len(sig), "scored": len(scored), "right": right, "brier": brier}
 
 
 # ---------------------------------------------------------------- digest text
@@ -253,6 +283,11 @@ def build_digest(cfg, prices, today, ledger, wire_pushed, failed):
         lines.append(f"Week ending {w.strftime('%b %-d')}")
         lines.append(f"Gold ${gc[w]:,.0f} ({pct(gc[w] / gc[pw] - 1)}) · Silver ${si[w]:,.2f} ({pct(si[w] / si[pw] - 1)})")
         lines.append(f"Ratio {r:.1f} (was {pr:.1f}): {zone_text(r)}")
+        pz = zone_of(PRED, r) if PRED else None
+        if pz:
+            p52 = pz["pLower"]["52"]
+            lines.append(f"Model odds ratio is lower in a year: {100 * p52:.0f}% (1972-2026 history for this zone"
+                         f"{', thin evidence' if pz['nEff52'] < 5 else ''}; any month: {100 * PRED['baseRateLower']['52']:.0f}%)")
         for h in cfg.get("holdings", []):
             if h.get("asset") == "silver":
                 val = h["oz"] * si[w]
@@ -291,6 +326,10 @@ def build_digest(cfg, prices, today, ledger, wire_pushed, failed):
     if soon:
         lines.append("Coming up: " + "; ".join(f"{dt.date.fromisoformat(e['date']).strftime('%a %b %-d')} {e['what']}" for e in soon))
     fs = forward_summary(ledger)
+    if fs.get("brier"):
+        k = max(fs["brier"], key=int)
+        b = fs["brier"][k]
+        lines.append(f"Forecast accuracy ({k}-week, {b['n']} scored, lower is better): model {b['model']:.3f} vs base rate {b['base']:.3f} vs coin flip 0.250")
     if fs["signals"] == 0:
         lines.append("Blind forward test: running from the week ending Nov 27; no signals yet.")
     else:
@@ -322,9 +361,11 @@ def main():
     rules = wire.load_json(RULES_PATH, None)
     cfg = wire.load_json(wire.CONFIG_PATH, {})
     rhash = rules_hash()
+    global PRED
+    PRED = wire.load_json(PRED_PATH, None)
     prices, failed = load_prices(rules, http, today)
     fstate = wire.load_json(FSTATE_PATH, {})
-    ledger, fstate, new, scored_now = forward_step(rules, prices, fstate, read_ledger(), rhash)
+    ledger, fstate, new, scored_now = forward_step(rules, prices, fstate, read_ledger(), rhash, PRED)
     fstate.update(rulesHash=rhash, lastRun=dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
                   lastNew=len(new), lastScored=scored_now)
     since = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=7)).isoformat(timespec="seconds")
