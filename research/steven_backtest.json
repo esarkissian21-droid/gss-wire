@@ -1,0 +1,2160 @@
+{
+ "generatedAt": "2026-11-22T10:04:06+00:00",
+ "secCalls": 1446,
+ "tickersPriced": 1798,
+ "priceFailures": 3,
+ "summary": {
+  "steven_8": {
+   "cohorts": 27,
+   "avgStocks": 16.4,
+   "meanExcessVsIWM": 0.0194,
+   "medianExcessVsIWM": 0.0242,
+   "cohortsBeatIWM": 16,
+   "earlyMean": 0.0121,
+   "lateMean": 0.0274,
+   "decCohortsGrowthOf1": 3.54,
+   "iwmGrowthOf1": 4.09,
+   "avgStockHitRateVsIWM": 0.501
+  },
+  "steven_5": {
+   "cohorts": 27,
+   "avgStocks": 35.6,
+   "meanExcessVsIWM": 0.0108,
+   "medianExcessVsIWM": 0.0199,
+   "cohortsBeatIWM": 17,
+   "earlyMean": 0.0094,
+   "lateMean": 0.0123,
+   "decCohortsGrowthOf1": 3.26,
+   "iwmGrowthOf1": 4.09,
+   "avgStockHitRateVsIWM": 0.472
+  },
+  "steven_10": {
+   "cohorts": 27,
+   "avgStocks": 10.1,
+   "meanExcessVsIWM": -0.0161,
+   "medianExcessVsIWM": -0.0087,
+   "cohortsBeatIWM": 11,
+   "earlyMean": -0.0238,
+   "lateMean": -0.0077,
+   "decCohortsGrowthOf1": 2.92,
+   "iwmGrowthOf1": 4.09,
+   "avgStockHitRateVsIWM": 0.481
+  },
+  "steven_8_netcash": {
+   "cohorts": 27,
+   "avgStocks": 7.3,
+   "meanExcessVsIWM": 0.0164,
+   "medianExcessVsIWM": -0.0067,
+   "cohortsBeatIWM": 13,
+   "earlyMean": 0.033,
+   "lateMean": -0.0014,
+   "decCohortsGrowthOf1": 2.11,
+   "iwmGrowthOf1": 4.09,
+   "avgStockHitRateVsIWM": 0.47
+  },
+  "steven_8_under2B": {
+   "cohorts": 27,
+   "avgStocks": 12.7,
+   "meanExcessVsIWM": 0.0133,
+   "medianExcessVsIWM": 0.0069,
+   "cohortsBeatIWM": 14,
+   "earlyMean": 0.0077,
+   "lateMean": 0.0192,
+   "decCohortsGrowthOf1": 3.29,
+   "iwmGrowthOf1": 4.09,
+   "avgStockHitRateVsIWM": 0.488
+  },
+  "cheap_only": {
+   "cohorts": 27,
+   "avgStocks": 285.6,
+   "meanExcessVsIWM": 0.0432,
+   "medianExcessVsIWM": 0.0258,
+   "cohortsBeatIWM": 19,
+   "earlyMean": 0.0276,
+   "lateMean": 0.0599,
+   "decCohortsGrowthOf1": 5.63,
+   "iwmGrowthOf1": 4.09,
+   "avgStockHitRateVsIWM": 0.477
+  }
+ },
+ "cohorts": {
+  "steven_8": [
+   {
+    "date": "2012-06-15",
+    "n": 24,
+    "ret": 0.2155,
+    "vsIWM": -0.0587,
+    "vsSPY": -0.0226,
+    "hitIWM": 0.375,
+    "medianRet": 0.1978
+   },
+   {
+    "date": "2012-12-15",
+    "n": 23,
+    "ret": 0.3214,
+    "vsIWM": -0.0414,
+    "vsSPY": 0.017,
+    "hitIWM": 0.391,
+    "medianRet": 0.2889
+   },
+   {
+    "date": "2013-06-15",
+    "n": 17,
+    "ret": 0.2637,
+    "vsIWM": 0.0119,
+    "vsSPY": 0.0056,
+    "hitIWM": 0.529,
+    "medianRet": 0.283
+   },
+   {
+    "date": "2013-12-15",
+    "n": 11,
+    "ret": -0.0063,
+    "vsIWM": -0.0601,
+    "vsSPY": -0.1431,
+    "hitIWM": 0.364,
+    "medianRet": 0.0378
+   },
+   {
+    "date": "2014-06-15",
+    "n": 17,
+    "ret": 0.0273,
+    "vsIWM": -0.0625,
+    "vsSPY": -0.0635,
+    "hitIWM": 0.353,
+    "medianRet": 0.0499
+   },
+   {
+    "date": "2014-12-15",
+    "n": 19,
+    "ret": -0.1243,
+    "vsIWM": -0.0788,
+    "vsSPY": -0.1137,
+    "hitIWM": 0.316,
+    "medianRet": -0.1512
+   },
+   {
+    "date": "2015-06-15",
+    "n": 16,
+    "ret": -0.0492,
+    "vsIWM": 0.0506,
+    "vsSPY": -0.0497,
+    "hitIWM": 0.688,
+    "medianRet": -0.0018
+   },
+   {
+    "date": "2015-12-15",
+    "n": 11,
+    "ret": 0.2935,
+    "vsIWM": 0.0446,
+    "vsSPY": 0.1254,
+    "hitIWM": 0.727,
+    "medianRet": 0.316
+   },
+   {
+    "date": "2016-06-15",
+    "n": 11,
+    "ret": 0.4406,
+    "vsIWM": 0.1544,
+    "vsSPY": 0.2013,
+    "hitIWM": 0.727,
+    "medianRet": 0.4094
+   },
+   {
+    "date": "2016-12-15",
+    "n": 9,
+    "ret": 0.233,
+    "vsIWM": 0.0858,
+    "vsSPY": 0.0205,
+    "hitIWM": 0.556,
+    "medianRet": 0.1372
+   },
+   {
+    "date": "2017-06-15",
+    "n": 12,
+    "ret": 0.4204,
+    "vsIWM": 0.1715,
+    "vsSPY": 0.2203,
+    "hitIWM": 0.5,
+    "medianRet": 0.2165
+   },
+   {
+    "date": "2017-12-15",
+    "n": 10,
+    "ret": -0.0974,
+    "vsIWM": -0.0348,
+    "vsSPY": -0.093,
+    "hitIWM": 0.6,
+    "medianRet": -0.062
+   },
+   {
+    "date": "2018-06-15",
+    "n": 11,
+    "ret": -0.0625,
+    "vsIWM": 0.0242,
+    "vsSPY": -0.119,
+    "hitIWM": 0.636,
+    "medianRet": 0.0427
+   },
+   {
+    "date": "2018-12-15",
+    "n": 21,
+    "ret": 0.2608,
+    "vsIWM": -0.0375,
+    "vsSPY": -0.0723,
+    "hitIWM": 0.476,
+    "medianRet": 0.2359
+   },
+   {
+    "date": "2019-06-15",
+    "n": 17,
+    "ret": -0.1958,
+    "vsIWM": -0.1345,
+    "vsSPY": -0.2493,
+    "hitIWM": 0.294,
+    "medianRet": -0.1735
+   },
+   {
+    "date": "2019-12-15",
+    "n": 13,
+    "ret": 0.0024,
+    "vsIWM": -0.1608,
+    "vsSPY": -0.1457,
+    "hitIWM": 0.154,
+    "medianRet": -0.0228
+   },
+   {
+    "date": "2020-06-15",
+    "n": 14,
+    "ret": 0.9438,
+    "vsIWM": 0.217,
+    "vsSPY": 0.4231,
+    "hitIWM": 0.429,
+    "medianRet": 0.5183
+   },
+   {
+    "date": "2020-12-15",
+    "n": 6,
+    "ret": 0.1937,
+    "vsIWM": 0.0736,
+    "vsSPY": -0.055,
+    "hitIWM": 0.667,
+    "medianRet": 0.232
+   },
+   {
+    "date": "2021-06-15",
+    "n": 8,
+    "ret": -0.1722,
+    "vsIWM": 0.1014,
+    "vsSPY": -0.0734,
+    "hitIWM": 0.75,
+    "medianRet": -0.1529
+   },
+   {
+    "date": "2021-12-15",
+    "n": 12,
+    "ret": -0.0967,
+    "vsIWM": 0.1003,
+    "vsSPY": 0.0676,
+    "hitIWM": 0.75,
+    "medianRet": -0.0419
+   },
+   {
+    "date": "2022-06-15",
+    "n": 37,
+    "ret": 0.1678,
+    "vsIWM": 0.0207,
+    "vsSPY": -0.044,
+    "hitIWM": 0.459,
+    "medianRet": 0.1225
+   },
+   {
+    "date": "2022-12-15",
+    "n": 26,
+    "ret": 0.2626,
+    "vsIWM": 0.0999,
+    "vsSPY": 0.0151,
+    "hitIWM": 0.538,
+    "medianRet": 0.2491
+   },
+   {
+    "date": "2023-06-15",
+    "n": 27,
+    "ret": 0.211,
+    "vsIWM": 0.1208,
+    "vsSPY": -0.0335,
+    "hitIWM": 0.519,
+    "medianRet": 0.1697
+   },
+   {
+    "date": "2023-12-15",
+    "n": 19,
+    "ret": 0.0274,
+    "vsIWM": -0.1422,
+    "vsSPY": -0.2126,
+    "hitIWM": 0.211,
+    "medianRet": -0.0403
+   },
+   {
+    "date": "2024-06-15",
+    "n": 18,
+    "ret": 0.0246,
+    "vsIWM": -0.0272,
+    "vsSPY": -0.073,
+    "hitIWM": 0.556,
+    "medianRet": 0.0815
+   },
+   {
+    "date": "2024-12-15",
+    "n": 16,
+    "ret": 0.2092,
+    "vsIWM": 0.0585,
+    "vsSPY": 0.0377,
+    "hitIWM": 0.5,
+    "medianRet": 0.1845
+   },
+   {
+    "date": "2025-06-15",
+    "n": 19,
+    "ret": 0.4685,
+    "vsIWM": 0.0283,
+    "vsSPY": 0.1554,
+    "hitIWM": 0.474,
+    "medianRet": 0.2729
+   }
+  ],
+  "steven_5": [
+   {
+    "date": "2012-06-15",
+    "n": 45,
+    "ret": 0.2681,
+    "vsIWM": -0.0179,
+    "vsSPY": 0.0198,
+    "hitIWM": 0.422,
+    "medianRet": 0.2053
+   },
+   {
+    "date": "2012-12-15",
+    "n": 44,
+    "ret": 0.4058,
+    "vsIWM": 0.0199,
+    "vsSPY": 0.082,
+    "hitIWM": 0.409,
+    "medianRet": 0.3013
+   },
+   {
+    "date": "2013-06-15",
+    "n": 42,
+    "ret": 0.2936,
+    "vsIWM": 0.0359,
+    "vsSPY": 0.0294,
+    "hitIWM": 0.548,
+    "medianRet": 0.2772
+   },
+   {
+    "date": "2013-12-15",
+    "n": 34,
+    "ret": 0.0039,
+    "vsIWM": -0.0504,
+    "vsSPY": -0.1342,
+    "hitIWM": 0.382,
+    "medianRet": 0.0309
+   },
+   {
+    "date": "2014-06-15",
+    "n": 38,
+    "ret": 0.0666,
+    "vsIWM": -0.0266,
+    "vsSPY": -0.0277,
+    "hitIWM": 0.421,
+    "medianRet": 0.0694
+   },
+   {
+    "date": "2014-12-15",
+    "n": 38,
+    "ret": -0.0575,
+    "vsIWM": -0.0086,
+    "vsSPY": -0.0461,
+    "hitIWM": 0.447,
+    "medianRet": -0.1385
+   },
+   {
+    "date": "2015-06-15",
+    "n": 40,
+    "ret": -0.028,
+    "vsIWM": 0.074,
+    "vsSPY": -0.0285,
+    "hitIWM": 0.6,
+    "medianRet": -0.0253
+   },
+   {
+    "date": "2015-12-15",
+    "n": 37,
+    "ret": 0.2993,
+    "vsIWM": 0.0493,
+    "vsSPY": 0.1305,
+    "hitIWM": 0.649,
+    "medianRet": 0.316
+   },
+   {
+    "date": "2016-06-15",
+    "n": 31,
+    "ret": 0.3417,
+    "vsIWM": 0.0751,
+    "vsSPY": 0.1189,
+    "hitIWM": 0.581,
+    "medianRet": 0.3232
+   },
+   {
+    "date": "2016-12-15",
+    "n": 30,
+    "ret": 0.2075,
+    "vsIWM": 0.0633,
+    "vsSPY": -0.0006,
+    "hitIWM": 0.467,
+    "medianRet": 0.0884
+   },
+   {
+    "date": "2017-06-15",
+    "n": 29,
+    "ret": 0.2293,
+    "vsIWM": 0.0139,
+    "vsSPY": 0.0562,
+    "hitIWM": 0.31,
+    "medianRet": 0.1239
+   },
+   {
+    "date": "2017-12-15",
+    "n": 21,
+    "ret": -0.1784,
+    "vsIWM": -0.1214,
+    "vsSPY": -0.1744,
+    "hitIWM": 0.333,
+    "medianRet": -0.168
+   },
+   {
+    "date": "2018-06-15",
+    "n": 33,
+    "ret": -0.0523,
+    "vsIWM": 0.0354,
+    "vsSPY": -0.1093,
+    "hitIWM": 0.667,
+    "medianRet": -0.0291
+   },
+   {
+    "date": "2018-12-15",
+    "n": 44,
+    "ret": 0.2964,
+    "vsIWM": -0.0102,
+    "vsSPY": -0.046,
+    "hitIWM": 0.568,
+    "medianRet": 0.3536
+   },
+   {
+    "date": "2019-06-15",
+    "n": 39,
+    "ret": -0.108,
+    "vsIWM": -0.0401,
+    "vsSPY": -0.1673,
+    "hitIWM": 0.359,
+    "medianRet": -0.1503
+   },
+   {
+    "date": "2019-12-15",
+    "n": 35,
+    "ret": 0.036,
+    "vsIWM": -0.1326,
+    "vsSPY": -0.1171,
+    "hitIWM": 0.257,
+    "medianRet": -0.0207
+   },
+   {
+    "date": "2020-06-15",
+    "n": 34,
+    "ret": 0.7455,
+    "vsIWM": 0.0929,
+    "vsSPY": 0.2779,
+    "hitIWM": 0.441,
+    "medianRet": 0.5742
+   },
+   {
+    "date": "2020-12-15",
+    "n": 19,
+    "ret": 0.1138,
+    "vsIWM": 0.0017,
+    "vsSPY": -0.1183,
+    "hitIWM": 0.421,
+    "medianRet": 0.0212
+   },
+   {
+    "date": "2021-06-15",
+    "n": 27,
+    "ret": -0.1788,
+    "vsIWM": 0.0927,
+    "vsSPY": -0.0807,
+    "hitIWM": 0.704,
+    "medianRet": -0.1792
+   },
+   {
+    "date": "2021-12-15",
+    "n": 24,
+    "ret": -0.1626,
+    "vsIWM": 0.0201,
+    "vsSPY": -0.0102,
+    "hitIWM": 0.583,
+    "medianRet": -0.1232
+   },
+   {
+    "date": "2022-06-15",
+    "n": 60,
+    "ret": 0.2054,
+    "vsIWM": 0.0536,
+    "vsSPY": -0.0132,
+    "hitIWM": 0.467,
+    "medianRet": 0.1228
+   },
+   {
+    "date": "2022-12-15",
+    "n": 40,
+    "ret": 0.2446,
+    "vsIWM": 0.0843,
+    "vsSPY": 0.0007,
+    "hitIWM": 0.525,
+    "medianRet": 0.1971
+   },
+   {
+    "date": "2023-06-15",
+    "n": 43,
+    "ret": 0.1693,
+    "vsIWM": 0.0822,
+    "vsSPY": -0.0668,
+    "hitIWM": 0.558,
+    "medianRet": 0.1697
+   },
+   {
+    "date": "2023-12-15",
+    "n": 30,
+    "ret": 0.06,
+    "vsIWM": -0.1149,
+    "vsSPY": -0.1876,
+    "hitIWM": 0.3,
+    "medianRet": 0.0557
+   },
+   {
+    "date": "2024-06-15",
+    "n": 35,
+    "ret": -0.0044,
+    "vsIWM": -0.0547,
+    "vsSPY": -0.0992,
+    "hitIWM": 0.429,
+    "medianRet": -0.0085
+   },
+   {
+    "date": "2024-12-15",
+    "n": 27,
+    "ret": 0.1521,
+    "vsIWM": 0.0085,
+    "vsSPY": -0.0114,
+    "hitIWM": 0.444,
+    "medianRet": 0.0801
+   },
+   {
+    "date": "2025-06-15",
+    "n": 42,
+    "ret": 0.5233,
+    "vsIWM": 0.0667,
+    "vsSPY": 0.1986,
+    "hitIWM": 0.452,
+    "medianRet": 0.2391
+   }
+  ],
+  "steven_10": [
+   {
+    "date": "2012-06-15",
+    "n": 13,
+    "ret": 0.1381,
+    "vsIWM": -0.1186,
+    "vsSPY": -0.0848,
+    "hitIWM": 0.231,
+    "medianRet": 0.1114
+   },
+   {
+    "date": "2012-12-15",
+    "n": 12,
+    "ret": 0.2939,
+    "vsIWM": -0.0613,
+    "vsSPY": -0.0042,
+    "hitIWM": 0.333,
+    "medianRet": 0.2575
+   },
+   {
+    "date": "2013-06-15",
+    "n": 11,
+    "ret": 0.2689,
+    "vsIWM": 0.016,
+    "vsSPY": 0.0098,
+    "hitIWM": 0.636,
+    "medianRet": 0.3178
+   },
+   {
+    "date": "2013-12-15",
+    "n": 6,
+    "ret": 0.0384,
+    "vsIWM": -0.0179,
+    "vsSPY": -0.1045,
+    "hitIWM": 0.333,
+    "medianRet": 0.0358
+   },
+   {
+    "date": "2014-06-15",
+    "n": 8,
+    "ret": 0.0863,
+    "vsIWM": -0.0087,
+    "vsSPY": -0.0097,
+    "hitIWM": 0.5,
+    "medianRet": 0.1156
+   },
+   {
+    "date": "2014-12-15",
+    "n": 12,
+    "ret": -0.1057,
+    "vsIWM": -0.0593,
+    "vsSPY": -0.0949,
+    "hitIWM": 0.333,
+    "medianRet": -0.1465
+   },
+   {
+    "date": "2015-06-15",
+    "n": 9,
+    "ret": -0.0972,
+    "vsIWM": -0.0025,
+    "vsSPY": -0.0977,
+    "hitIWM": 0.667,
+    "medianRet": -0.0686
+   },
+   {
+    "date": "2015-12-15",
+    "n": 8,
+    "ret": 0.2851,
+    "vsIWM": 0.0378,
+    "vsSPY": 0.1181,
+    "hitIWM": 0.75,
+    "medianRet": 0.3088
+   },
+   {
+    "date": "2016-06-15",
+    "n": 5,
+    "ret": 0.3055,
+    "vsIWM": 0.0462,
+    "vsSPY": 0.0887,
+    "hitIWM": 0.6,
+    "medianRet": 0.4094
+   },
+   {
+    "date": "2016-12-15",
+    "n": 5,
+    "ret": 0.1448,
+    "vsIWM": 0.008,
+    "vsSPY": -0.0525,
+    "hitIWM": 0.4,
+    "medianRet": 0.0061
+   },
+   {
+    "date": "2017-06-15",
+    "n": 9,
+    "ret": 0.5655,
+    "vsIWM": 0.2912,
+    "vsSPY": 0.345,
+    "hitIWM": 0.667,
+    "medianRet": 0.4496
+   },
+   {
+    "date": "2017-12-15",
+    "n": 4,
+    "ret": -0.2422,
+    "vsIWM": -0.1896,
+    "vsSPY": -0.2385,
+    "hitIWM": 0.25,
+    "medianRet": -0.4842
+   },
+   {
+    "date": "2018-06-15",
+    "n": 4,
+    "ret": -0.1766,
+    "vsIWM": -0.1005,
+    "vsSPY": -0.2262,
+    "hitIWM": 0.5,
+    "medianRet": -0.1094
+   },
+   {
+    "date": "2018-12-15",
+    "n": 9,
+    "ret": 0.0814,
+    "vsIWM": -0.1744,
+    "vsSPY": -0.2042,
+    "hitIWM": 0.333,
+    "medianRet": 0.0099
+   },
+   {
+    "date": "2019-06-15",
+    "n": 7,
+    "ret": -0.4536,
+    "vsIWM": -0.412,
+    "vsSPY": -0.4899,
+    "hitIWM": 0.0,
+    "medianRet": -0.4048
+   },
+   {
+    "date": "2019-12-15",
+    "n": 7,
+    "ret": 0.1405,
+    "vsIWM": -0.0452,
+    "vsSPY": -0.028,
+    "hitIWM": 0.286,
+    "medianRet": -0.0048
+   },
+   {
+    "date": "2020-06-15",
+    "n": 10,
+    "ret": 0.6758,
+    "vsIWM": 0.0492,
+    "vsSPY": 0.2269,
+    "hitIWM": 0.4,
+    "medianRet": 0.5129
+   },
+   {
+    "date": "2020-12-15",
+    "n": 3,
+    "ret": 0.3234,
+    "vsIWM": 0.1902,
+    "vsSPY": 0.0477,
+    "hitIWM": 1.0,
+    "medianRet": 0.362
+   },
+   {
+    "date": "2021-06-15",
+    "n": 4,
+    "ret": -0.1778,
+    "vsIWM": 0.0939,
+    "vsSPY": -0.0797,
+    "hitIWM": 0.75,
+    "medianRet": -0.1939
+   },
+   {
+    "date": "2021-12-15",
+    "n": 7,
+    "ret": -0.0844,
+    "vsIWM": 0.1153,
+    "vsSPY": 0.0822,
+    "hitIWM": 0.857,
+    "medianRet": -0.0189
+   },
+   {
+    "date": "2022-06-15",
+    "n": 28,
+    "ret": 0.1398,
+    "vsIWM": -0.0038,
+    "vsSPY": -0.0669,
+    "hitIWM": 0.393,
+    "medianRet": 0.1008
+   },
+   {
+    "date": "2022-12-15",
+    "n": 22,
+    "ret": 0.2898,
+    "vsIWM": 0.1236,
+    "vsSPY": 0.037,
+    "hitIWM": 0.545,
+    "medianRet": 0.2727
+   },
+   {
+    "date": "2023-06-15",
+    "n": 24,
+    "ret": 0.2666,
+    "vsIWM": 0.1722,
+    "vsSPY": 0.0108,
+    "hitIWM": 0.583,
+    "medianRet": 0.1994
+   },
+   {
+    "date": "2023-12-15",
+    "n": 11,
+    "ret": 0.0128,
+    "vsIWM": -0.1543,
+    "vsSPY": -0.2238,
+    "hitIWM": 0.273,
+    "medianRet": -0.0409
+   },
+   {
+    "date": "2024-06-15",
+    "n": 11,
+    "ret": -0.1055,
+    "vsIWM": -0.1507,
+    "vsSPY": -0.1907,
+    "hitIWM": 0.455,
+    "medianRet": -0.1171
+   },
+   {
+    "date": "2024-12-15",
+    "n": 11,
+    "ret": 0.1153,
+    "vsIWM": -0.0237,
+    "vsSPY": -0.0429,
+    "hitIWM": 0.455,
+    "medianRet": 0.0956
+   },
+   {
+    "date": "2025-06-15",
+    "n": 13,
+    "ret": 0.349,
+    "vsIWM": -0.0554,
+    "vsSPY": 0.0614,
+    "hitIWM": 0.462,
+    "medianRet": 0.2367
+   }
+  ],
+  "steven_8_netcash": [
+   {
+    "date": "2012-06-15",
+    "n": 12,
+    "ret": 0.1855,
+    "vsIWM": -0.0819,
+    "vsSPY": -0.0467,
+    "hitIWM": 0.167,
+    "medianRet": 0.1483
+   },
+   {
+    "date": "2012-12-15",
+    "n": 13,
+    "ret": 0.3693,
+    "vsIWM": -0.0067,
+    "vsSPY": 0.0538,
+    "hitIWM": 0.538,
+    "medianRet": 0.4123
+   },
+   {
+    "date": "2013-06-15",
+    "n": 11,
+    "ret": 0.2337,
+    "vsIWM": -0.0121,
+    "vsSPY": -0.0182,
+    "hitIWM": 0.455,
+    "medianRet": 0.1953
+   },
+   {
+    "date": "2013-12-15",
+    "n": 5,
+    "ret": 0.1593,
+    "vsIWM": 0.0965,
+    "vsSPY": -0.0002,
+    "hitIWM": 0.4,
+    "medianRet": 0.0432
+   },
+   {
+    "date": "2014-06-15",
+    "n": 9,
+    "ret": 0.1409,
+    "vsIWM": 0.0412,
+    "vsSPY": 0.0401,
+    "hitIWM": 0.556,
+    "medianRet": 0.1981
+   },
+   {
+    "date": "2014-12-15",
+    "n": 9,
+    "ret": -0.0646,
+    "vsIWM": -0.016,
+    "vsSPY": -0.0533,
+    "hitIWM": 0.333,
+    "medianRet": -0.1352
+   },
+   {
+    "date": "2015-06-15",
+    "n": 6,
+    "ret": -0.0228,
+    "vsIWM": 0.0797,
+    "vsSPY": -0.0234,
+    "hitIWM": 0.833,
+    "medianRet": -0.0018
+   },
+   {
+    "date": "2015-12-15",
+    "n": 7,
+    "ret": 0.2512,
+    "vsIWM": 0.0104,
+    "vsSPY": 0.0886,
+    "hitIWM": 0.714,
+    "medianRet": 0.316
+   },
+   {
+    "date": "2016-06-15",
+    "n": 6,
+    "ret": 0.4241,
+    "vsIWM": 0.1411,
+    "vsSPY": 0.1875,
+    "hitIWM": 0.833,
+    "medianRet": 0.4194
+   },
+   {
+    "date": "2016-12-15",
+    "n": 4,
+    "ret": -0.0232,
+    "vsIWM": -0.1398,
+    "vsSPY": -0.1915,
+    "hitIWM": 0.0,
+    "medianRet": -0.0118
+   },
+   {
+    "date": "2017-06-15",
+    "n": 7,
+    "ret": 0.7153,
+    "vsIWM": 0.4147,
+    "vsSPY": 0.4737,
+    "hitIWM": 0.714,
+    "medianRet": 0.4496
+   },
+   {
+    "date": "2017-12-15",
+    "n": 4,
+    "ret": -0.0968,
+    "vsIWM": -0.0341,
+    "vsSPY": -0.0924,
+    "hitIWM": 0.5,
+    "medianRet": -0.1933
+   },
+   {
+    "date": "2018-06-15",
+    "n": 6,
+    "ret": 0.0208,
+    "vsIWM": 0.1153,
+    "vsSPY": -0.0406,
+    "hitIWM": 0.667,
+    "medianRet": 0.0622
+   },
+   {
+    "date": "2018-12-15",
+    "n": 8,
+    "ret": 0.118,
+    "vsIWM": -0.1465,
+    "vsSPY": -0.1773,
+    "hitIWM": 0.375,
+    "medianRet": 0.1407
+   },
+   {
+    "date": "2019-06-15",
+    "n": 6,
+    "ret": -0.0907,
+    "vsIWM": -0.0214,
+    "vsSPY": -0.1512,
+    "hitIWM": 0.333,
+    "medianRet": -0.1358
+   },
+   {
+    "date": "2019-12-15",
+    "n": 2,
+    "ret": -0.3153,
+    "vsIWM": -0.4268,
+    "vsSPY": -0.4165,
+    "hitIWM": 0.0,
+    "medianRet": -0.3153
+   },
+   {
+    "date": "2020-06-15",
+    "n": 4,
+    "ret": 0.9467,
+    "vsIWM": 0.2188,
+    "vsSPY": 0.4252,
+    "hitIWM": 0.5,
+    "medianRet": 0.9312
+   },
+   {
+    "date": "2020-12-15",
+    "n": 1,
+    "ret": 0.0063,
+    "vsIWM": -0.095,
+    "vsSPY": -0.2034,
+    "hitIWM": 0.0,
+    "medianRet": 0.0063
+   },
+   {
+    "date": "2021-06-15",
+    "n": 3,
+    "ret": -0.1358,
+    "vsIWM": 0.1498,
+    "vsSPY": -0.0327,
+    "hitIWM": 0.667,
+    "medianRet": -0.1265
+   },
+   {
+    "date": "2021-12-15",
+    "n": 4,
+    "ret": -0.1271,
+    "vsIWM": 0.0633,
+    "vsSPY": 0.0317,
+    "hitIWM": 0.75,
+    "medianRet": -0.0231
+   },
+   {
+    "date": "2022-06-15",
+    "n": 20,
+    "ret": 0.1315,
+    "vsIWM": -0.011,
+    "vsSPY": -0.0737,
+    "hitIWM": 0.5,
+    "medianRet": 0.1528
+   },
+   {
+    "date": "2022-12-15",
+    "n": 12,
+    "ret": 0.3017,
+    "vsIWM": 0.134,
+    "vsSPY": 0.0465,
+    "hitIWM": 0.583,
+    "medianRet": 0.3052
+   },
+   {
+    "date": "2023-06-15",
+    "n": 9,
+    "ret": 0.3183,
+    "vsIWM": 0.2201,
+    "vsSPY": 0.0521,
+    "hitIWM": 0.778,
+    "medianRet": 0.2273
+   },
+   {
+    "date": "2023-12-15",
+    "n": 9,
+    "ret": 0.0654,
+    "vsIWM": -0.1104,
+    "vsSPY": -0.1835,
+    "hitIWM": 0.222,
+    "medianRet": 0.1003
+   },
+   {
+    "date": "2024-06-15",
+    "n": 6,
+    "ret": -0.1787,
+    "vsIWM": -0.2202,
+    "vsSPY": -0.2569,
+    "hitIWM": 0.333,
+    "medianRet": -0.2378
+   },
+   {
+    "date": "2024-12-15",
+    "n": 6,
+    "ret": 0.3818,
+    "vsIWM": 0.2096,
+    "vsSPY": 0.1858,
+    "hitIWM": 0.5,
+    "medianRet": 0.2955
+   },
+   {
+    "date": "2025-06-15",
+    "n": 9,
+    "ret": 0.244,
+    "vsIWM": -0.1289,
+    "vsSPY": -0.0212,
+    "hitIWM": 0.444,
+    "medianRet": 0.2729
+   }
+  ],
+  "steven_8_under2B": [
+   {
+    "date": "2012-06-15",
+    "n": 18,
+    "ret": 0.2208,
+    "vsIWM": -0.0545,
+    "vsSPY": -0.0183,
+    "hitIWM": 0.389,
+    "medianRet": 0.1909
+   },
+   {
+    "date": "2012-12-15",
+    "n": 20,
+    "ret": 0.3534,
+    "vsIWM": -0.0182,
+    "vsSPY": 0.0416,
+    "hitIWM": 0.45,
+    "medianRet": 0.3255
+   },
+   {
+    "date": "2013-06-15",
+    "n": 14,
+    "ret": 0.2446,
+    "vsIWM": -0.0034,
+    "vsSPY": -0.0095,
+    "hitIWM": 0.5,
+    "medianRet": 0.2473
+   },
+   {
+    "date": "2013-12-15",
+    "n": 9,
+    "ret": 0.0162,
+    "vsIWM": -0.0389,
+    "vsSPY": -0.1237,
+    "hitIWM": 0.333,
+    "medianRet": 0.0378
+   },
+   {
+    "date": "2014-06-15",
+    "n": 14,
+    "ret": -0.0029,
+    "vsIWM": -0.0901,
+    "vsSPY": -0.091,
+    "hitIWM": 0.286,
+    "medianRet": -0.0091
+   },
+   {
+    "date": "2014-12-15",
+    "n": 16,
+    "ret": -0.101,
+    "vsIWM": -0.0543,
+    "vsSPY": -0.0901,
+    "hitIWM": 0.312,
+    "medianRet": -0.1465
+   },
+   {
+    "date": "2015-06-15",
+    "n": 15,
+    "ret": -0.0479,
+    "vsIWM": 0.0521,
+    "vsSPY": -0.0484,
+    "hitIWM": 0.667,
+    "medianRet": 0.0247
+   },
+   {
+    "date": "2015-12-15",
+    "n": 9,
+    "ret": 0.3327,
+    "vsIWM": 0.0762,
+    "vsSPY": 0.1595,
+    "hitIWM": 0.778,
+    "medianRet": 0.3256
+   },
+   {
+    "date": "2016-06-15",
+    "n": 9,
+    "ret": 0.4547,
+    "vsIWM": 0.1656,
+    "vsSPY": 0.2131,
+    "hitIWM": 0.778,
+    "medianRet": 0.4094
+   },
+   {
+    "date": "2016-12-15",
+    "n": 7,
+    "ret": 0.2148,
+    "vsIWM": 0.0697,
+    "vsSPY": 0.0054,
+    "hitIWM": 0.571,
+    "medianRet": 0.1372
+   },
+   {
+    "date": "2017-06-15",
+    "n": 11,
+    "ret": 0.4053,
+    "vsIWM": 0.1591,
+    "vsSPY": 0.2074,
+    "hitIWM": 0.455,
+    "medianRet": 0.169
+   },
+   {
+    "date": "2017-12-15",
+    "n": 9,
+    "ret": -0.0995,
+    "vsIWM": -0.037,
+    "vsSPY": -0.0952,
+    "hitIWM": 0.667,
+    "medianRet": -0.0615
+   },
+   {
+    "date": "2018-06-15",
+    "n": 9,
+    "ret": -0.0784,
+    "vsIWM": 0.0069,
+    "vsSPY": -0.1338,
+    "hitIWM": 0.667,
+    "medianRet": 0.0427
+   },
+   {
+    "date": "2018-12-15",
+    "n": 13,
+    "ret": 0.1462,
+    "vsIWM": -0.125,
+    "vsSPY": -0.1566,
+    "hitIWM": 0.385,
+    "medianRet": 0.2262
+   },
+   {
+    "date": "2019-06-15",
+    "n": 15,
+    "ret": -0.1565,
+    "vsIWM": -0.0922,
+    "vsSPY": -0.2126,
+    "hitIWM": 0.333,
+    "medianRet": -0.1735
+   },
+   {
+    "date": "2019-12-15",
+    "n": 13,
+    "ret": 0.0024,
+    "vsIWM": -0.1608,
+    "vsSPY": -0.1457,
+    "hitIWM": 0.154,
+    "medianRet": -0.0228
+   },
+   {
+    "date": "2020-06-15",
+    "n": 11,
+    "ret": 1.0752,
+    "vsIWM": 0.2993,
+    "vsSPY": 0.5193,
+    "hitIWM": 0.545,
+    "medianRet": 0.7377
+   },
+   {
+    "date": "2020-12-15",
+    "n": 4,
+    "ret": 0.1323,
+    "vsIWM": 0.0184,
+    "vsSPY": -0.1036,
+    "hitIWM": 0.5,
+    "medianRet": 0.0996
+   },
+   {
+    "date": "2021-06-15",
+    "n": 7,
+    "ret": -0.1799,
+    "vsIWM": 0.0912,
+    "vsSPY": -0.082,
+    "hitIWM": 0.714,
+    "medianRet": -0.1793
+   },
+   {
+    "date": "2021-12-15",
+    "n": 9,
+    "ret": -0.0663,
+    "vsIWM": 0.1374,
+    "vsSPY": 0.1036,
+    "hitIWM": 0.778,
+    "medianRet": -0.0189
+   },
+   {
+    "date": "2022-06-15",
+    "n": 24,
+    "ret": 0.0677,
+    "vsIWM": -0.0668,
+    "vsSPY": -0.1259,
+    "hitIWM": 0.292,
+    "medianRet": 0.0096
+   },
+   {
+    "date": "2022-12-15",
+    "n": 18,
+    "ret": 0.2034,
+    "vsIWM": 0.0483,
+    "vsSPY": -0.0325,
+    "hitIWM": 0.444,
+    "medianRet": 0.1231
+   },
+   {
+    "date": "2023-06-15",
+    "n": 18,
+    "ret": 0.1527,
+    "vsIWM": 0.0669,
+    "vsSPY": -0.08,
+    "hitIWM": 0.444,
+    "medianRet": 0.0445
+   },
+   {
+    "date": "2023-12-15",
+    "n": 13,
+    "ret": 0.0084,
+    "vsIWM": -0.158,
+    "vsSPY": -0.2271,
+    "hitIWM": 0.231,
+    "medianRet": -0.061
+   },
+   {
+    "date": "2024-06-15",
+    "n": 13,
+    "ret": -0.0342,
+    "vsIWM": -0.083,
+    "vsSPY": -0.1262,
+    "hitIWM": 0.462,
+    "medianRet": -0.0813
+   },
+   {
+    "date": "2024-12-15",
+    "n": 12,
+    "ret": 0.2377,
+    "vsIWM": 0.0835,
+    "vsSPY": 0.0621,
+    "hitIWM": 0.583,
+    "medianRet": 0.2848
+   },
+   {
+    "date": "2025-06-15",
+    "n": 13,
+    "ret": 0.5222,
+    "vsIWM": 0.0659,
+    "vsSPY": 0.1977,
+    "hitIWM": 0.462,
+    "medianRet": 0.2367
+   }
+  ],
+  "cheap_only": [
+   {
+    "date": "2012-06-15",
+    "n": 234,
+    "ret": 0.4092,
+    "vsIWM": 0.0913,
+    "vsSPY": 0.1332,
+    "hitIWM": 0.615,
+    "medianRet": 0.3534
+   },
+   {
+    "date": "2012-12-15",
+    "n": 232,
+    "ret": 0.44,
+    "vsIWM": 0.0446,
+    "vsSPY": 0.1082,
+    "hitIWM": 0.513,
+    "medianRet": 0.3866
+   },
+   {
+    "date": "2013-06-15",
+    "n": 230,
+    "ret": 0.311,
+    "vsIWM": 0.0498,
+    "vsSPY": 0.0433,
+    "hitIWM": 0.517,
+    "medianRet": 0.2583
+   },
+   {
+    "date": "2013-12-15",
+    "n": 212,
+    "ret": 0.0694,
+    "vsIWM": 0.0115,
+    "vsSPY": -0.0778,
+    "hitIWM": 0.5,
+    "medianRet": 0.0582
+   },
+   {
+    "date": "2014-06-15",
+    "n": 214,
+    "ret": 0.1082,
+    "vsIWM": 0.0113,
+    "vsSPY": 0.0102,
+    "hitIWM": 0.481,
+    "medianRet": 0.0878
+   },
+   {
+    "date": "2014-12-15",
+    "n": 226,
+    "ret": -0.09,
+    "vsIWM": -0.0428,
+    "vsSPY": -0.079,
+    "hitIWM": 0.42,
+    "medianRet": -0.1246
+   },
+   {
+    "date": "2015-06-15",
+    "n": 228,
+    "ret": -0.0716,
+    "vsIWM": 0.0258,
+    "vsSPY": -0.0721,
+    "hitIWM": 0.531,
+    "medianRet": -0.0875
+   },
+   {
+    "date": "2015-12-15",
+    "n": 259,
+    "ret": 0.3736,
+    "vsIWM": 0.1093,
+    "vsSPY": 0.1951,
+    "hitIWM": 0.653,
+    "medianRet": 0.3454
+   },
+   {
+    "date": "2016-06-15",
+    "n": 251,
+    "ret": 0.2942,
+    "vsIWM": 0.037,
+    "vsSPY": 0.0792,
+    "hitIWM": 0.494,
+    "medianRet": 0.2394
+   },
+   {
+    "date": "2016-12-15",
+    "n": 233,
+    "ret": 0.1771,
+    "vsIWM": 0.0366,
+    "vsSPY": -0.0257,
+    "hitIWM": 0.455,
+    "medianRet": 0.0943
+   },
+   {
+    "date": "2017-06-15",
+    "n": 241,
+    "ret": 0.2638,
+    "vsIWM": 0.0423,
+    "vsSPY": 0.0858,
+    "hitIWM": 0.461,
+    "medianRet": 0.176
+   },
+   {
+    "date": "2017-12-15",
+    "n": 229,
+    "ret": -0.0643,
+    "vsIWM": 0.0006,
+    "vsSPY": -0.0598,
+    "hitIWM": 0.454,
+    "medianRet": -0.1083
+   },
+   {
+    "date": "2018-06-15",
+    "n": 281,
+    "ret": -0.0999,
+    "vsIWM": -0.0167,
+    "vsSPY": -0.1541,
+    "hitIWM": 0.463,
+    "medianRet": -0.1114
+   },
+   {
+    "date": "2018-12-15",
+    "n": 351,
+    "ret": 0.292,
+    "vsIWM": -0.0136,
+    "vsSPY": -0.0493,
+    "hitIWM": 0.456,
+    "medianRet": 0.2565
+   },
+   {
+    "date": "2019-06-15",
+    "n": 331,
+    "ret": -0.1305,
+    "vsIWM": -0.0643,
+    "vsSPY": -0.1884,
+    "hitIWM": 0.384,
+    "medianRet": -0.1583
+   },
+   {
+    "date": "2019-12-15",
+    "n": 331,
+    "ret": 0.1209,
+    "vsIWM": -0.0615,
+    "vsSPY": -0.0447,
+    "hitIWM": 0.305,
+    "medianRet": 0.017
+   },
+   {
+    "date": "2020-06-15",
+    "n": 374,
+    "ret": 1.1976,
+    "vsIWM": 0.3759,
+    "vsSPY": 0.6089,
+    "hitIWM": 0.516,
+    "medianRet": 0.6226
+   },
+   {
+    "date": "2020-12-15",
+    "n": 308,
+    "ret": 0.3273,
+    "vsIWM": 0.1938,
+    "vsSPY": 0.0508,
+    "hitIWM": 0.568,
+    "medianRet": 0.163
+   },
+   {
+    "date": "2021-06-15",
+    "n": 271,
+    "ret": -0.1171,
+    "vsIWM": 0.1747,
+    "vsSPY": -0.0117,
+    "hitIWM": 0.601,
+    "medianRet": -0.1805
+   },
+   {
+    "date": "2021-12-15",
+    "n": 261,
+    "ret": -0.0621,
+    "vsIWM": 0.1424,
+    "vsSPY": 0.1085,
+    "hitIWM": 0.548,
+    "medianRet": -0.1533
+   },
+   {
+    "date": "2022-06-15",
+    "n": 366,
+    "ret": 0.1225,
+    "vsIWM": -0.0188,
+    "vsSPY": -0.081,
+    "hitIWM": 0.432,
+    "medianRet": 0.0622
+   },
+   {
+    "date": "2022-12-15",
+    "n": 340,
+    "ret": 0.168,
+    "vsIWM": 0.0175,
+    "vsSPY": -0.0609,
+    "hitIWM": 0.471,
+    "medianRet": 0.1106
+   },
+   {
+    "date": "2023-06-15",
+    "n": 329,
+    "ret": 0.1146,
+    "vsIWM": 0.0316,
+    "vsSPY": -0.1105,
+    "hitIWM": 0.48,
+    "medianRet": 0.0585
+   },
+   {
+    "date": "2023-12-15",
+    "n": 323,
+    "ret": 0.1663,
+    "vsIWM": -0.0261,
+    "vsSPY": -0.1061,
+    "hitIWM": 0.381,
+    "medianRet": 0.0512
+   },
+   {
+    "date": "2024-06-15",
+    "n": 352,
+    "ret": 0.1159,
+    "vsIWM": 0.0594,
+    "vsSPY": 0.0096,
+    "hitIWM": 0.415,
+    "medianRet": -0.0347
+   },
+   {
+    "date": "2024-12-15",
+    "n": 330,
+    "ret": 0.0817,
+    "vsIWM": -0.0531,
+    "vsSPY": -0.0718,
+    "hitIWM": 0.361,
+    "medianRet": -0.0089
+   },
+   {
+    "date": "2025-06-15",
+    "n": 373,
+    "ret": 0.4379,
+    "vsIWM": 0.0069,
+    "vsSPY": 0.1314,
+    "hitIWM": 0.399,
+    "medianRet": 0.2644
+   }
+  ]
+ },
+ "detail": {
+  "2012-06-15": {
+   "iwm": 0.29126546728662284,
+   "spy": 0.24354615683412484,
+   "steven_8": [
+    "CBT",
+    "CNO",
+    "COHR",
+    "CROX",
+    "DAR",
+    "EBS",
+    "FELE",
+    "FTK",
+    "FWRD",
+    "GRC",
+    "HEI",
+    "IRDM",
+    "KLIC",
+    "KMT",
+    "KRO",
+    "LXU",
+    "MKSI",
+    "NEU",
+    "NOVT",
+    "PRI",
+    "TDY",
+    "TER",
+    "VSH",
+    "WWD"
+   ]
+  },
+  "2012-12-15": {
+   "iwm": 0.3784631468326449,
+   "spy": 0.29933970795320874,
+   "steven_8": [
+    "ADTN",
+    "ALGT",
+    "CALM",
+    "CROX",
+    "EBS",
+    "FELE",
+    "FET",
+    "FTK",
+    "FWRD",
+    "HMN",
+    "IOSP",
+    "KAI",
+    "KLIC",
+    "KRO",
+    "LXU",
+    "MKSI",
+    "PLPC",
+    "ROG",
+    "SWBI",
+    "TDW",
+    "UCB",
+    "USPH",
+    "VRA"
+   ]
+  },
+  "2013-06-15": {
+   "iwm": 0.24884263685681907,
+   "spy": 0.25661600185170896,
+   "steven_8": [
+    "COHR",
+    "CROX",
+    "EBS",
+    "ECPG",
+    "FELE",
+    "FET",
+    "FWRD",
+    "HCI",
+    "HMN",
+    "IRDM",
+    "KAI",
+    "LNN",
+    "PRI",
+    "ROG",
+    "SWBI",
+    "VRA",
+    "WAB"
+   ]
+  },
+  "2013-12-15": {
+   "iwm": 0.05727592459316577,
+   "spy": 0.15959793072629713,
+   "steven_8": [
+    "AVD",
+    "CMCO",
+    "COHR",
+    "FET",
+    "FSS",
+    "HMN",
+    "HURN",
+    "KAI",
+    "LNN",
+    "SF",
+    "UVE"
+   ]
+  },
+  "2014-06-15": {
+   "iwm": 0.09579226884289604,
+   "spy": 0.09696834515257557,
+   "steven_8": [
+    "ACIC",
+    "FELE",
+    "FSS",
+    "HMN",
+    "IOSP",
+    "LGIH",
+    "LNN",
+    "MBI",
+    "MEI",
+    "MMS",
+    "MOD",
+    "NPKI",
+    "REX",
+    "SHOO",
+    "SPOK",
+    "UVE",
+    "VRA"
+   ]
+  },
+  "2014-12-15": {
+   "iwm": -0.04931390139331704,
+   "spy": -0.011913061385830037,
+   "steven_8": [
+    "ACIC",
+    "AEIS",
+    "CALM",
+    "EPAC",
+    "FET",
+    "GRC",
+    "HEI",
+    "HMN",
+    "IOSP",
+    "KLIC",
+    "LNN",
+    "MEI",
+    "MOD",
+    "NPKI",
+    "OIS",
+    "PIPR",
+    "REX",
+    "SPOK",
+    "UVE"
+   ]
+  },
+  "2015-06-15": {
+   "iwm": -0.09496665245119962,
+   "spy": 0.000556301498445988,
+   "steven_8": [
+    "ACIC",
+    "CENX",
+    "COHR",
+    "FCFS",
+    "FET",
+    "FOXF",
+    "FSS",
+    "FTK",
+    "GNRC",
+    "HEI",
+    "HMN",
+    "IOSP",
+    "KLIC",
+    "MBI",
+    "MEI",
+    "SPOK"
+   ]
+  },
+  "2015-12-15": {
+   "iwm": 0.23826818549316875,
+   "spy": 0.1493132863256883,
+   "steven_8": [
+    "CALM",
+    "CODI",
+    "FSS",
+    "HEI",
+    "HMN",
+    "HTLD",
+    "IOSP",
+    "KAI",
+    "KEX",
+    "MEI",
+    "UVE"
+   ]
+  },
+  "2016-06-15": {
+   "iwm": 0.24795090879253978,
+   "spy": 0.1991644296451789,
+   "steven_8": [
+    "AIN",
+    "CALM",
+    "CODI",
+    "FSS",
+    "KAI",
+    "MEI",
+    "NOVT",
+    "PRDO",
+    "RDN",
+    "SHOO",
+    "UVE"
+   ]
+  },
+  "2016-12-15": {
+   "iwm": 0.1356279274059624,
+   "spy": 0.2082423905395463,
+   "steven_8": [
+    "AAOI",
+    "CALM",
+    "FELE",
+    "HEI",
+    "IESC",
+    "INSW",
+    "KAI",
+    "MEI",
+    "UVE"
+   ]
+  },
+  "2017-06-15": {
+   "iwm": 0.2124586886699773,
+   "spy": 0.16394910568311616,
+   "steven_8": [
+    "CALY",
+    "FELE",
+    "HCC",
+    "HCKT",
+    "HEI",
+    "IESC",
+    "MEI",
+    "MPAA",
+    "RILY",
+    "SRI",
+    "SWBI",
+    "UVE"
+   ]
+  },
+  "2017-12-15": {
+   "iwm": -0.06491218713631652,
+   "spy": -0.004820239367174128,
+   "steven_8": [
+    "AAOI",
+    "AMPY",
+    "EBF",
+    "FELE",
+    "HCKT",
+    "MEI",
+    "RILY",
+    "SRI",
+    "SWBI",
+    "UVE"
+   ]
+  },
+  "2018-06-15": {
+   "iwm": -0.08466170919287952,
+   "spy": 0.0640195707914768,
+   "steven_8": [
+    "CNNE",
+    "COHU",
+    "EBF",
+    "GNW",
+    "HCKT",
+    "HMN",
+    "KBR",
+    "KN",
+    "NODK",
+    "TUSK",
+    "UVE"
+   ]
+  },
+  "2018-12-15": {
+   "iwm": 0.3098618177303343,
+   "spy": 0.35896736557678044,
+   "steven_8": [
+    "CAL",
+    "CALM",
+    "CALY",
+    "EBF",
+    "EXP",
+    "FCN",
+    "FND",
+    "FSS",
+    "GNW",
+    "HCKT",
+    "HMN",
+    "HOS",
+    "KMT",
+    "KN",
+    "LPX",
+    "PUMP",
+    "ROG",
+    "SF",
+    "TRS",
+    "TUSK",
+    "UVE"
+   ]
+  },
+  "2019-06-15": {
+   "iwm": -0.07076160057402525,
+   "spy": 0.07124613507754862,
+   "steven_8": [
+    "BTU",
+    "CALM",
+    "DIOD",
+    "EBF",
+    "FSS",
+    "HCC",
+    "HCKT",
+    "KMT",
+    "MEI",
+    "NHC",
+    "OVV",
+    "PIPR",
+    "PUMP",
+    "TRS",
+    "UFPT",
+    "UVE",
+    "VPG"
+   ]
+  },
+  "2019-12-15": {
+   "iwm": 0.19439028473916053,
+   "spy": 0.17332071690690887,
+   "steven_8": [
+    "BOOM",
+    "CVSA",
+    "EBF",
+    "FSS",
+    "HCC",
+    "HMN",
+    "MEI",
+    "PIPR",
+    "PUMP",
+    "TRS",
+    "UFPT",
+    "UVE",
+    "VRTS"
+   ]
+  },
+  "2020-06-15": {
+   "iwm": 0.5971962301727132,
+   "spy": 0.36590833807572487,
+   "steven_8": [
+    "ANGO",
+    "ASB",
+    "BHF",
+    "CASK",
+    "CLNE",
+    "CNO",
+    "CVSA",
+    "FSS",
+    "HMN",
+    "MEI",
+    "NPO",
+    "PIPR",
+    "QCRH",
+    "VRTS"
+   ]
+  },
+  "2020-12-15": {
+   "iwm": 0.11189731284104565,
+   "spy": 0.26319956147701795,
+   "steven_8": [
+    "ASB",
+    "FSS",
+    "HMN",
+    "MEI",
+    "MYE",
+    "NPO"
+   ]
+  },
+  "2021-06-15": {
+   "iwm": -0.24841695412393772,
+   "spy": -0.10663625474998217,
+   "steven_8": [
+    "AVNW",
+    "ESCA",
+    "GRBK",
+    "HMN",
+    "MEI",
+    "NHC",
+    "STC",
+    "WERN"
+   ]
+  },
+  "2021-12-15": {
+   "iwm": -0.17907332437313705,
+   "spy": -0.153957427974603,
+   "steven_8": [
+    "AVNW",
+    "AZZ",
+    "CMBMF",
+    "COHU",
+    "DXLG",
+    "GNW",
+    "HMN",
+    "MEI",
+    "MTUS",
+    "NUS",
+    "NXH",
+    "STKS"
+   ]
+  },
+  "2022-06-15": {
+   "iwm": 0.14407853713880914,
+   "spy": 0.22152082934837036,
+   "steven_8": [
+    "AEIS",
+    "AMR",
+    "ASIX",
+    "ASLE",
+    "ASO",
+    "CHRD",
+    "COHU",
+    "DIOD",
+    "EGY",
+    "ESAB",
+    "FLGT",
+    "FWRD",
+    "GIC",
+    "GNK",
+    "GNW",
+    "GOLF",
+    "GRBK",
+    "HCC",
+    "HMN",
+    "HTLD",
+    "JXN",
+    "KN",
+    "LAUR",
+    "MATX",
+    "MCFT",
+    "MEI",
+    "METC",
+    "MLI",
+    "MTUS",
+    "NXH",
+    "OPRT",
+    "ORGO",
+    "PIPR",
+    "REI",
+    "SPXC",
+    "STC",
+    "WERN"
+   ]
+  },
+  "2022-12-15": {
+   "iwm": 0.1479314070182034,
+   "spy": 0.24381868437138898,
+   "steven_8": [
+    "AMR",
+    "CNR",
+    "COHU",
+    "CVSA",
+    "DCGO",
+    "DCO",
+    "DRS",
+    "EGY",
+    "FLGT",
+    "FWRD",
+    "GIC",
+    "GNK",
+    "GNW",
+    "HCC",
+    "HDSN",
+    "JXN",
+    "MATX",
+    "MEI",
+    "METC",
+    "MTUS",
+    "OPLN",
+    "ORGO",
+    "OXM",
+    "PIPR",
+    "REI",
+    "WERN"
+   ]
+  },
+  "2023-06-15": {
+   "iwm": 0.08047552183130424,
+   "spy": 0.2529923674774497,
+   "steven_8": [
+    "AMR",
+    "ASB",
+    "CNR",
+    "EGY",
+    "FWRD",
+    "GNK",
+    "GNW",
+    "GPOR",
+    "GRBK",
+    "GRNT",
+    "HCC",
+    "HDSN",
+    "HTLD",
+    "JXN",
+    "MATX",
+    "MCFT",
+    "METC",
+    "OPLN",
+    "OXM",
+    "PANL",
+    "PLPC",
+    "PTEN",
+    "QCRH",
+    "REI",
+    "TALO",
+    "VECO",
+    "VPG"
+   ]
+  },
+  "2023-12-15": {
+   "iwm": 0.1976029724819326,
+   "spy": 0.30479726183598954,
+   "steven_8": [
+    "ALG",
+    "AVA",
+    "EGY",
+    "GNW",
+    "GPOR",
+    "HCC",
+    "HNRG",
+    "JAKK",
+    "KRT",
+    "MCFT",
+    "METC",
+    "OXM",
+    "PANL",
+    "PLPC",
+    "QCRH",
+    "SSRM",
+    "SSTK",
+    "TH",
+    "TNC"
+   ]
+  },
+  "2024-06-15": {
+   "iwm": 0.05325497349612096,
+   "spy": 0.10529407942879021,
+   "steven_8": [
+    "AVA",
+    "CNR",
+    "CSV",
+    "DORM",
+    "EGY",
+    "GRBK",
+    "GRNT",
+    "HCKT",
+    "INVX",
+    "LAUR",
+    "MCFT",
+    "PGC",
+    "PLPC",
+    "QCRH",
+    "REI",
+    "SSTK",
+    "TH",
+    "TNC"
+   ]
+  },
+  "2024-12-15": {
+   "iwm": 0.1423626881728961,
+   "spy": 0.16529529636323503,
+   "steven_8": [
+    "AMR",
+    "AVA",
+    "CASK",
+    "CSV",
+    "EGY",
+    "GNK",
+    "HRTG",
+    "INSW",
+    "INVX",
+    "KODK",
+    "LAUR",
+    "NHC",
+    "PLOW",
+    "STRA",
+    "TNC",
+    "XIFR"
+   ]
+  },
+  "2025-06-15": {
+   "iwm": 0.4281125177592706,
+   "spy": 0.2709501919645112,
+   "steven_8": [
+    "APLE",
+    "BANC",
+    "CLW",
+    "CSV",
+    "EGY",
+    "EIG",
+    "FMNB",
+    "GNK",
+    "GRBK",
+    "HRTG",
+    "INVX",
+    "REPX",
+    "ROCK",
+    "SDRL",
+    "STRA",
+    "TH",
+    "VC",
+    "VECO",
+    "YETI"
+   ]
+  }
+ }
+}
