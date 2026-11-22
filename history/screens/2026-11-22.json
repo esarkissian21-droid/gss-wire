@@ -359,6 +359,7 @@
 "epsYr": 14.33,
 "equity": 22992000000.0,
 "flags": [],
+"industry": "Fire, Marine & Casualty Insurance",
 "ma200": 97.88,
 "margin": 23.31,
 "mktCap": 35423666964.18,
@@ -377,7 +378,8 @@
 "Quality": "pass",
 "Value": "unknown"
 },
-"shares": 325525336.0
+"shares": 325525336.0,
+"sic": "6331"
 },
 "ACLS": {
 "beta": 2.59,
@@ -520,6 +522,7 @@
 "epsYr": 11.87,
 "equity": 11764000000.0,
 "flags": [],
+"industry": "Services-Prepackaged Software",
 "ma200": 246.36,
 "margin": 28.05,
 "mktCap": 84732734613.04,
@@ -538,7 +541,8 @@
 "Quality": "fail",
 "Value": "fail"
 },
-"shares": 389200000.0
+"shares": 389200000.0,
+"sic": "7372"
 },
 "ADMA": {
 "beta": -0.04,
@@ -760,6 +764,7 @@
 "epsYr": 28.89,
 "equity": 4727000000.0,
 "flags": [],
+"industry": "Fire, Marine & Casualty Insurance",
 "ma200": 138.54,
 "margin": 11.96,
 "mktCap": 13074872572.67,
@@ -778,7 +783,8 @@
 "Quality": "fail",
 "Value": "fail"
 },
-"shares": 82757593.0
+"shares": 82757593.0,
+"sic": "6331"
 },
 "AFL": {
 "beta": -0.14,
@@ -1220,6 +1226,7 @@
 "epsYr": 42.96,
 "equity": 32311000000.0,
 "flags": [],
+"industry": "Fire, Marine & Casualty Insurance",
 "ma200": 233.31,
 "margin": 16.41,
 "mktCap": 66069015432.0,
@@ -1238,7 +1245,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 247449496.0
+"shares": 247449496.0,
+"sic": "6331"
 },
 "ALTO": {
 "beta": 0.37,
@@ -1414,6 +1422,7 @@
 "epsYr": 74.72,
 "equity": 613601000000.0,
 "flags": [],
+"industry": "Retail-Catalog & Mail-Order Houses",
 "ma200": 245.15,
 "margin": 16.9,
 "mktCap": 2668898875884.71,
@@ -1432,7 +1441,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 10813138306.0
+"shares": 10813138306.0,
+"sic": "5961"
 },
 "ANDG": {
 "beta": 0.61,
@@ -3596,6 +3606,7 @@
 "epsYr": 19.17,
 "equity": 73227000000.0,
 "flags": [],
+"industry": "Fire, Marine & Casualty Insurance",
 "ma200": 338.77,
 "margin": 18.15,
 "mktCap": 141992103137.48,
@@ -3614,7 +3625,8 @@
 "Quality": "pass",
 "Value": "unknown"
 },
-"shares": 382079222.0
+"shares": 382079222.0,
+"sic": "6331"
 },
 "CBOE": {
 "beta": -0.42,
@@ -3629,6 +3641,7 @@
 "epsYr": 51.18,
 "equity": 5926500000.0,
 "flags": [],
+"industry": "Security & Commodity Brokers, Dealers, Exchanges & Services",
 "ma200": 299.23,
 "margin": 28.05,
 "mktCap": 37319967470.36,
@@ -3647,7 +3660,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 104330235.0
+"shares": 104330235.0,
+"sic": "6200"
 },
 "CBU": {
 "beta": 0.43,
@@ -3761,6 +3775,7 @@
 "epsYr": 29.97,
 "equity": 6875251000.0,
 "flags": [],
+"industry": "Services-Prepackaged Software",
 "ma200": 328.65,
 "margin": 22.51,
 "mktCap": 77259635135.71,
@@ -3779,7 +3794,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 274379000.0
+"shares": 274379000.0,
+"sic": "7372"
 },
 "CENX": {
 "beta": 1.67,
@@ -3961,6 +3977,7 @@
 "epsYr": 26.77,
 "equity": 16182000000.0,
 "flags": [],
+"industry": "Fire, Marine & Casualty Insurance",
 "ma200": 170.12,
 "margin": 20.07,
 "mktCap": 28635814808.31,
@@ -3979,7 +3996,8 @@
 "Quality": "pass",
 "Value": "unknown"
 },
-"shares": 153510324.0
+"shares": 153510324.0,
+"sic": "6331"
 },
 "CIRC": {
 "beta": 0.14,
@@ -4981,6 +4999,7 @@
 "epsYr": 27.38,
 "equity": 14726000000.0,
 "flags": [],
+"industry": "Services-Computer Programming Services",
 "ma200": 57.49,
 "margin": 11.75,
 "mktCap": 25954587089.4,
@@ -4999,7 +5018,8 @@
 "Quality": "pass",
 "Value": "pass"
 },
-"shares": 447030425.0
+"shares": 447030425.0,
+"sic": "7371"
 },
 "CTVA": {
 "beta": 0.26,
@@ -7379,6 +7399,7 @@
 "epsYr": 96.1,
 "equity": 3335243000.0,
 "flags": [],
+"industry": "Electrical Work",
 "ma200": 1602.88,
 "margin": 30.95,
 "mktCap": 36471754317.9,
@@ -7397,7 +7418,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 34985904.0
+"shares": 34985904.0,
+"sic": "1731"
 },
 "FLR": {
 "beta": 1.7,
@@ -7638,6 +7660,7 @@
 "epsYr": 32.62,
 "equity": 10880733000.0,
 "flags": [],
+"industry": "Semiconductors & Related Devices",
 "ma200": 211.1,
 "margin": 37.12,
 "mktCap": 14788331172.48,
@@ -7656,7 +7679,8 @@
 "Quality": "pass",
 "Value": "pass"
 },
-"shares": 107481151.0
+"shares": 107481151.0,
+"sic": "3674"
 },
 "FSLY": {
 "beta": 2.13,
@@ -7802,6 +7826,7 @@
 "epsYr": 26.34,
 "equity": 2246800000.0,
 "flags": [],
+"industry": "Computer Peripheral Equipment, NEC",
 "ma200": 131.88,
 "margin": 28.96,
 "mktCap": 91515443545.24,
@@ -7820,7 +7845,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 734709741.0
+"shares": 734709741.0,
+"sic": "3577"
 },
 "G": {
 "beta": 0.03,
@@ -8285,6 +8311,7 @@
 "epsYr": 8.34,
 "equity": 6618484000.0,
 "flags": [],
+"industry": "Life Insurance",
 "ma200": 161.09,
 "margin": 18.89,
 "mktCap": 11440435503.95,
@@ -8303,7 +8330,8 @@
 "Quality": "pass",
 "Value": "unknown"
 },
-"shares": 75439736.0
+"shares": 75439736.0,
+"sic": "6311"
 },
 "GLP": {
 "beta": 0.18,
@@ -8546,6 +8574,7 @@
 "epsYr": 89.14,
 "equity": 677549000000.0,
 "flags": [],
+"industry": "Services-Computer Programming, Data Processing, Etc.",
 "ma200": 336.97,
 "margin": 50.03,
 "mktCap": 3261475365051.27,
@@ -8564,7 +8593,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 12294000000.0
+"shares": 12294000000.0,
+"sic": "7370"
 },
 "GRBK": {
 "beta": 0.83,
@@ -9094,6 +9124,7 @@
 "epsYr": 34.8,
 "equity": 18873000000.0,
 "flags": [],
+"industry": "Fire, Marine & Casualty Insurance",
 "ma200": 135.65,
 "margin": 15.56,
 "mktCap": 36592848266.18,
@@ -9112,7 +9143,8 @@
 "Quality": "pass",
 "Value": "unknown"
 },
-"shares": 267413397.0
+"shares": 267413397.0,
+"sic": "6331"
 },
 "HIPO": {
 "beta": 0.63,
@@ -10544,6 +10576,7 @@
 "epsYr": 18.07,
 "equity": 372368000000.0,
 "flags": [],
+"industry": "National Commercial Banks",
 "ma200": 325.19,
 "margin": 32.45,
 "mktCap": 824646417588.06,
@@ -10562,7 +10595,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 2655609509.0
+"shares": 2655609509.0,
+"sic": "6021"
 },
 "JRVR": {
 "beta": 0.01,
@@ -11752,6 +11786,7 @@
 "epsYr": -16.93,
 "equity": 4791174000.0,
 "flags": [],
+"industry": "Apparel & Other Finishd Prods of  Fabrics & Similar Matl",
 "ma200": 128.0,
 "margin": 12.78,
 "mktCap": 11127903445.17,
@@ -11770,7 +11805,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 108437957.0
+"shares": 108437957.0,
+"sic": "2300"
 },
 "LVS": {
 "beta": 0.44,
@@ -12632,6 +12668,7 @@
 "epsYr": 65.81,
 "equity": 3511451000.0,
 "flags": [],
+"industry": "Rolling Drawing & Extruding of  Nonferrous Metals",
 "ma200": 61.42,
 "margin": 17.27,
 "mktCap": 10866022560.25,
@@ -12650,7 +12687,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 217974381.0
+"shares": 217974381.0,
+"sic": "3350"
 },
 "MLR": {
 "beta": 0.88,
@@ -13536,6 +13574,7 @@
 "epsYr": 33.75,
 "equity": 35675000000.0,
 "flags": [],
+"industry": "Gold and Silver Ores",
 "ma200": 111.91,
 "margin": 34.73,
 "mktCap": 98390811072.94,
@@ -13554,7 +13593,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 1039193185.0
+"shares": 1039193185.0,
+"sic": "1040"
 },
 "NEO": {
 "beta": 1.1,
@@ -14021,6 +14061,7 @@
 "epsYr": 120.37,
 "equity": 22811000000.0,
 "flags": [],
+"industry": "Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",
 "ma200": 229.69,
 "margin": 9.26,
 "mktCap": 53901122594.38,
@@ -14039,7 +14080,8 @@
 "Quality": "fail",
 "Value": "fail"
 },
-"shares": 224944177.0
+"shares": 224944177.0,
+"sic": "3312"
 },
 "NUS": {
 "beta": 0.73,
@@ -14151,6 +14193,7 @@
 "epsYr": 125.36,
 "equity": 228984000000.0,
 "flags": [],
+"industry": "Semiconductors & Related Devices",
 "ma200": 203.35,
 "margin": 63.66,
 "mktCap": 3050378970336.91,
@@ -14169,7 +14212,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 24300000000.0
+"shares": 24300000000.0,
+"sic": "3674"
 },
 "NVR": {
 "beta": 0.44,
@@ -15556,6 +15600,7 @@
 "epsYr": 30.71,
 "equity": 11816300000.0,
 "flags": [],
+"industry": "Accident & Health Insurance",
 "ma200": 105.02,
 "margin": 12.31,
 "mktCap": 22210331307.73,
@@ -15574,7 +15619,8 @@
 "Quality": "fail",
 "Value": "unknown"
 },
-"shares": 212376467.0
+"shares": 212376467.0,
+"sic": "6321"
 },
 "PGNY": {
 "beta": -0.08,
@@ -15622,6 +15668,7 @@
 "epsYr": 8.89,
 "equity": 34485000000.0,
 "flags": [],
+"industry": "Fire, Marine & Casualty Insurance",
 "ma200": 211.25,
 "margin": 12.67,
 "mktCap": 134058613319.64,
@@ -15640,7 +15687,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 579362175.0
+"shares": 579362175.0,
+"sic": "6331"
 },
 "PGY": {
 "beta": 2.76,
@@ -17703,6 +17751,7 @@
 "epsYr": 31.11,
 "equity": 6743184000.0,
 "flags": [],
+"industry": "Retail-Family Clothing Stores",
 "ma200": 225.54,
 "margin": 10.85,
 "mktCap": 68190463005.37,
@@ -17721,7 +17770,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 319453110.0
+"shares": 319453110.0,
+"sic": "5651"
 },
 "RRC": {
 "beta": -0.1,
@@ -18803,6 +18853,7 @@
 "epsYr": 0.79,
 "equity": 6094900000.0,
 "flags": [],
+"industry": "Cutlery, Handtools & General Hardware",
 "ma200": 379.93,
 "margin": 19.21,
 "mktCap": 17995660820.9,
@@ -18821,7 +18872,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 51581233.0
+"shares": 51581233.0,
+"sic": "3420"
 },
 "SNDR": {
 "beta": 1.0,
@@ -19067,6 +19119,7 @@
 "epsYr": 78.26,
 "equity": 9842428000.0,
 "flags": [],
+"industry": "Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",
 "ma200": 227.54,
 "margin": 8.82,
 "mktCap": 29291114577.35,
@@ -19085,7 +19138,8 @@
 "Quality": "fail",
 "Value": "fail"
 },
-"shares": 142217487.0
+"shares": 142217487.0,
+"sic": "3312"
 },
 "STLN": {
 "beta": 1.52,
@@ -19735,6 +19789,7 @@
 "epsYr": 23.01,
 "equity": 10651000000.0,
 "flags": [],
+"industry": "Retail-Family Clothing Stores",
 "ma200": 150.06,
 "margin": 9.73,
 "mktCap": 154238829356.46,
@@ -19753,7 +19808,8 @@
 "Quality": "fail",
 "Value": "fail"
 },
-"shares": 1104704446.0
+"shares": 1104704446.0,
+"sic": "5651"
 },
 "TMDX": {
 "beta": 1.26,
@@ -19801,6 +19857,7 @@
 "epsYr": -0.19,
 "equity": 56307000000.0,
 "flags": [],
+"industry": "Radiotelephone Communications",
 "ma200": 185.06,
 "margin": 12.05,
 "mktCap": 175415544222.89,
@@ -19819,7 +19876,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 1059272571.0
+"shares": 1059272571.0,
+"sic": "4812"
 },
 "TNL": {
 "beta": 0.84,
@@ -20160,6 +20218,7 @@
 "epsYr": 49.59,
 "equity": 28995000000.0,
 "flags": [],
+"industry": "Fire, Marine & Casualty Insurance",
 "ma200": 338.64,
 "margin": 17.03,
 "mktCap": 80593099492.85,
@@ -20178,7 +20237,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 204946347.0
+"shares": 204946347.0,
+"sic": "6331"
 },
 "TSLA": {
 "beta": 2.06,
@@ -20236,6 +20296,7 @@
 "epsYr": 9.01,
 "equity": 9110000000.0,
 "flags": [],
+"industry": "Auto Controls For Regulating Residential & Comml Environments",
 "ma200": 455.15,
 "margin": 13.56,
 "mktCap": 84557081600.17,
@@ -20254,7 +20315,8 @@
 "Quality": "pass",
 "Value": "fail"
 },
-"shares": 218895337.0
+"shares": 218895337.0,
+"sic": "3822"
 },
 "TTAN": {
 "beta": 0.53,
@@ -20880,6 +20942,7 @@
 "epsYr": 5.37,
 "equity": 2643741000.0,
 "flags": [],
+"industry": "Retail-Retail Stores, NEC",
 "ma200": 551.57,
 "margin": 9.34,
 "mktCap": 26470237935.32,
@@ -20898,7 +20961,8 @@
 "Quality": "fail",
 "Value": "fail"
 },
-"shares": 42989311.0
+"shares": 42989311.0,
+"sic": "5990"
 },
 "UNM": {
 "beta": 0.28,
@@ -21075,6 +21139,7 @@
 "epsYr": 17.39,
 "equity": 66425000000.0,
 "flags": [],
+"industry": "National Commercial Banks",
 "ma200": 58.3,
 "margin": 27.59,
 "mktCap": 87337603452.43,
@@ -21093,7 +21158,8 @@
 "Quality": "fail",
 "Value": "unknown"
 },
-"shares": 1558208825.0
+"shares": 1558208825.0,
+"sic": "6021"
 },
 "USNA": {
 "beta": 0.69,
@@ -21889,6 +21955,7 @@
 "epsYr": 8.6,
 "equity": 20907400000.0,
 "flags": [],
+"industry": "Pharmaceutical Preparations",
 "ma200": 484.88,
 "margin": 30.7,
 "mktCap": 130576977815.39,
@@ -21907,7 +21974,8 @@
 "Quality": "fail",
 "Value": "fail"
 },
-"shares": 253537674.0
+"shares": 253537674.0,
+"sic": "2834"
 },
 "VSEC": {
 "beta": 2.03,
@@ -23157,7 +23225,7 @@
 "source": "SEC EDGAR XBRL frames (us-gaap/dei) + Yahoo Finance prices",
 "strategies": {
 "buffett-v1": {
-"description": "Based on Frazzini, Kabiller & Pedersen, 'Buffett's Alpha' (2018): Berkshire's returns are explained by owning cheap, safe (low-beta), high-quality, large companies, plus leverage (not used here). Quality = profitable, growing, low debt. Cheap = low price-to-book. Safe = low beta vs the S&P 500. Ranked on all three equally; top 10.",
+"description": "Based on Frazzini, Kabiller & Pedersen, 'Buffett's Alpha' (2018): Berkshire's returns are explained by owning cheap, safe (low-beta), high-quality, large companies, plus leverage (not used here). Quality = profitable, growing, low debt. Cheap = low price-to-book. Safe = low beta vs the S&P 500. Ranked on all three equally; top 10, at most 3 from any one industry (SEC industry code), so it can't turn into an insurance fund.",
 "live": false,
 "name": "Buffett-style: cheap, safe, high quality, large",
 "picks": [
@@ -23171,6 +23239,7 @@
 "pe": 6.046195652173913,
 "roe": 38.52480941554099,
 "score": 0.576,
+"sector": "Fire, Marine & Casualty Insurance",
 "t": "ALL"
 },
 {
@@ -23183,6 +23252,7 @@
 "pe": 8.91236688737299,
 "roe": 18.740767699257134,
 "score": 0.939,
+"sector": "Fire, Marine & Casualty Insurance",
 "t": "ACGL"
 },
 {
@@ -23195,31 +23265,8 @@
 "pe": 8.29333311138731,
 "roe": 24.692548830479865,
 "score": 0.939,
+"sector": "Fire, Marine & Casualty Insurance",
 "t": "HIG"
-},
-{
-"beta": -0.36617225803735437,
-"de": 0.24326518776279543,
-"flags": [],
-"mktCap": 134058613319.63539,
-"name": "PROGRESSIVE CORP/OH/",
-"pb": 3.887447102207783,
-"pe": 11.656926921392868,
-"roe": 33.238953238953236,
-"score": 0.939,
-"t": "PGR"
-},
-{
-"beta": -0.05644801205018674,
-"de": 0.33843766166580447,
-"flags": [],
-"mktCap": 80593099492.85083,
-"name": "TRAVELERS COMPANIES, INC.",
-"pb": 2.779551629344743,
-"pe": 10.337539175456756,
-"roe": 27.496534882185994,
-"score": 1.061,
-"t": "TRV"
 },
 {
 "beta": -0.4197375749221834,
@@ -23231,6 +23278,7 @@
 "pe": 25.441677912878955,
 "roe": 27.387757367223486,
 "score": 1.152,
+"sector": "Security & Commodity Brokers, Dealers, Exchanges & Services",
 "t": "CBOE"
 },
 {
@@ -23243,31 +23291,8 @@
 "pe": 12.155779269339318,
 "roe": 61.90192912382086,
 "score": 1.182,
+"sector": "Services-Prepackaged Software",
 "t": "ADBE"
-},
-{
-"beta": -0.1227880196824557,
-"de": 0.38523376348635496,
-"flags": [],
-"mktCap": 13074872572.671036,
-"name": "AMERICAN FINANCIAL GROUP INC",
-"pb": 2.7659980056422753,
-"pe": 12.876121067087537,
-"roe": 21.571322829649993,
-"score": 1.182,
-"t": "AFG"
-},
-{
-"beta": 0.3783860498396516,
-"de": 0.4990576391814198,
-"flags": [],
-"mktCap": 11440435503.952393,
-"name": "GLOBE LIFE INC.",
-"pb": 1.7285583079074291,
-"pe": 10.15060200110337,
-"roe": 19.26396205522909,
-"score": 1.182,
-"t": "GL"
 },
 {
 "beta": -0.012102271849152586,
@@ -23279,7 +23304,60 @@
 "pe": 10.575592235572135,
 "roe": 17.371636903757217,
 "score": 1.242,
+"sector": "Services-Computer Programming Services",
 "t": "CTSH"
+},
+{
+"beta": 0.9954628502507856,
+"de": 0.0,
+"flags": [],
+"mktCap": 11127903445.173744,
+"name": "lululemon athletica inc.",
+"pb": 2.3225838688333473,
+"pe": 8.432210579012493,
+"roe": 30.89795197513132,
+"score": 1.333,
+"sector": "Apparel & Other Finishd Prods of  Fabrics & Similar Matl",
+"t": "LULU"
+},
+{
+"beta": -0.33059605636458184,
+"de": 0.11265029214840074,
+"flags": [],
+"mktCap": 175415544222.8867,
+"name": "T-Mobile US, Inc.",
+"pb": 3.115341684388916,
+"pe": 15.969142343636992,
+"roe": 19.353678586107687,
+"score": 1.333,
+"sector": "Radiotelephone Communications",
+"t": "TMUS"
+},
+{
+"beta": 0.23723481751424344,
+"de": 0.26955215472725563,
+"flags": [],
+"mktCap": 154238829356.45532,
+"name": "TJX COMPANIES INC /DE/",
+"pb": 14.48115945511739,
+"pe": 25.855554651331015,
+"roe": 62.168427524722034,
+"score": 1.394,
+"sector": "Retail-Family Clothing Stores",
+"t": "TJX"
+},
+{
+"beta": 0.5743699456266116,
+"de": 0.12844601645925224,
+"flags": [],
+"mktCap": 26470237935.32251,
+"name": "Ulta Beauty, Inc.",
+"pb": 10.012417228209008,
+"pe": 22.431329334585612,
+"roe": 46.099084133873745,
+"score": 1.455,
+"sector": "Retail-Retail Stores, NEC",
+"t": "ULTA"
 }
 ],
 "record": {
