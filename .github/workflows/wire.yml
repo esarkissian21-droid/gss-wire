@@ -7,7 +7,7 @@ on:
     - cron: "*/20 12-23 * * 1-5"         # Mon-Fri 4:00 a.m.-3:40 p.m. PT: every 20 minutes
     - cron: "*/20 0-2 * * 2-6"           # Mon-Fri 4:00-6:40 p.m. PT (after-hours filings): every 20 minutes
     - cron: "7 1,3,5,7,9,11 * * 1-6"     # overnight: every 2 hours
-    - cron: "7 */2 * * 0,6"              # weekends: every 2 hours
+    - cron: "8 */2 * * 0,6"              # weekends: every 2 hours
   workflow_dispatch: {}                  # lets you press "Run workflow" by hand
 
 permissions:
