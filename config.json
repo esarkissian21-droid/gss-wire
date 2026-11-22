@@ -1,21 +1,101 @@
 {
   "timezone": "America/Los_Angeles",
-  "quiet_hours": { "start": 21, "end": 5, "min_priority": 4 },
+  "quiet_hours": {
+    "start": 21,
+    "end": 5,
+    "min_priority": 4
+  },
   "companies": [
-    { "ticker": "NVDA", "name": "Nvidia", "cik": "0001045810", "news_query": "\"Nvidia\"" },
-    { "ticker": "TSM", "name": "TSMC", "cik": "0001046179", "news_query": "\"TSMC\" OR \"Taiwan Semiconductor\"" },
-    { "ticker": "PDD", "name": "PDD Holdings", "cik": "0001737806", "news_query": "\"PDD Holdings\"" },
-    { "ticker": "AEM", "name": "Agnico Eagle", "cik": "0000002809", "news_query": "\"Agnico Eagle\"" },
-    { "ticker": "DINO", "name": "HF Sinclair", "cik": "0001915657", "news_query": "\"HF Sinclair\"" }
+    {
+      "ticker": "NVDA",
+      "name": "Nvidia",
+      "cik": "0001045810",
+      "news_query": "\"Nvidia\""
+    },
+    {
+      "ticker": "TSM",
+      "name": "TSMC",
+      "cik": "0001046179",
+      "news_query": "\"TSMC\" OR \"Taiwan Semiconductor\""
+    },
+    {
+      "ticker": "PDD",
+      "name": "PDD Holdings",
+      "cik": "0001737806",
+      "news_query": "\"PDD Holdings\""
+    },
+    {
+      "ticker": "AEM",
+      "name": "Agnico Eagle",
+      "cik": "0000002809",
+      "news_query": "\"Agnico Eagle\""
+    },
+    {
+      "ticker": "DINO",
+      "name": "HF Sinclair",
+      "cik": "0001915657",
+      "news_query": "\"HF Sinclair\""
+    },
+    {
+      "ticker": "PGR",
+      "name": "Progressive",
+      "cik": "0000080661",
+      "news_query": "\"Progressive Corp\" OR \"Progressive insurance\""
+    },
+    {
+      "ticker": "TRV",
+      "name": "Travelers",
+      "cik": "0000086312",
+      "news_query": "\"Travelers Companies\" OR \"Travelers insurance\""
+    },
+    {
+      "ticker": "WRB",
+      "name": "W. R. Berkley",
+      "cik": "0000011544",
+      "news_query": "\"W. R. Berkley\" OR \"WR Berkley\""
+    },
+    {
+      "ticker": "PHM",
+      "name": "PulteGroup",
+      "cik": "0000822416",
+      "news_query": "\"PulteGroup\""
+    }
   ],
   "topics": [
-    { "key": "METALS", "name": "Gold & silver", "news_query": "\"gold price\" OR \"silver price\" OR \"gold prices\" OR \"silver prices\"", "strict": true }
+    {
+      "key": "METALS",
+      "name": "Gold & silver",
+      "news_query": "\"gold price\" OR \"silver price\" OR \"gold prices\" OR \"silver prices\"",
+      "strict": true
+    }
   ],
   "fed_feed": "https://www.federalreserve.gov/feeds/press_monetary.xml",
   "trusted_sources": [
-    "Reuters", "Associated Press", "AP News", "Bloomberg", "Bloomberg.com", "The Wall Street Journal", "WSJ",
-    "CNBC", "Financial Times", "Barron's", "MarketWatch", "Business Wire", "GlobeNewswire", "PR Newswire",
-    "Kitco", "Kitco NEWS", "Nikkei Asia", "Yahoo Finance", "Investor's Business Daily", "Fortune", "Axios", "The Information"
+    "Reuters",
+    "Associated Press",
+    "AP News",
+    "Bloomberg",
+    "Bloomberg.com",
+    "The Wall Street Journal",
+    "WSJ",
+    "CNBC",
+    "Financial Times",
+    "Barron's",
+    "MarketWatch",
+    "Business Wire",
+    "GlobeNewswire",
+    "PR Newswire",
+    "Kitco",
+    "Kitco NEWS",
+    "Nikkei Asia",
+    "Yahoo Finance",
+    "Investor's Business Daily",
+    "Fortune",
+    "Axios",
+    "The Information"
   ],
-  "limits": { "news_pushes_per_company_per_day": 4, "news_pushes_per_company_per_run": 1 }
+  "limits": {
+    "news_pushes_per_company_per_day": 4,
+    "news_pushes_per_company_per_run": 1
+  }
 }
