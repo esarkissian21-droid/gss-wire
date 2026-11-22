@@ -345,6 +345,7 @@ def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep, spec=None, ledg
     results = {s: [] for s in SCREENS}
     for t, m in rows.items():
         m["flags"] = red_flags(m)
+        m["oneOff"] = bool(m["flags"])
         m["screens"] = {}
         for s, rules in SCREENS.items():
             c = check(m, rules)

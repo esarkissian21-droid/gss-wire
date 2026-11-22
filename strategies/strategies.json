@@ -79,7 +79,7 @@
   {
    "id": "steven-smallcap-v1",
    "name": "Steven's small-cap value: viable, cheap on sales, little debt, US only",
-   "description": "From a social-media investing class (Nov 2026): profitable business with a net margin of at least 8%, price under 2x sales, market value $300M to $3B, debt under half of equity, US companies only. Ranked by lowest price-to-sales, then highest margin, then most net cash; top 15, at most 3 per industry. Scored against small companies (IWM), the fair yardstick. Backtest 2012-2025 (non-blind, survivorship-biased): about even with IWM and no better than cheap small caps without the quality rules.",
+   "description": "From a social-media investing class (Nov 2026): profitable business with a net margin of at least 8%, price under 2x sales, market value $300M to $3B, debt under half of equity, US companies only, and nothing whose profits look inflated by a one-off (asset sale, tiny prior-year base). Ranked by lowest price-to-sales, then highest margin, then most net cash; top 15, at most 3 per industry. Scored against small companies (IWM), the fair yardstick. Backtest 2012-2025 (non-blind, survivorship-biased): about even with IWM and no better than cheap small caps without the quality rules.",
    "createdOn": "2026-11-22",
    "startDate": "2026-11-29",
    "benchmark": "IWM",
@@ -125,6 +125,11 @@
      "ps",
      "<",
      2
+    ],
+    [
+     "oneOff",
+     "==",
+     false
     ]
    ],
    "rank": [
