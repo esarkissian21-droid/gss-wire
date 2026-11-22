@@ -4,14 +4,77 @@
   {
    "id": "buffett-v1",
    "name": "Buffett-style: cheap, safe, high quality, large",
-   "description": "Based on Frazzini, Kabiller & Pedersen, 'Buffett's Alpha' (2018): Berkshire's returns are explained by owning cheap, safe (low-beta), high-quality, large companies, plus leverage (not used here). Quality = profitable, growing, low debt. Cheap = low price-to-book. Safe = low beta vs the S&P 500. Ranked on all three equally; top 10.",
+   "description": "Based on Frazzini, Kabiller & Pedersen, 'Buffett's Alpha' (2018): Berkshire's returns are explained by owning cheap, safe (low-beta), high-quality, large companies, plus leverage (not used here). Quality = profitable, growing, low debt. Cheap = low price-to-book. Safe = low beta vs the S&P 500. Ranked on all three equally; top 10, at most 3 from any one industry (SEC industry code), so it can't turn into an insurance fund.",
    "createdOn": "2026-11-22",
    "startDate": "2026-11-29",
-   "prefilters": [["revenue", ">=", 5e9], ["epsTTM", ">", 0], ["roe", ">", 12], ["margin", ">", 8], ["de", "<", 0.5], ["eps5y", ">", 0]],
-   "filters": [["mktCap", ">=", 1e10], ["pb", ">", 0]],
-   "rank": [["pb", "asc", 1], ["roe", "desc", 1], ["beta", "asc", 1]],
+   "prefilters": [
+    [
+     "revenue",
+     ">=",
+     5000000000.0
+    ],
+    [
+     "epsTTM",
+     ">",
+     0
+    ],
+    [
+     "roe",
+     ">",
+     12
+    ],
+    [
+     "margin",
+     ">",
+     8
+    ],
+    [
+     "de",
+     "<",
+     0.5
+    ],
+    [
+     "eps5y",
+     ">",
+     0
+    ]
+   ],
+   "filters": [
+    [
+     "mktCap",
+     ">=",
+     10000000000.0
+    ],
+    [
+     "pb",
+     ">",
+     0
+    ]
+   ],
+   "rank": [
+    [
+     "pb",
+     "asc",
+     1
+    ],
+    [
+     "roe",
+     "desc",
+     1
+    ],
+    [
+     "beta",
+     "asc",
+     1
+    ]
+   ],
    "top": 10,
-   "horizonsWeeks": [13, 26, 52]
+   "horizonsWeeks": [
+    13,
+    26,
+    52
+   ],
+   "maxPerSector": 3
   }
  ]
 }

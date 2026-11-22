@@ -338,6 +338,21 @@ def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep, spec=None, ledg
         results[s].sort(key=lambda t: (not rows[t].get("momentum"), -(rows[t].get("mktCap") or 0)))
     strat_out, new_entries, scored = {}, [], 0
     if spec:
+        # industry codes for the top of each capped strategy's ranking (SEC submissions JSON, one call each)
+        for strat in spec["strategies"]:
+            if not strat.get("maxPerSector"):
+                continue
+            order, _ = se.ranked(strat, rows)
+            for t in order[:strat["top"] * 6]:
+                m = rows[t]
+                if m.get("sic") or not m.get("cik"):
+                    continue
+                try:
+                    sub = json.loads(fetch_sec(f"https://data.sec.gov/submissions/CIK{int(m['cik']):010d}.json"))
+                    m["sic"], m["industry"] = sub.get("sic"), sub.get("sicDescription")
+                except Exception:
+                    pass
+                sleep(0.15)
         ledger, new_entries, scored = se.log_and_score(spec, rows, today, histories, spy_hist, ledger)
         for s in spec["strategies"]:
             picks = se.pick(s, rows)

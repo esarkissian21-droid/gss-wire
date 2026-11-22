@@ -170,6 +170,13 @@ class StrategyTests(unittest.TestCase):
         self.assertEqual(scored, 1)
         self.assertAlmostEqual(led2[0]["out"]["13"]["meanExcess"], 110 / 100 / (630 / 600) - 1, places=4)
 
+    def test_sector_cap(self):
+        import strategies_engine as se
+        rows = {f"I{i}": {"pb": 1 + i / 10, "sic": "6331", "industry": "Fire, marine & casualty insurance"} for i in range(5)}
+        rows["X"] = {"pb": 5.0, "sic": "3570", "industry": "Computers"}
+        strat = {"rank": [["pb", "asc", 1]], "top": 4, "maxPerSector": 3}
+        self.assertEqual([p["t"] for p in se.pick(strat, rows)], ["I0", "I1", "I2", "X"])
+
     def test_before_start_date_no_logging(self):
         spec = json.loads(json.dumps(self.SPEC))
         spec["strategies"][0]["startDate"] = "2026-11-29"

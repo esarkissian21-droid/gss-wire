@@ -32,20 +32,41 @@ def prefilter_universe(spec, rows):
     return need
 
 
-def pick(strategy, rows):
+def sector_of(m):
+    """2-digit SIC major group (e.g. 63 = insurance carriers, 35 = industrial machinery & computers)."""
+    sic = str(m.get("sic") or "")
+    return sic[:2] if len(sic) >= 2 else None
+
+
+def ranked(strategy, rows):
     elig = {t: m for t, m in rows.items() if passes(m, strategy.get("prefilters", [])) and passes(m, strategy.get("filters", []))}
     for k, _, _ in strategy["rank"]:
         elig = {t: m for t, m in elig.items() if m.get(k) is not None}
     if not elig:
-        return []
+        return [], {}
     score = {t: 0.0 for t in elig}
     n = len(elig)
     for k, direction, w in strategy["rank"]:
         order = sorted(elig, key=lambda t: elig[t][k], reverse=(direction == "desc"))
         for i, t in enumerate(order):
             score[t] += w * (i / max(1, n - 1))  # 0 = best
-    ranked = sorted(score, key=lambda t: (score[t], t))
-    return [{"t": t, "score": round(score[t], 3), **{k: elig[t].get(k) for k, _, _ in strategy["rank"]}} for t in ranked[:strategy["top"]]]
+    return sorted(score, key=lambda t: (score[t], t)), score
+
+
+def pick(strategy, rows):
+    order, score = ranked(strategy, rows)
+    cap = strategy.get("maxPerSector")
+    chosen, per = [], {}
+    for t in order:
+        sec = sector_of(rows[t]) if cap else None
+        if cap and sec is not None and per.get(sec, 0) >= cap:
+            continue
+        chosen.append(t)
+        if sec is not None:
+            per[sec] = per.get(sec, 0) + 1
+        if len(chosen) >= strategy["top"]:
+            break
+    return [{"t": t, "score": round(score[t], 3), "sector": rows[t].get("industry"), **{k: rows[t].get(k) for k, _, _ in strategy["rank"]}} for t in chosen]
 
 
 def beta(closes, spy_closes):
