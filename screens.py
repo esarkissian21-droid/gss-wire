@@ -211,6 +211,20 @@ def de_ratio(total_debt, equity):
     return total_debt / equity
 
 
+def red_flags(m):
+    """Signs a number is distorted by a one-off (asset sale, spin-off, tiny prior-year base, share-count mismatch)."""
+    f = []
+    if any((m.get(k) or 0) > 300 for k in ("epsYr", "epsQ")):
+        f.append("earnings jumped over 300%: check for one-off gains or a tiny base")
+    if (m.get("margin") or 0) > 60:
+        f.append("profit margin over 60%: check for one-off gains")
+    if m.get("pe") is not None and m["pe"] < 3:
+        f.append("P/E under 3: usually a one-off gain")
+    if m.get("pb") is not None and m["pb"] < 0.3:
+        f.append("P/B under 0.3: possible share-count or spin-off mismatch")
+    return f
+
+
 def check(m, rules):
     res = []
     for k, op, lim in rules:
@@ -284,6 +298,7 @@ def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep):
         m["momentum"] = None if p.get("chg52") is None else (p["price"] > p["ma200"] and p["chg52"] > 0)
     results = {s: [] for s in SCREENS}
     for t, m in rows.items():
+        m["flags"] = red_flags(m)
         m["screens"] = {}
         for s, rules in SCREENS.items():
             c = check(m, rules)
