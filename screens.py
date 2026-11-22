@@ -216,8 +216,8 @@ def red_flags(m):
     f = []
     if any((m.get(k) or 0) > 300 for k in ("epsYr", "epsQ")):
         f.append("earnings jumped over 300%: check for one-off gains or a tiny base")
-    if (m.get("margin") or 0) > 60:
-        f.append("profit margin over 60%: check for one-off gains")
+    if (m.get("margin") or 0) > 80:
+        f.append("profit margin over 80%: check for one-off gains")
     if m.get("pe") is not None and m["pe"] < 3:
         f.append("P/E under 3: usually a one-off gain")
     if m.get("pb") is not None and m["pb"] < 0.3:
