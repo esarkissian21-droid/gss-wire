@@ -1,0 +1,195 @@
+{
+ "SPY": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "NVDA": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "TSM": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "PDD": {
+  "source": "yahoo-adjclose",
+  "rows": 436,
+  "first": "2018-07-23",
+  "last": "2026-11-20"
+ },
+ "AEM": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "DINO": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "PGR": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "TRV": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "WRB": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "PHM": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "AAPL": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "XOM": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "MSFT": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "IBM": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "CVX": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "GE": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "PG": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "JNJ": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "T": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "PFE": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "WMT": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "KO": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "GOOGL": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "ORCL": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "WFC": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "JPM": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "INTC": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "PM": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "MRK": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "VZ": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "GLD": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "SLV": {
+  "source": "yahoo-adjclose",
+  "rows": 777,
+  "first": "2012-01-01",
+  "last": "2026-11-15"
+ },
+ "_fetchedAt": "2026-11-22T05:27:23+00:00"
+}
