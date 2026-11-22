@@ -17,6 +17,21 @@ Every item seen is appended to `wire_log.jsonl`, which Claude's daily analyzer r
 | `NTFY_TOPIC` | your private ntfy channel name |
 | `SEC_CONTACT` | your name and email, e.g. `Jane Doe jane@example.com`. The SEC asks automated tools to identify themselves. |
 
+## Insider buys
+The wire opens every new Form 4 for your companies. Open-market purchases (code P) of $10k or more ping you;
+$100k+, a CEO/CFO/president/chair buyer, or two different insiders buying within 30 days raise it to high priority.
+Pre-planned 10b5-1 buys are marked as less informative. Sales, grants and option exercises are logged only.
+TSM, PDD and AEM are foreign filers and don't file Form 4s.
+
+## Weekly digest and the blind forward test
+`digest.py` runs Sunday ~5 p.m. PT (workflow "Weekly digest"): ratio and zone, your silver bar in dollars and gold
+ounces, watchlist moves, the week's wire alerts, coming events (`calendar` in config.json) and the forward-test score.
+
+`forward/rules_frozen.json` fixes the rules as of Nov 22 2026. From the week ending Nov 27 2026 the digest applies
+them mechanically and appends to `forward/ledger.jsonl`, filling outcomes at 13/26/52 weeks. Never edit the frozen
+file or the ledger by hand: git history is the proof that nothing was changed after the fact. To try new rules, add a
+v2 file with its own start week and keep v1 running.
+
 ## Changing the watchlist
 
 Edit `config.json`: add a company with its ticker, name, 10-digit SEC CIK and a news search. A new company's existing filings and headlines are marked as already seen, so adding one doesn't flood your phone.
