@@ -28,8 +28,10 @@ def describe(raw, t):
         left, right = t.split(":")
         notes.append(f"part before the colon is {'all digits' if left.isdigit() else 'NOT all digits'} ({len(left)} chars)")
         notes.append(f"part after the colon is {len(right)} chars (should be about 35)")
-        if re.search(r"[^A-Za-z0-9_-]", right):
-            notes.append("part after the colon has unexpected characters (spaces, quotes or punctuation)")
+        bad = [(i + 1, ch) for i, ch in enumerate(right) if not re.match(r"[A-Za-z0-9_-]", ch)]
+        if bad:
+            shown = ", ".join(f"{ch!r} (U+{ord(ch):04X}) at position {pos} of {len(right)}" for pos, ch in bad[:5])
+            notes.append("part after the colon has characters a token can't contain: " + shown)
     return notes
 
 
@@ -40,6 +42,8 @@ def call(token, method, payload=None):
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
             return json.loads(r.read())
+    except (ValueError, UnicodeError) as e:  # e.g. a space or odd character makes the URL invalid
+        return {"ok": False, "error_code": "bad-url", "description": f"token contains characters that break the address ({type(e).__name__})"}
     except urllib.error.HTTPError as e:
         try:
             return json.loads(e.read())
