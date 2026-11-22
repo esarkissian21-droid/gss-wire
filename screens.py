@@ -48,6 +48,8 @@ DEBT_PARTS = {
 }
 TOTAL_FORMS = {"LongTermDebt", "LongTermDebtAndCapitalLeaseObligations", "DebtLongtermAndShorttermCombinedAmount"}
 CA, CL = ["AssetsCurrent"], ["LiabilitiesCurrent"]
+CASH = ["CashAndCashEquivalentsAtCarryingValue", "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents"]
+STRATEGY_MIN_REVENUE = 100e6  # strategies may look at smaller companies than the playbook screens
 SHARES = [("dei", "EntityCommonStockSharesOutstanding"), ("us-gaap", "CommonStockSharesOutstanding")]
 
 SCREENS = {
@@ -80,6 +82,7 @@ def back(y, q, n):
 class Frames:
     def __init__(self, fetch):
         self.fetch, self.cache, self.calls, self.missing = fetch, {}, 0, []
+        self.loc = {}  # filer location code from frames, e.g. "US-CA"; foreign codes have no "US-" prefix
 
     def get(self, tax, concept, unit, period):
         key = (tax, concept, unit, period)
@@ -90,6 +93,9 @@ class Frames:
         try:
             data = json.loads(self.fetch(url))
             out = {int(d["cik"]): float(d["val"]) for d in data.get("data", [])}
+            for d in data.get("data", []):
+                if d.get("loc"):
+                    self.loc[int(d["cik"])] = d["loc"]
         except urllib.error.HTTPError as e:
             if e.code != 404:
                 raise
@@ -175,6 +181,7 @@ def fundamentals_at(fr, y, q):
         if cik in total_lt and d.get("lt") == total_lt[cik]:
             d["ltc"] = 0.0  # total already includes the current portion
     ca, cl = instant(fr, CA, "USD", y, q), instant(fr, CL, "USD", y, q)
+    cash = instant(fr, CASH, "USD", y, q)
     shares = {}
     for tax, c in SHARES:
         for cik, v in instant(fr, [c], "shares", y, q, tax).items():
@@ -200,6 +207,10 @@ def fundamentals_at(fr, y, q):
             "epsQ": growth(eps_q.get(cik), eps_q_prev.get(cik)),
             "salesQ": growth(rev_q.get(cik), rev_q_prev.get(cik)),
             "eps5y": cagr(eps_a.get(cik), eps_a5.get(cik), 5),
+            "cash": cash.get(cik),
+            "netCash": None if (cik not in cash or total_debt is None) else cash[cik] - total_debt,
+            "loc": fr.loc.get(cik, ""),
+            "us": fr.loc.get(cik, "").startswith("US"),
         }
         out[cik] = m
     return out, (y, q)
@@ -280,9 +291,10 @@ def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep, spec=None, ledg
             continue
         big = (m["revenue"] or 0) >= MIN_REVENUE
         tracked = t in always
+        if (m["revenue"] or 0) >= STRATEGY_MIN_REVENUE or tracked:
+            big_rows[t] = dict(m, cik=cik, name=names.get(cik, ""))
         if not (big or tracked):
             continue
-        big_rows[t] = dict(m, cik=cik, name=names.get(cik, ""))
         alive = [s for s, rules in SCREENS.items() if could_pass(m, rules)]
         if alive or tracked:
             rows[t] = big_rows[t]
@@ -294,6 +306,9 @@ def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep, spec=None, ledg
             need_px.add(t)
         for t in se.tickers_to_price(ledger, today):
             need_px.add(t)
+        for strat in spec["strategies"]:
+            if strat.get("benchmark", "SPY") != "SPY":
+                need_px.add(strat["benchmark"])
     for t in always:
         if t not in rows:
             rows[t] = {"cik": t2cik.get(t), "note": "not in SEC US-GAAP frames (foreign IFRS filer or no recent 10-Q)"}
@@ -322,7 +337,10 @@ def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep, spec=None, ledg
             m["pe"] = p["price"] / m["epsTTM"]
         if m.get("shares") and m.get("equity") and m["equity"] > 0:
             m["pb"] = p["price"] * m["shares"] / m["equity"]
+        if m.get("shares"):
             m["mktCap"] = p["price"] * m["shares"]
+            if m.get("revenue") and m["revenue"] > 0:
+                m["ps"] = m["mktCap"] / m["revenue"]
         m["momentum"] = None if p.get("chg52") is None else (p["price"] > p["ma200"] and p["chg52"] > 0)
     results = {s: [] for s in SCREENS}
     for t, m in rows.items():

@@ -111,6 +111,7 @@ def price_on(series, day, tol=5):
 
 
 def log_and_score(spec, rows, today, histories, spy_hist, ledger):
+    """Each strategy may name a benchmark (default SPY); its history must be in histories[symbol]."""
     """Append this week's picks (from each strategy's startDate) and fill outcomes whose horizon has passed.
     histories: {ticker: {date_iso: close}}; spy_hist the same for SPY."""
     new = []
@@ -120,8 +121,10 @@ def log_and_score(spec, rows, today, histories, spy_hist, ledger):
         if any(r["strategy"] == s["id"] and r["date"] == today.isoformat() for r in ledger):
             continue
         picks = pick(s, rows)
-        spy_px = price_on(spy_hist, today)
-        entry = {"strategy": s["id"], "date": today.isoformat(), "spyAt": spy_px, "out": {},
+        bench = s.get("benchmark", "SPY")
+        bh = spy_hist if bench == "SPY" else histories.get(bench, {})
+        spy_px = price_on(bh, today)
+        entry = {"strategy": s["id"], "date": today.isoformat(), "bench": bench, "spyAt": spy_px, "out": {},
                  "picks": [{"t": p["t"], "px": price_on(histories.get(p["t"], {}), today)} for p in picks]}
         new.append(entry)
     ledger = ledger + new
@@ -137,7 +140,8 @@ def log_and_score(spec, rows, today, histories, spy_hist, ledger):
             d1 = d0 + dt.timedelta(weeks=h)
             if d1 > today:
                 continue
-            spy1 = price_on(spy_hist, d1)
+            bench = e.get("bench", "SPY")
+            spy1 = price_on(spy_hist if bench == "SPY" else histories.get(bench, {}), d1)
             if not spy1 or not e.get("spyAt"):
                 continue
             ex = []
