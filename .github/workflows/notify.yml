@@ -1,0 +1,50 @@
+name: Notify
+
+# Lets the daily analyzer run send a phone alert without ever holding the Telegram token.
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: Alert title
+        required: true
+      message:
+        description: Alert text
+        required: true
+      priority:
+        description: 1-5 (4 = high, 5 = urgent)
+        required: false
+        default: "4"
+
+permissions:
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Send to Telegram and ntfy
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          T: ${{ inputs.title }}
+          M: ${{ inputs.message }}
+          P: ${{ inputs.priority }}
+        run: |
+          python3 - <<'PY'
+          import os, wire
+          t, m = os.environ["T"], os.environ["M"]
+          p = int(os.environ.get("P") or 4)
+          sent = 0
+          tok = os.environ.get("TELEGRAM_TOKEN", "").strip()
+          if tok and os.environ.get("TELEGRAM_CHAT_ID"):
+              wire.telegram_push(tok, os.environ["TELEGRAM_CHAT_ID"].strip(), t, m, p); sent += 1; print("telegram: sent")
+          if os.environ.get("NTFY_TOPIC"):
+              try:
+                  wire.ntfy_push(os.environ["NTFY_TOPIC"].strip(), t, m, p, ["chart_with_upwards_trend"]); sent += 1; print("ntfy: sent")
+              except Exception as e:
+                  print("ntfy failed:", e)
+          raise SystemExit(0 if sent else 1)
+          PY
