@@ -40,6 +40,7 @@ class World:
         self.fed = fed_rss([])
         self.fail = set()
         self.uas = []
+        self.archives = {}
 
     def fetch(self, url, ua):
         self.uas.append((url, ua))
@@ -49,6 +50,11 @@ class World:
         if "data.sec.gov" in url:
             cik = url.split("CIK")[1].split(".json")[0]
             return self.sec[cik]
+        if "sec.gov/Archives" in url:
+            for key, val in self.archives.items():
+                if url.endswith(key):
+                    return val
+            raise OSError("no such filing")
         if "federalreserve.gov" in url:
             return self.fed
         if "news.google.com" in url:
@@ -215,3 +221,85 @@ class WireTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+def form4(owner, title, code, shares, price, director=False, planned=False):
+    rel = (f"<isDirector>1</isDirector>" if director else "") + (f"<isOfficer>1</isOfficer><officerTitle>{title}</officerTitle>" if title else "")
+    return (f"<?xml version='1.0'?><ownershipDocument><schemaVersion>X0508</schemaVersion>"
+            f"{'<aff10b5One>1</aff10b5One>' if planned else '<aff10b5One>0</aff10b5One>'}"
+            f"<issuer><issuerTradingSymbol>PGR</issuerTradingSymbol></issuer>"
+            f"<reportingOwner><reportingOwnerId><rptOwnerName>{owner}</rptOwnerName></reportingOwnerId>"
+            f"<reportingOwnerRelationship>{rel}</reportingOwnerRelationship></reportingOwner>"
+            f"<nonDerivativeTable><nonDerivativeTransaction><securityTitle><value>Common Shares</value></securityTitle>"
+            f"<transactionDate><value>2026-11-20</value></transactionDate>"
+            f"<transactionCoding><transactionFormType>4</transactionFormType><transactionCode>{code}</transactionCode></transactionCoding>"
+            f"<transactionAmounts><transactionShares><value>{shares}</value></transactionShares>"
+            f"<transactionPricePerShare><value>{price}</value></transactionPricePerShare>"
+            f"<transactionAcquiredDisposedCode><value>{'A' if code == 'P' else 'D'}</value></transactionAcquiredDisposedCode></transactionAmounts>"
+            f"</nonDerivativeTransaction></nonDerivativeTable></ownershipDocument>").encode()
+
+
+class InsiderTests(unittest.TestCase):
+    PGR = "0000080661"
+
+    def setUp(self):
+        self.world = World()
+        self.pushes = []
+        self.t0 = dt.datetime(2026, 11, 23, 18, 0, tzinfo=UTC)
+        self.state, _, _ = wire.run(CFG, {}, self.world.fetch, self.push, ts=self.t0,
+                                    sec_contact="T t@example.com", sleep=lambda s: None)
+        self.pushes.clear()
+
+    def push(self, title, msg, prio, tags, click):
+        self.pushes.append({"title": title, "msg": msg, "prio": prio, "tags": tags})
+
+    def file(self, acc, xml, minutes=5):
+        self.world.sec[self.PGR] = sec_json([(acc, "2026-11-23", "4", "", f"xslF345X05/{acc}.xml")])
+        self.world.archives[f"/{acc.replace('-', '')}/{acc}.xml"] = xml
+        self.state, lines, _ = wire.run(CFG, self.state, self.world.fetch, self.push,
+                                        ts=self.t0 + dt.timedelta(minutes=minutes), sec_contact="T t@example.com", sleep=lambda s: None)
+        return [l for l in lines if l.get("form") == "4"][0]
+
+    def test_raw_xml_url(self):
+        u = "https://www.sec.gov/Archives/edgar/data/80661/000112760226000001/xslF345X05/wk-form4_1.xml"
+        self.assertEqual(wire.form4_xml_url(u), "https://www.sec.gov/Archives/edgar/data/80661/000112760226000001/wk-form4_1.xml")
+
+    def test_ceo_open_market_buy_pushes_high(self):
+        line = self.file("0001127602-26-000001", form4("DOE JANE", "President and CEO", "P", 2000, 250.0))
+        self.assertTrue(line["pushed"])
+        p = self.pushes[0]
+        self.assertEqual(p["prio"], 4)
+        self.assertIn("moneybag", p["tags"])
+        self.assertIn("Doe Jane (President and CEO) bought 2,000 shares", p["msg"])
+        self.assertIn("$500k", p["msg"])
+        self.assertEqual(self.state["insider_buys"][0]["t"], "PGR")
+
+    def test_sale_and_grant_are_logged_only(self):
+        line = self.file("0001127602-26-000002", form4("SMITH BOB", "EVP", "S", 5000, 250.0))
+        self.assertFalse(line["pushed"])
+        self.assertIn("insider sale", line["title"])
+        line = self.file("0001127602-26-000003", form4("SMITH BOB", "EVP", "A", 900, 0), minutes=10)
+        self.assertFalse(line["pushed"])
+        self.assertEqual(self.pushes, [])
+
+    def test_director_buy_then_cluster(self):
+        self.file("0001127602-26-000004", form4("LEE ANN", "", "P", 300, 250.0, director=True))
+        self.assertEqual(self.pushes[0]["prio"], 3)
+        self.file("0001127602-26-000005", form4("KIM MAX", "", "P", 200, 251.0, director=True), minutes=10)
+        self.assertEqual(self.pushes[1]["prio"], 4)
+        self.assertIn("2 insiders buying within 30 days", self.pushes[1]["msg"])
+
+    def test_small_and_planned_buys(self):
+        line = self.file("0001127602-26-000006", form4("TINY TIM", "VP", "P", 10, 250.0))
+        self.assertFalse(line["pushed"])
+        self.file("0001127602-26-000007", form4("BIG BEN", "CEO", "P", 4000, 250.0, planned=True), minutes=10)
+        self.assertEqual(self.pushes[0]["prio"], 3)
+        self.assertIn("pre-planned", self.pushes[0]["msg"])
+
+    def test_unreadable_form4_does_not_break_run(self):
+        self.world.sec[self.PGR] = sec_json([("0001127602-26-000008", "2026-11-23", "4", "", "xslF345X05/missing.xml")])
+        _, lines, _ = wire.run(CFG, self.state, self.world.fetch, self.push, ts=self.t0 + dt.timedelta(minutes=5),
+                               sec_contact="T t@example.com", sleep=lambda s: None)
+        f4 = [l for l in lines if l.get("form") == "4"][0]
+        self.assertIn("couldn't read", f4["title"])
+        self.assertFalse(f4["pushed"])

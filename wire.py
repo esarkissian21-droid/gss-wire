@@ -204,6 +204,82 @@ def sec_items(company, raw_json):
     return out
 
 
+# ---------------------------------------------------------------- insider trades (Form 4)
+def _tx(el, path):
+    v = el.find(path)
+    return (v.text or "").strip() if v is not None and v.text else ""
+
+
+def form4_xml_url(url):
+    """EDGAR's primaryDocument for a Form 4 is the styled view (xslF345X05/x.xml); the raw XML drops that folder."""
+    return re.sub(r"/xslF345X\d+/", "/", url)
+
+
+def parse_form4(raw_xml):
+    """Return {owner, role, ceoish, buys:[...], sells_value, planned} from a Form 4 XML."""
+    root = ET.fromstring(raw_xml)
+    owners, roles, ceoish = [], [], False
+    for ro in root.iter("reportingOwner"):
+        owners.append(_tx(ro, "reportingOwnerId/rptOwnerName"))
+        rel = ro.find("reportingOwnerRelationship")
+        if rel is None:
+            continue
+        flag = lambda tag: _tx(rel, tag).lower() in ("1", "true")
+        title = _tx(rel, "officerTitle")
+        if flag("isOfficer") and title:
+            roles.append(title)
+            if re.search(r"\b(ceo|chief executive|cfo|chief financial|president|chair)", title, re.I):
+                ceoish = True
+        elif flag("isDirector"):
+            roles.append("Director")
+        elif flag("isTenPercentOwner"):
+            roles.append("10% owner")
+    buys, sells_value = [], 0.0
+    for t in root.iter("nonDerivativeTransaction"):
+        code = _tx(t, "transactionCoding/transactionCode")
+        try:
+            sh = float(_tx(t, "transactionAmounts/transactionShares/value") or 0)
+            px = float(_tx(t, "transactionAmounts/transactionPricePerShare/value") or 0)
+        except ValueError:
+            continue
+        if code == "P":
+            buys.append({"shares": sh, "price": px, "value": sh * px, "date": _tx(t, "transactionDate/value")})
+        elif code == "S":
+            sells_value += sh * px
+    planned = _tx(root, "aff10b5One").lower() in ("1", "true")
+    return {"owner": "; ".join(o for o in owners if o) or "An insider", "role": ", ".join(dict.fromkeys(roles)) or "insider",
+            "ceoish": ceoish, "buys": buys, "sells_value": sells_value, "planned": planned}
+
+
+def money(v):
+    return f"${v/1e6:.1f}M" if v >= 1e6 else f"${v/1e3:.0f}k" if v >= 1e3 else f"${v:.0f}"
+
+
+def describe_form4(ticker, f, cluster_n):
+    """Decide priority and wording for a parsed Form 4. Only open-market purchases (code P) push."""
+    if f["buys"]:
+        val = sum(b["value"] for b in f["buys"])
+        sh = sum(b["shares"] for b in f["buys"])
+        avg = val / sh if sh else 0
+        title = f"{ticker} insider buy: {f['owner'].title()} ({f['role']}) bought {sh:,.0f} shares at about ${avg:,.2f} ({money(val)})"
+        notes = []
+        prio = 3 if val >= 10_000 else 0
+        if prio and (val >= 100_000 or f["ceoish"]):
+            prio = 4
+        if prio and cluster_n >= 1:
+            prio = 4
+            notes.append(f"{cluster_n + 1} insiders buying within 30 days")
+        if f["planned"]:
+            prio = min(prio, 3)
+            notes.append("pre-planned 10b5-1 trade, less informative")
+        if val < 10_000:
+            notes.append("small buy: logged only")
+        return prio, title + (" · " + "; ".join(notes) if notes else ""), val
+    if f["sells_value"]:
+        return 0, f"{ticker} insider sale: {f['owner'].title()} ({f['role']}) sold {money(f['sells_value'])}", 0
+    return 0, None, 0
+
+
 def rss_items(raw_xml):
     """Parse RSS 2.0 items: title, link, pubDate, source."""
     root = ET.fromstring(raw_xml)
@@ -265,7 +341,7 @@ def fed_items(raw_xml):
 def run(cfg, state, fetch, push, ts=None, sec_contact=None, sleep=time.sleep):
     """One pass. Returns (state, log_lines, pushes). fetch(url, ua) -> bytes; push(title, msg, prio, tags, click)."""
     ts = ts or now_utc()
-    first = not state.get("seen")
+    first = not state.get("seen") and not state.get("lastRun")
     state.setdefault("seen", {})
     state.setdefault("seeded", [])
     state.setdefault("errors", {})
@@ -309,6 +385,35 @@ def run(cfg, state, fetch, push, ts=None, sec_contact=None, sleep=time.sleep):
     for t in cfg.get("topics", []):
         collected += guard(f"News {t['key']}", lambda t=t: news_items(t["key"], fetch(news_url(t["news_query"]), GENERIC_UA), cfg, strict=t.get("strict")))
 
+    # Insider trades: open each NEW Form 4 (from an already-seeded SEC source, under 36 hours old).
+    state.setdefault("insider_buys", [])
+    if sec_contact and not first:
+        opened = 0
+        for it in collected:
+            if it.get("form") != "4" or it["id"] in state["seen"] or it["_src"] not in state["seeded"]:
+                continue
+            if it.get("when") and (ts - it["when"]).total_seconds() > 36 * 3600:
+                continue
+            if opened >= 20:
+                break
+            opened += 1
+            try:
+                f = parse_form4(fetch(form4_xml_url(it["url"]), sec_contact))
+            except Exception:
+                it["title"] += " (couldn't read the Form 4)"
+                continue
+            finally:
+                sleep(0.25)
+            mcut = (ts - dt.timedelta(days=30)).date().isoformat()
+            cluster = {b["owner"] for b in state["insider_buys"] if b["t"] == it["asset"] and b["d"] >= mcut and b["owner"] != f["owner"]}
+            prio, title, val = describe_form4(it["asset"], f, len(cluster))
+            if title:
+                it["title"], it["priority"], it["kind"] = title, prio, "insider"
+            if f["buys"] and val >= 10_000:
+                state["insider_buys"].append({"t": it["asset"], "owner": f["owner"], "d": it["date"], "v": round(val)})
+        cut90 = (ts - dt.timedelta(days=90)).date().isoformat()
+        state["insider_buys"] = [b for b in state["insider_buys"] if b["d"] >= cut90][-200:]
+
     quiet = in_quiet_hours(ts, cfg)
     lim = cfg.get("limits", {})
     per_day = lim.get("news_pushes_per_company_per_day", 4)
@@ -341,7 +446,7 @@ def run(cfg, state, fetch, push, ts=None, sec_contact=None, sleep=time.sleep):
                 elif state["news_count"].get(a, 0) >= per_day or run_count.get(a, 0) >= per_run:
                     reason = "news limit reached: logged only"
             if not reason:
-                tag = {"filing": ["page_facing_up"], "fed": ["bank"], "news": ["newspaper"]}[it["kind"]]
+                tag = {"filing": ["page_facing_up"], "fed": ["bank"], "news": ["newspaper"], "insider": ["moneybag"]}[it["kind"]]
                 if it["priority"] >= 5:
                     tag = ["rotating_light"] + tag
                 push(f"{it['asset']} · {it['source']}", it["title"], it["priority"], tag, it["url"])
