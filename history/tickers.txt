@@ -1,0 +1,8 @@
+# benchmark
+SPY
+# watchlist + Nov 21 shortlist (picked with hindsight: not a fair test set)
+NVDA TSM PDD AEM DINO PGR TRV WRB PHM
+# fixed universe chosen before the test period: the 20 largest S&P 500 weights at end of 2011
+AAPL XOM MSFT IBM CVX GE PG JNJ T PFE WMT KO GOOGL ORCL WFC JPM INTC PM MRK VZ
+# metals ETFs (cross-check for the ratio)
+GLD SLV
