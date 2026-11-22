@@ -1,0 +1,35 @@
+name: Stock screens
+
+# Runs right after the Sunday digest (no schedule of its own) or by hand.
+on:
+  workflow_run:
+    workflows: ["Weekly digest"]
+    types: [completed]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+
+jobs:
+  screens:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest -q tests.test_screens
+      - name: Build screens from SEC filings
+        env:
+          SEC_CONTACT: ${{ secrets.SEC_CONTACT }}
+        run: python3 screens.py
+      - name: Save results
+        run: |
+          git config user.name "gss-wire-bot"
+          git config user.email "gss-wire-bot@users.noreply.github.com"
+          git add history/screens
+          git diff --cached --quiet && exit 0
+          git commit -m "Screens: weekly refresh from SEC filings"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
