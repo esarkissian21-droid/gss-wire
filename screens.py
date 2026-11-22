@@ -28,6 +28,8 @@ import time
 import urllib.error
 import urllib.request
 
+import strategies_engine as se
+
 FRAMES = "https://data.sec.gov/api/xbrl/frames/{tax}/{concept}/{unit}/{period}.json"
 TICKERS = "https://www.sec.gov/files/company_tickers.json"
 
@@ -244,17 +246,25 @@ def could_pass(m, rules):
 
 # ---------------------------------------------------------------- prices
 def yahoo_daily(sym, fetch):
+    """Latest price, 200-day average, 52-week change, and the daily close history {date: close}."""
     now = int(time.time())
-    url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?period1={now - 400 * 86400}"
+    url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?period1={now - 430 * 86400}"
            f"&period2={now}&interval=1d")
     j = json.loads(fetch(url))["chart"]["result"][0]
-    closes = [c for c in j["indicators"]["quote"][0]["close"] if c is not None]
+    raw = j["indicators"]["quote"][0]["close"]
+    ts = j.get("timestamp") or []
+    hist = {}
+    for t, c in zip(ts, raw):
+        if c is not None:
+            hist[dt.datetime.fromtimestamp(t, dt.timezone.utc).date().isoformat()] = c
+    closes = [c for c in raw if c is not None]
     if len(closes) < 210:
         return None
-    return {"price": closes[-1], "ma200": st.mean(closes[-200:]), "chg52": 100 * (closes[-1] / closes[-252] - 1) if len(closes) >= 252 else None}
+    return {"price": closes[-1], "ma200": st.mean(closes[-200:]),
+            "chg52": 100 * (closes[-1] / closes[-252] - 1) if len(closes) >= 252 else None, "hist": hist}
 
 
-def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep):
+def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep, spec=None, ledger=None):
     fr = Frames(lambda u: (sleep(0.15), fetch_sec(u))[1])
     funda, (y, q) = fundamentals(fr, today)
     tick = json.loads(fetch_sec(TICKERS))
@@ -263,7 +273,7 @@ def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep):
         cik2t.setdefault(int(v["cik_str"]), v["ticker"])
         t2cik[v["ticker"]] = int(v["cik_str"])
         names.setdefault(int(v["cik_str"]), v.get("title", ""))
-    rows, need_px = {}, set()
+    rows, need_px, big_rows = {}, set(), {}
     for cik, m in funda.items():
         t = cik2t.get(cik)
         if not t:
@@ -272,14 +282,28 @@ def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep):
         tracked = t in always
         if not (big or tracked):
             continue
+        big_rows[t] = dict(m, cik=cik, name=names.get(cik, ""))
         alive = [s for s, rules in SCREENS.items() if could_pass(m, rules)]
         if alive or tracked:
-            rows[t] = dict(m, cik=cik, name=names.get(cik, ""))
+            rows[t] = big_rows[t]
+            need_px.add(t)
+    ledger = ledger or []
+    if spec:
+        for t in se.prefilter_universe(spec, big_rows):
+            rows[t] = big_rows[t]
+            need_px.add(t)
+        for t in se.tickers_to_price(ledger, today):
             need_px.add(t)
     for t in always:
         if t not in rows:
             rows[t] = {"cik": t2cik.get(t), "note": "not in SEC US-GAAP frames (foreign IFRS filer or no recent 10-Q)"}
-    px_fail = []
+    px_fail, histories = [], {}
+    spy_hist = {}
+    try:
+        spy = yahoo_daily("SPY", fetch_px)
+        spy_hist = spy["hist"] if spy else {}
+    except Exception as e:
+        px_fail.append(f"SPY: {type(e).__name__}")
     for t in sorted(need_px):
         try:
             p = yahoo_daily(t.replace(".", "-"), fetch_px)
@@ -288,8 +312,12 @@ def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep):
         sleep(0.3)
         if not p:
             continue
+        histories[t] = p.pop("hist")
+        if t not in rows:  # past strategy pick no longer in the universe: price only, for scoring
+            continue
         m = rows[t]
         m.update(p)
+        m["beta"] = se.beta(histories[t], spy_hist) if spy_hist else None
         if m.get("epsTTM") and m["epsTTM"] > 0:
             m["pe"] = p["price"] / m["epsTTM"]
         if m.get("shares") and m.get("equity") and m["equity"] > 0:
@@ -308,6 +336,24 @@ def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep):
                 results[s].append(t)
     for s in results:
         results[s].sort(key=lambda t: (not rows[t].get("momentum"), -(rows[t].get("mktCap") or 0)))
+    strat_out, new_entries, scored = {}, [], 0
+    if spec:
+        ledger, new_entries, scored = se.log_and_score(spec, rows, today, histories, spy_hist, ledger)
+        for s in spec["strategies"]:
+            picks = se.pick(s, rows)
+            past = [e for e in ledger if e["strategy"] == s["id"]]
+            done = {h: [e["out"][h] for e in past if h in e["out"]] for h in ("13", "26", "52")}
+            strat_out[s["id"]] = {
+                "name": s["name"], "description": s["description"], "startDate": s["startDate"],
+                "live": today >= dt.date.fromisoformat(s["startDate"]),
+                "picks": [dict(p, name=rows[p["t"]].get("name", ""), mktCap=rows[p["t"]].get("mktCap"),
+                               pe=rows[p["t"]].get("pe"), de=rows[p["t"]].get("de"), flags=red_flags(rows[p["t"]]))
+                          for p in picks],
+                "weeksLogged": len(past),
+                "record": {h: {"n": len(v), "meanExcess": round(sum(o["meanExcess"] for o in v) / len(v), 4) if v else None,
+                               "weeksBeat": sum(1 for o in v if o["meanExcess"] > 0)} for h, v in done.items()},
+            }
+
     def rnd(v):
         return round(v, 2) if isinstance(v, float) else v
     return {
@@ -317,6 +363,7 @@ def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep):
         "minRevenue": MIN_REVENUE, "companiesWithData": len(funda), "considered": len(rows),
         "secCalls": fr.calls, "missingFrames": fr.missing[:40], "priceFailures": px_fail[:40],
         "passes": results,
+        "strategies": strat_out, "_ledger": ledger, "_newEntries": len(new_entries), "_scored": scored,
         "rows": {t: {k: rnd(v) for k, v in m.items()} for t, m in rows.items()},
     }
 
@@ -340,7 +387,14 @@ def main():
 
     cfg = json.load(open("config.json"))
     always = [c["ticker"] for c in cfg["companies"]]
-    res = run(sec, px, dt.date.today(), always)
+    spec = json.load(open(se.SPEC_PATH)) if os.path.exists(se.SPEC_PATH) else None
+    res = run(sec, px, dt.date.today(), always, spec=spec, ledger=se.read_ledger())
+    if spec:
+        se.write_ledger(res.pop("_ledger"))
+    else:
+        res.pop("_ledger", None)
+    print("strategies:", json.dumps({k: [p["t"] for p in v["picks"]] for k, v in res["strategies"].items()}),
+          "new ledger entries:", res.pop("_newEntries"), "outcomes filled:", res.pop("_scored"))
     os.makedirs(out_dir, exist_ok=True)
     for name in ("latest.json", f"{res['asOf']}.json"):
         with open(os.path.join(out_dir, name), "w") as f:

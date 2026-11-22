@@ -34,11 +34,17 @@ class FakeSEC:
         return json.dumps({"data": [{"cik": c, "val": v} for c, v in d.items()]}).encode()
 
 
+T0 = 1764000000  # a timestamp ~Nov 2025
+
+
 def fake_px(url):
     sym = url.split("/chart/")[1].split("?")[0]
-    base = {"GOOD": 100.0, "BANK": 50.0, "TINY": 5.0}[sym]
-    closes = [base * (0.8 + 0.2 * i / 299) for i in range(300)]  # rising: above 200-day average, up on the year
-    return json.dumps({"chart": {"result": [{"indicators": {"quote": [{"close": closes}]}}]}}).encode()
+    base = {"GOOD": 100.0, "BANK": 50.0, "TINY": 5.0, "SPY": 600.0}[sym]
+    # rising with a small wiggle: above 200-day average, up on the year; GOOD moves 1.5x the market's wiggle
+    wig = {"GOOD": 1.5, "BANK": 0.5, "TINY": 1.0, "SPY": 1.0}[sym]
+    closes = [base * (0.8 + 0.2 * i / 299) * (1 + 0.01 * wig * (1 if i % 2 else -1)) for i in range(300)]
+    ts = [T0 + 86400 * i for i in range(300)]
+    return json.dumps({"chart": {"result": [{"timestamp": ts, "indicators": {"quote": [{"close": closes}]}}]}}).encode()
 
 
 def build():
@@ -102,8 +108,8 @@ class ScreenTests(unittest.TestCase):
         self.assertAlmostEqual(self.g["cr"], 3.0, places=2)
         ni_ttm = 560e6 + 600e6 + 620e6 + 650e6
         self.assertAlmostEqual(self.g["roe"], 100 * ni_ttm / 10e9, places=1)
-        self.assertAlmostEqual(self.g["pe"], 100.0 / 7.4, places=1)
-        self.assertAlmostEqual(self.g["pb"], 100.0 * 325e6 / 10e9, places=2)
+        self.assertAlmostEqual(self.g["pe"], self.g["price"] / 7.4, places=1)
+        self.assertAlmostEqual(self.g["pb"], self.g["price"] * 325e6 / 10e9, places=2)
         self.assertTrue(self.g["momentum"])
         self.assertAlmostEqual(self.g["eps5y"], 100 * ((5.9 / 3.0) ** 0.2 - 1), places=1)
 
@@ -129,6 +135,48 @@ class ScreenTests(unittest.TestCase):
         self.assertIsNone(b["cr"])
         self.assertNotEqual(b["screens"]["Quality"], "pass")
         self.assertNotIn("TINY", self.res["rows"])
+
+
+class StrategyTests(unittest.TestCase):
+    SPEC = {"strategies": [{"id": "q", "name": "Quality test", "description": "", "createdOn": "2026-11-22",
+                            "startDate": "2026-11-22", "prefilters": [["revenue", ">=", 5e9], ["roe", ">", 12]],
+                            "filters": [["mktCap", ">=", 1e9]], "rank": [["pb", "asc", 1], ["beta", "asc", 1]],
+                            "top": 5, "horizonsWeeks": [13]}]}
+
+    def test_beta_math(self):
+        import strategies_engine as se
+        spy = {f"d{i:03d}": 100 * (1 + 0.01 * (1 if i % 2 else -1)) for i in range(200)}
+        stock = {k: 100 * (1 + 0.02 * (1 if int(k[1:]) % 2 else -1)) for k in spy}
+        self.assertAlmostEqual(se.beta(stock, spy), 2.0, places=1)
+
+    def test_strategy_picks_logged_and_scored_later(self):
+        import strategies_engine as se
+        res = screens.run(build(), fake_px, TODAY, sleep=lambda s: None, spec=self.SPEC, ledger=[])
+        st_ = res["strategies"]["q"]
+        self.assertTrue(st_["live"])
+        self.assertEqual([p["t"] for p in st_["picks"]], ["GOOD"])  # BANK: revenue too small for prefilter (4e9)
+        self.assertIsNotNone(st_["picks"][0]["beta"])
+        led = res["_ledger"]
+        self.assertEqual(len(led), 1)
+        self.assertEqual(led[0]["picks"][0]["t"], "GOOD")
+        # score 13 weeks later with synthetic histories: pick +10%, SPY +5%
+        e = led[0]
+        d0 = dt.date.fromisoformat(e["date"])
+        d1 = d0 + dt.timedelta(weeks=13)
+        e["picks"][0]["px"], e["spyAt"] = 100.0, 600.0
+        hist = {"GOOD": {d1.isoformat(): 110.0}}
+        spy = {d1.isoformat(): 630.0}
+        led2, new, scored = se.log_and_score({"strategies": []}, {}, d1, hist, spy, led)
+        self.assertEqual(scored, 1)
+        self.assertAlmostEqual(led2[0]["out"]["13"]["meanExcess"], 110 / 100 / (630 / 600) - 1, places=4)
+
+    def test_before_start_date_no_logging(self):
+        spec = json.loads(json.dumps(self.SPEC))
+        spec["strategies"][0]["startDate"] = "2026-11-29"
+        res = screens.run(build(), fake_px, TODAY, sleep=lambda s: None, spec=spec, ledger=[])
+        self.assertEqual(res["_ledger"], [])
+        self.assertFalse(res["strategies"]["q"]["live"])
+        self.assertEqual(len(res["strategies"]["q"]["picks"]), 1)  # preview still shown
 
 
 if __name__ == "__main__":

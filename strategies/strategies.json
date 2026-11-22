@@ -1,0 +1,17 @@
+{
+ "about": "Your stock-picking strategies. Each runs every Sunday on SEC-filing data (screens.py). Picks are logged with that day's prices to strategies/ledger.jsonl and scored against the S&P 500 (SPY) after 13, 26 and 52 weeks. A strategy is frozen once created: to change one, add a new version with a new id and keep the old one running. Filters use fields from screens.py: revenue, roe, margin, de, cr, epsTTM, epsYr, epsQ, salesQ, eps5y, pe, pb, mktCap, beta, momentum, chg52.",
+ "strategies": [
+  {
+   "id": "buffett-v1",
+   "name": "Buffett-style: cheap, safe, high quality, large",
+   "description": "Based on Frazzini, Kabiller & Pedersen, 'Buffett's Alpha' (2018): Berkshire's returns are explained by owning cheap, safe (low-beta), high-quality, large companies, plus leverage (not used here). Quality = profitable, growing, low debt. Cheap = low price-to-book. Safe = low beta vs the S&P 500. Ranked on all three equally; top 10.",
+   "createdOn": "2026-11-22",
+   "startDate": "2026-11-29",
+   "prefilters": [["revenue", ">=", 5e9], ["epsTTM", ">", 0], ["roe", ">", 12], ["margin", ">", 8], ["de", "<", 0.5], ["eps5y", ">", 0]],
+   "filters": [["mktCap", ">=", 1e10], ["pb", ">", 0]],
+   "rank": [["pb", "asc", 1], ["roe", "desc", 1], ["beta", "asc", 1]],
+   "top": 10,
+   "horizonsWeeks": [13, 26, 52]
+  }
+ ]
+}
