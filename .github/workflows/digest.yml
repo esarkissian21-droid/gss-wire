@@ -1,0 +1,42 @@
+name: Weekly digest
+
+on:
+  schedule:
+    - cron: "3 1 * * 1"    # Sunday ~5 p.m. PT (Monday 01:03 UTC)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "1 = print only (no message, no ledger write)"
+        required: false
+        default: "0"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest -q tests.test_digest
+      - name: Build digest, update forward test, send
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          DRY_RUN: ${{ inputs.dry_run || '0' }}
+        run: python3 digest.py
+      - name: Save forward-test ledger
+        if: ${{ (inputs.dry_run || '0') != '1' }}
+        run: |
+          git config user.name "gss-wire-bot"
+          git config user.email "gss-wire-bot@users.noreply.github.com"
+          git add forward
+          git diff --cached --quiet && exit 0
+          git commit -m "Forward test: weekly update"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
