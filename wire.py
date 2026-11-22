@@ -10,7 +10,8 @@ New items go to your phone through ntfy. Everything seen is appended to
 wire_log.jsonl so Claude's daily analyzer run can read it.
 
 Standard library only. Secrets come from environment variables:
-  NTFY_TOPIC   your private ntfy channel name
+  NTFY_TOPIC   your private ntfy channel name (optional if Telegram is set)
+  TELEGRAM_TOKEN / TELEGRAM_CHAT_ID   optional second channel (bot token from @BotFather + your chat id)
   SEC_CONTACT  "Your Name your@email.com" (the SEC asks automated tools to identify themselves)
 """
 import datetime as dt
@@ -118,6 +119,23 @@ def ntfy_push(topic, title, message, priority=3, tags=None, click=None):
         body["click"] = click
     req = urllib.request.Request(
         "https://ntfy.sh/",
+        data=json.dumps(body).encode("utf-8"),
+        headers={"Content-Type": "application/json", "User-Agent": GENERIC_UA},
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=20) as r:
+        r.read()
+
+
+def telegram_push(token, chat_id, title, message, priority=3, click=None):
+    icon = "\U0001F6A8 " if int(priority) >= 5 else ("\u26A0\uFE0F " if int(priority) >= 4 else "")
+    text = f"{icon}{title[:120]}\n{message[:900]}"
+    if click:
+        text += f"\n{click}"
+    body = {"chat_id": chat_id, "text": text, "disable_web_page_preview": True,
+            "disable_notification": int(priority) <= 2}
+    req = urllib.request.Request(
+        f"https://api.telegram.org/bot{token}/sendMessage",
         data=json.dumps(body).encode("utf-8"),
         headers={"Content-Type": "application/json", "User-Agent": GENERIC_UA},
         method="POST",
@@ -370,8 +388,10 @@ def append_log(lines):
 
 def main():
     topic = os.environ.get("NTFY_TOPIC", "").strip()
-    if not topic:
-        print("NTFY_TOPIC secret is missing; nothing to send to.", file=sys.stderr)
+    tg_token = os.environ.get("TELEGRAM_TOKEN", "").strip()
+    tg_chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+    if not topic and not (tg_token and tg_chat):
+        print("No NTFY_TOPIC or TELEGRAM_TOKEN/TELEGRAM_CHAT_ID secret; nothing to send to.", file=sys.stderr)
         return 1
     sec_contact = os.environ.get("SEC_CONTACT", "").strip() or None
     cfg = load_json(CONFIG_PATH, None)
@@ -381,7 +401,19 @@ def main():
         return http_get(url, ua)
 
     def push(title, msg, prio, tags, click):
-        ntfy_push(topic, title, msg, prio, tags, click)
+        sent, last_err = 0, None
+        if topic:
+            try:
+                ntfy_push(topic, title, msg, prio, tags, click); sent += 1
+            except Exception as e:  # keep going so the other channel still fires
+                last_err = e
+        if tg_token and tg_chat:
+            try:
+                telegram_push(tg_token, tg_chat, title, msg, prio, click); sent += 1
+            except Exception as e:
+                last_err = e
+        if not sent and last_err:
+            raise last_err
 
     state, lines, pushes = run(cfg, state, fetch, push, sec_contact=sec_contact)
     append_log(lines)
