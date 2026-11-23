@@ -1,0 +1,1208 @@
+{
+ "asOf": "2026-11-23",
+ "universe": 116,
+ "failed": [
+  "MMC"
+ ],
+ "span": [
+  "2004-06-01",
+  "2026-11-20"
+ ],
+ "baseline": {
+  "5": {
+   "n": 124279,
+   "months": 261,
+   "pUp": 54.4,
+   "baseUp": 54.4,
+   "pBeat": 50.1,
+   "baseBeat": 50.1,
+   "beatCI": [
+    49.9,
+    50.4
+   ],
+   "edge": 0.0,
+   "t": 0.12,
+   "halves": {
+    "2005-2015": 0.0,
+    "2016-2026": 0.0
+   },
+   "medExcess": 0.01,
+   "reliable": false
+  },
+  "21": {
+   "n": 123819,
+   "months": 260,
+   "pUp": 58.4,
+   "baseUp": 58.4,
+   "pBeat": 50.8,
+   "baseBeat": 50.8,
+   "beatCI": [
+    50.5,
+    51.0
+   ],
+   "edge": 0.0,
+   "t": 0.14,
+   "halves": {
+    "2005-2015": 0.0,
+    "2016-2026": 0.0
+   },
+   "medExcess": 0.1,
+   "reliable": false
+  },
+  "63": {
+   "n": 122890,
+   "months": 258,
+   "pUp": 63.2,
+   "baseUp": 63.2,
+   "pBeat": 51.4,
+   "baseBeat": 51.4,
+   "beatCI": [
+    51.1,
+    51.6
+   ],
+   "edge": 0.0,
+   "t": 0.23,
+   "halves": {
+    "2005-2015": 0.0,
+    "2016-2026": 0.0
+   },
+   "medExcess": 0.33,
+   "reliable": false
+  }
+ },
+ "buckets": {
+  "drop3": {
+   "all": {
+    "5": {
+     "n": 9420,
+     "months": 261,
+     "pUp": 55.0,
+     "baseUp": 54.4,
+     "pBeat": 49.7,
+     "baseBeat": 50.1,
+     "beatCI": [
+      48.7,
+      50.7
+     ],
+     "edge": -0.5,
+     "t": 0.05,
+     "halves": {
+      "2005-2015": -0.6,
+      "2016-2026": -0.3
+     },
+     "medExcess": -0.02,
+     "reliable": false
+    },
+    "21": {
+     "n": 9364,
+     "months": 260,
+     "pUp": 58.4,
+     "baseUp": 58.4,
+     "pBeat": 51.5,
+     "baseBeat": 50.8,
+     "beatCI": [
+      50.5,
+      52.5
+     ],
+     "edge": 0.8,
+     "t": 1.24,
+     "halves": {
+      "2005-2015": 0.7,
+      "2016-2026": 1.0
+     },
+     "medExcess": 0.25,
+     "reliable": false
+    },
+    "63": {
+     "n": 9294,
+     "months": 258,
+     "pUp": 63.7,
+     "baseUp": 63.2,
+     "pBeat": 52.2,
+     "baseBeat": 51.4,
+     "beatCI": [
+      51.2,
+      53.2
+     ],
+     "edge": 0.8,
+     "t": 2.17,
+     "halves": {
+      "2005-2015": 0.8,
+      "2016-2026": 1.0
+     },
+     "medExcess": 0.69,
+     "reliable": true
+    }
+   },
+   "above200": {
+    "5": {
+     "n": 5985,
+     "months": 261,
+     "pUp": 55.2,
+     "baseUp": 54.3,
+     "pBeat": 49.2,
+     "baseBeat": 50.1,
+     "beatCI": [
+      47.9,
+      50.4
+     ],
+     "edge": -0.9,
+     "t": -0.41,
+     "halves": {
+      "2005-2015": -0.9,
+      "2016-2026": -0.9
+     },
+     "medExcess": -0.05,
+     "reliable": false
+    },
+    "21": {
+     "n": 5941,
+     "months": 260,
+     "pUp": 58.4,
+     "baseUp": 58.2,
+     "pBeat": 51.0,
+     "baseBeat": 50.3,
+     "beatCI": [
+      49.7,
+      52.2
+     ],
+     "edge": 0.6,
+     "t": 0.7,
+     "halves": {
+      "2005-2015": 0.3,
+      "2016-2026": 1.1
+     },
+     "medExcess": 0.14,
+     "reliable": false
+    },
+    "63": {
+     "n": 5889,
+     "months": 258,
+     "pUp": 63.9,
+     "baseUp": 63.0,
+     "pBeat": 51.2,
+     "baseBeat": 50.7,
+     "beatCI": [
+      49.9,
+      52.5
+     ],
+     "edge": 0.5,
+     "t": 1.54,
+     "halves": {
+      "2005-2015": 0.9,
+      "2016-2026": 0.6
+     },
+     "medExcess": 0.36,
+     "reliable": false
+    }
+   },
+   "below200": {
+    "5": {
+     "n": 3435,
+     "months": 249,
+     "pUp": 54.6,
+     "baseUp": 54.7,
+     "pBeat": 50.5,
+     "baseBeat": 50.3,
+     "beatCI": [
+      48.9,
+      52.2
+     ],
+     "edge": 0.2,
+     "t": -0.67,
+     "halves": {
+      "2005-2015": -0.5,
+      "2016-2026": 0.8
+     },
+     "medExcess": 0.06,
+     "reliable": false
+    },
+    "21": {
+     "n": 3423,
+     "months": 248,
+     "pUp": 58.2,
+     "baseUp": 58.8,
+     "pBeat": 52.5,
+     "baseBeat": 51.7,
+     "beatCI": [
+      50.8,
+      54.2
+     ],
+     "edge": 0.8,
+     "t": 0.76,
+     "halves": {
+      "2005-2015": 0.8,
+      "2016-2026": 0.7
+     },
+     "medExcess": 0.48,
+     "reliable": false
+    },
+    "63": {
+     "n": 3405,
+     "months": 246,
+     "pUp": 63.3,
+     "baseUp": 63.7,
+     "pBeat": 53.8,
+     "baseBeat": 52.7,
+     "beatCI": [
+      52.2,
+      55.5
+     ],
+     "edge": 1.1,
+     "t": -0.11,
+     "halves": {
+      "2005-2015": 0.1,
+      "2016-2026": 1.8
+     },
+     "medExcess": 1.35,
+     "reliable": false
+    }
+   }
+  },
+  "drop6": {
+   "all": {
+    "5": {
+     "n": 2435,
+     "months": 252,
+     "pUp": 52.1,
+     "baseUp": 54.4,
+     "pBeat": 47.9,
+     "baseBeat": 50.1,
+     "beatCI": [
+      45.9,
+      49.9
+     ],
+     "edge": -2.2,
+     "t": -2.91,
+     "halves": {
+      "2005-2015": -2.5,
+      "2016-2026": -2.0
+     },
+     "medExcess": -0.24,
+     "reliable": true
+    },
+    "21": {
+     "n": 2421,
+     "months": 251,
+     "pUp": 55.8,
+     "baseUp": 58.4,
+     "pBeat": 49.9,
+     "baseBeat": 50.8,
+     "beatCI": [
+      47.9,
+      51.9
+     ],
+     "edge": -0.9,
+     "t": -1.3,
+     "halves": {
+      "2005-2015": -0.6,
+      "2016-2026": -1.0
+     },
+     "medExcess": -0.02,
+     "reliable": false
+    },
+    "63": {
+     "n": 2401,
+     "months": 249,
+     "pUp": 63.6,
+     "baseUp": 63.2,
+     "pBeat": 53.5,
+     "baseBeat": 51.4,
+     "beatCI": [
+      51.5,
+      55.5
+     ],
+     "edge": 2.2,
+     "t": 0.75,
+     "halves": {
+      "2005-2015": 3.6,
+      "2016-2026": 1.0
+     },
+     "medExcess": 1.18,
+     "reliable": false
+    }
+   },
+   "above200": {
+    "5": {
+     "n": 1179,
+     "months": 242,
+     "pUp": 52.5,
+     "baseUp": 54.3,
+     "pBeat": 47.8,
+     "baseBeat": 50.1,
+     "beatCI": [
+      44.9,
+      50.6
+     ],
+     "edge": -2.3,
+     "t": -0.59,
+     "halves": {
+      "2005-2015": -2.6,
+      "2016-2026": -2.1
+     },
+     "medExcess": -0.22,
+     "reliable": false
+    },
+    "21": {
+     "n": 1172,
+     "months": 241,
+     "pUp": 53.8,
+     "baseUp": 58.2,
+     "pBeat": 49.1,
+     "baseBeat": 50.3,
+     "beatCI": [
+      46.3,
+      52.0
+     ],
+     "edge": -1.2,
+     "t": -1.58,
+     "halves": {
+      "2005-2015": -0.6,
+      "2016-2026": -1.1
+     },
+     "medExcess": -0.24,
+     "reliable": false
+    },
+    "63": {
+     "n": 1157,
+     "months": 239,
+     "pUp": 63.4,
+     "baseUp": 63.0,
+     "pBeat": 50.2,
+     "baseBeat": 50.7,
+     "beatCI": [
+      47.3,
+      53.1
+     ],
+     "edge": -0.5,
+     "t": -0.46,
+     "halves": {
+      "2005-2015": 2.3,
+      "2016-2026": -1.3
+     },
+     "medExcess": 0.03,
+     "reliable": false
+    }
+   },
+   "below200": {
+    "5": {
+     "n": 1256,
+     "months": 195,
+     "pUp": 51.8,
+     "baseUp": 54.7,
+     "pBeat": 48.1,
+     "baseBeat": 50.3,
+     "beatCI": [
+      45.3,
+      50.9
+     ],
+     "edge": -2.2,
+     "t": -1.7,
+     "halves": {
+      "2005-2015": -2.9,
+      "2016-2026": -1.6
+     },
+     "medExcess": -0.25,
+     "reliable": false
+    },
+    "21": {
+     "n": 1249,
+     "months": 194,
+     "pUp": 57.6,
+     "baseUp": 58.8,
+     "pBeat": 50.6,
+     "baseBeat": 51.7,
+     "beatCI": [
+      47.8,
+      53.4
+     ],
+     "edge": -1.1,
+     "t": -0.34,
+     "halves": {
+      "2005-2015": -1.6,
+      "2016-2026": -1.0
+     },
+     "medExcess": 0.21,
+     "reliable": false
+    },
+    "63": {
+     "n": 1244,
+     "months": 192,
+     "pUp": 63.7,
+     "baseUp": 63.7,
+     "pBeat": 56.6,
+     "baseBeat": 52.7,
+     "beatCI": [
+      53.8,
+      59.3
+     ],
+     "edge": 3.9,
+     "t": 1.17,
+     "halves": {
+      "2005-2015": 3.0,
+      "2016-2026": 3.8
+     },
+     "medExcess": 2.49,
+     "reliable": false
+    }
+   }
+  },
+  "jump3": {
+   "all": {
+    "5": {
+     "n": 10135,
+     "months": 261,
+     "pUp": 53.9,
+     "baseUp": 54.4,
+     "pBeat": 50.2,
+     "baseBeat": 50.1,
+     "beatCI": [
+      49.2,
+      51.2
+     ],
+     "edge": 0.1,
+     "t": 0.2,
+     "halves": {
+      "2005-2015": -0.5,
+      "2016-2026": 0.6
+     },
+     "medExcess": 0.02,
+     "reliable": false
+    },
+    "21": {
+     "n": 10098,
+     "months": 260,
+     "pUp": 57.6,
+     "baseUp": 58.4,
+     "pBeat": 51.9,
+     "baseBeat": 50.8,
+     "beatCI": [
+      50.9,
+      52.9
+     ],
+     "edge": 1.1,
+     "t": 1.51,
+     "halves": {
+      "2005-2015": -0.2,
+      "2016-2026": 2.4
+     },
+     "medExcess": 0.3,
+     "reliable": false
+    },
+    "63": {
+     "n": 9999,
+     "months": 258,
+     "pUp": 61.8,
+     "baseUp": 63.2,
+     "pBeat": 52.2,
+     "baseBeat": 51.4,
+     "beatCI": [
+      51.2,
+      53.2
+     ],
+     "edge": 0.9,
+     "t": 1.65,
+     "halves": {
+      "2005-2015": 0.7,
+      "2016-2026": 1.0
+     },
+     "medExcess": 0.58,
+     "reliable": false
+    }
+   },
+   "above200": {
+    "5": {
+     "n": 5222,
+     "months": 261,
+     "pUp": 54.2,
+     "baseUp": 54.3,
+     "pBeat": 50.2,
+     "baseBeat": 50.1,
+     "beatCI": [
+      48.9,
+      51.6
+     ],
+     "edge": 0.2,
+     "t": 0.81,
+     "halves": {
+      "2005-2015": -0.7,
+      "2016-2026": 0.9
+     },
+     "medExcess": 0.02,
+     "reliable": false
+    },
+    "21": {
+     "n": 5198,
+     "months": 260,
+     "pUp": 57.4,
+     "baseUp": 58.2,
+     "pBeat": 52.1,
+     "baseBeat": 50.3,
+     "beatCI": [
+      50.8,
+      53.5
+     ],
+     "edge": 1.8,
+     "t": 2.26,
+     "halves": {
+      "2005-2015": 0.5,
+      "2016-2026": 3.1
+     },
+     "medExcess": 0.29,
+     "reliable": true
+    },
+    "63": {
+     "n": 5136,
+     "months": 258,
+     "pUp": 61.6,
+     "baseUp": 63.0,
+     "pBeat": 52.5,
+     "baseBeat": 50.7,
+     "beatCI": [
+      51.1,
+      53.9
+     ],
+     "edge": 1.8,
+     "t": 1.9,
+     "halves": {
+      "2005-2015": 2.1,
+      "2016-2026": 1.5
+     },
+     "medExcess": 0.63,
+     "reliable": false
+    }
+   },
+   "below200": {
+    "5": {
+     "n": 4913,
+     "months": 258,
+     "pUp": 53.7,
+     "baseUp": 54.7,
+     "pBeat": 50.2,
+     "baseBeat": 50.3,
+     "beatCI": [
+      48.8,
+      51.6
+     ],
+     "edge": -0.1,
+     "t": 1.18,
+     "halves": {
+      "2005-2015": -0.8,
+      "2016-2026": 0.5
+     },
+     "medExcess": 0.01,
+     "reliable": false
+    },
+    "21": {
+     "n": 4900,
+     "months": 257,
+     "pUp": 57.9,
+     "baseUp": 58.8,
+     "pBeat": 51.7,
+     "baseBeat": 51.7,
+     "beatCI": [
+      50.3,
+      53.1
+     ],
+     "edge": -0.0,
+     "t": -1.56,
+     "halves": {
+      "2005-2015": -1.6,
+      "2016-2026": 1.4
+     },
+     "medExcess": 0.31,
+     "reliable": false
+    },
+    "63": {
+     "n": 4863,
+     "months": 255,
+     "pUp": 62.0,
+     "baseUp": 63.7,
+     "pBeat": 51.9,
+     "baseBeat": 52.7,
+     "beatCI": [
+      50.5,
+      53.3
+     ],
+     "edge": -0.8,
+     "t": -1.87,
+     "halves": {
+      "2005-2015": -1.9,
+      "2016-2026": -0.1
+     },
+     "medExcess": 0.54,
+     "reliable": false
+    }
+   }
+  },
+  "jump6": {
+   "all": {
+    "5": {
+     "n": 2800,
+     "months": 260,
+     "pUp": 50.0,
+     "baseUp": 54.4,
+     "pBeat": 51.0,
+     "baseBeat": 50.1,
+     "beatCI": [
+      49.2,
+      52.9
+     ],
+     "edge": 0.9,
+     "t": 0.44,
+     "halves": {
+      "2005-2015": -0.3,
+      "2016-2026": 2.1
+     },
+     "medExcess": 0.1,
+     "reliable": false
+    },
+    "21": {
+     "n": 2778,
+     "months": 259,
+     "pUp": 56.6,
+     "baseUp": 58.4,
+     "pBeat": 53.4,
+     "baseBeat": 50.8,
+     "beatCI": [
+      51.5,
+      55.2
+     ],
+     "edge": 2.6,
+     "t": 2.48,
+     "halves": {
+      "2005-2015": -0.1,
+      "2016-2026": 5.4
+     },
+     "medExcess": 0.65,
+     "reliable": false
+    },
+    "63": {
+     "n": 2762,
+     "months": 257,
+     "pUp": 62.2,
+     "baseUp": 63.2,
+     "pBeat": 52.7,
+     "baseBeat": 51.4,
+     "beatCI": [
+      50.9,
+      54.6
+     ],
+     "edge": 1.4,
+     "t": 2.59,
+     "halves": {
+      "2005-2015": -0.4,
+      "2016-2026": 3.0
+     },
+     "medExcess": 1.04,
+     "reliable": false
+    }
+   },
+   "above200": {
+    "5": {
+     "n": 1142,
+     "months": 246,
+     "pUp": 50.4,
+     "baseUp": 54.3,
+     "pBeat": 48.1,
+     "baseBeat": 50.1,
+     "beatCI": [
+      45.2,
+      51.0
+     ],
+     "edge": -2.0,
+     "t": -0.17,
+     "halves": {
+      "2005-2015": -2.6,
+      "2016-2026": -1.5
+     },
+     "medExcess": -0.15,
+     "reliable": false
+    },
+    "21": {
+     "n": 1133,
+     "months": 245,
+     "pUp": 56.8,
+     "baseUp": 58.2,
+     "pBeat": 53.1,
+     "baseBeat": 50.3,
+     "beatCI": [
+      50.2,
+      56.0
+     ],
+     "edge": 2.8,
+     "t": 2.53,
+     "halves": {
+      "2005-2015": 0.9,
+      "2016-2026": 4.5
+     },
+     "medExcess": 0.64,
+     "reliable": true
+    },
+    "63": {
+     "n": 1122,
+     "months": 243,
+     "pUp": 63.2,
+     "baseUp": 63.0,
+     "pBeat": 52.8,
+     "baseBeat": 50.7,
+     "beatCI": [
+      49.8,
+      55.7
+     ],
+     "edge": 2.0,
+     "t": 2.08,
+     "halves": {
+      "2005-2015": -1.5,
+      "2016-2026": 5.3
+     },
+     "medExcess": 0.87,
+     "reliable": false
+    }
+   },
+   "below200": {
+    "5": {
+     "n": 1658,
+     "months": 214,
+     "pUp": 49.8,
+     "baseUp": 54.7,
+     "pBeat": 53.1,
+     "baseBeat": 50.3,
+     "beatCI": [
+      50.7,
+      55.5
+     ],
+     "edge": 2.8,
+     "t": 0.29,
+     "halves": {
+      "2005-2015": 0.3,
+      "2016-2026": 5.5
+     },
+     "medExcess": 0.37,
+     "reliable": false
+    },
+    "21": {
+     "n": 1645,
+     "months": 213,
+     "pUp": 56.4,
+     "baseUp": 58.8,
+     "pBeat": 53.6,
+     "baseBeat": 51.7,
+     "beatCI": [
+      51.1,
+      56.0
+     ],
+     "edge": 1.9,
+     "t": 1.24,
+     "halves": {
+      "2005-2015": -1.6,
+      "2016-2026": 5.8
+     },
+     "medExcess": 0.69,
+     "reliable": false
+    },
+    "63": {
+     "n": 1640,
+     "months": 211,
+     "pUp": 61.5,
+     "baseUp": 63.7,
+     "pBeat": 52.7,
+     "baseBeat": 52.7,
+     "beatCI": [
+      50.3,
+      55.1
+     ],
+     "edge": -0.0,
+     "t": 0.9,
+     "halves": {
+      "2005-2015": -1.4,
+      "2016-2026": 0.5
+     },
+     "medExcess": 1.19,
+     "reliable": false
+    }
+   }
+  },
+  "vol2dn": {
+   "all": {
+    "5": {
+     "n": 7109,
+     "months": 261,
+     "pUp": 54.2,
+     "baseUp": 54.4,
+     "pBeat": 49.6,
+     "baseBeat": 50.1,
+     "beatCI": [
+      48.5,
+      50.8
+     ],
+     "edge": -0.5,
+     "t": -0.86,
+     "halves": {
+      "2005-2015": -0.9,
+      "2016-2026": -0.2
+     },
+     "medExcess": -0.03,
+     "reliable": false
+    },
+    "21": {
+     "n": 7085,
+     "months": 260,
+     "pUp": 57.5,
+     "baseUp": 58.4,
+     "pBeat": 50.0,
+     "baseBeat": 50.8,
+     "beatCI": [
+      48.9,
+      51.2
+     ],
+     "edge": -0.7,
+     "t": -1.37,
+     "halves": {
+      "2005-2015": -0.5,
+      "2016-2026": -0.7
+     },
+     "medExcess": 0.01,
+     "reliable": false
+    },
+    "63": {
+     "n": 7012,
+     "months": 258,
+     "pUp": 64.9,
+     "baseUp": 63.2,
+     "pBeat": 51.0,
+     "baseBeat": 51.4,
+     "beatCI": [
+      49.9,
+      52.2
+     ],
+     "edge": -0.3,
+     "t": 0.42,
+     "halves": {
+      "2005-2015": 0.0,
+      "2016-2026": -0.3
+     },
+     "medExcess": 0.29,
+     "reliable": false
+    }
+   },
+   "above200": {
+    "5": {
+     "n": 4951,
+     "months": 258,
+     "pUp": 53.2,
+     "baseUp": 54.3,
+     "pBeat": 49.2,
+     "baseBeat": 50.1,
+     "beatCI": [
+      47.8,
+      50.6
+     ],
+     "edge": -0.9,
+     "t": -1.05,
+     "halves": {
+      "2005-2015": -1.2,
+      "2016-2026": -0.6
+     },
+     "medExcess": -0.05,
+     "reliable": false
+    },
+    "21": {
+     "n": 4936,
+     "months": 257,
+     "pUp": 56.8,
+     "baseUp": 58.2,
+     "pBeat": 50.0,
+     "baseBeat": 50.3,
+     "beatCI": [
+      48.6,
+      51.4
+     ],
+     "edge": -0.4,
+     "t": -0.52,
+     "halves": {
+      "2005-2015": 0.0,
+      "2016-2026": -0.5
+     },
+     "medExcess": -0.01,
+     "reliable": false
+    },
+    "63": {
+     "n": 4891,
+     "months": 255,
+     "pUp": 64.5,
+     "baseUp": 63.0,
+     "pBeat": 49.9,
+     "baseBeat": 50.7,
+     "beatCI": [
+      48.5,
+      51.3
+     ],
+     "edge": -0.9,
+     "t": -0.51,
+     "halves": {
+      "2005-2015": 0.2,
+      "2016-2026": -1.5
+     },
+     "medExcess": -0.06,
+     "reliable": false
+    }
+   },
+   "below200": {
+    "5": {
+     "n": 2158,
+     "months": 250,
+     "pUp": 56.7,
+     "baseUp": 54.7,
+     "pBeat": 50.6,
+     "baseBeat": 50.3,
+     "beatCI": [
+      48.4,
+      52.7
+     ],
+     "edge": 0.3,
+     "t": 0.34,
+     "halves": {
+      "2005-2015": -0.2,
+      "2016-2026": 0.7
+     },
+     "medExcess": 0.03,
+     "reliable": false
+    },
+    "21": {
+     "n": 2149,
+     "months": 249,
+     "pUp": 59.0,
+     "baseUp": 58.8,
+     "pBeat": 50.2,
+     "baseBeat": 51.7,
+     "beatCI": [
+      48.1,
+      52.3
+     ],
+     "edge": -1.5,
+     "t": -1.14,
+     "halves": {
+      "2005-2015": -1.8,
+      "2016-2026": -1.2
+     },
+     "medExcess": 0.04,
+     "reliable": false
+    },
+    "63": {
+     "n": 2121,
+     "months": 247,
+     "pUp": 65.9,
+     "baseUp": 63.7,
+     "pBeat": 53.7,
+     "baseBeat": 52.7,
+     "beatCI": [
+      51.6,
+      55.9
+     ],
+     "edge": 1.0,
+     "t": -0.32,
+     "halves": {
+      "2005-2015": -0.2,
+      "2016-2026": 2.3
+     },
+     "medExcess": 1.14,
+     "reliable": false
+    }
+   }
+  },
+  "vol2up": {
+   "all": {
+    "5": {
+     "n": 6727,
+     "months": 261,
+     "pUp": 52.6,
+     "baseUp": 54.4,
+     "pBeat": 50.2,
+     "baseBeat": 50.1,
+     "beatCI": [
+      49.0,
+      51.4
+     ],
+     "edge": 0.0,
+     "t": 0.31,
+     "halves": {
+      "2005-2015": 1.0,
+      "2016-2026": -0.8
+     },
+     "medExcess": 0.01,
+     "reliable": false
+    },
+    "21": {
+     "n": 6705,
+     "months": 260,
+     "pUp": 58.2,
+     "baseUp": 58.4,
+     "pBeat": 51.5,
+     "baseBeat": 50.8,
+     "beatCI": [
+      50.3,
+      52.7
+     ],
+     "edge": 0.7,
+     "t": 0.93,
+     "halves": {
+      "2005-2015": 0.8,
+      "2016-2026": 0.7
+     },
+     "medExcess": 0.2,
+     "reliable": false
+    },
+    "63": {
+     "n": 6653,
+     "months": 258,
+     "pUp": 63.1,
+     "baseUp": 63.2,
+     "pBeat": 51.6,
+     "baseBeat": 51.4,
+     "beatCI": [
+      50.4,
+      52.8
+     ],
+     "edge": 0.2,
+     "t": -0.07,
+     "halves": {
+      "2005-2015": 0.3,
+      "2016-2026": 0.3
+     },
+     "medExcess": 0.44,
+     "reliable": false
+    }
+   },
+   "above200": {
+    "5": {
+     "n": 4304,
+     "months": 258,
+     "pUp": 52.6,
+     "baseUp": 54.3,
+     "pBeat": 49.6,
+     "baseBeat": 50.1,
+     "beatCI": [
+      48.1,
+      51.1
+     ],
+     "edge": -0.5,
+     "t": 0.05,
+     "halves": {
+      "2005-2015": 0.1,
+      "2016-2026": -1.0
+     },
+     "medExcess": -0.03,
+     "reliable": false
+    },
+    "21": {
+     "n": 4289,
+     "months": 257,
+     "pUp": 57.7,
+     "baseUp": 58.2,
+     "pBeat": 50.2,
+     "baseBeat": 50.3,
+     "beatCI": [
+      48.7,
+      51.7
+     ],
+     "edge": -0.1,
+     "t": -0.08,
+     "halves": {
+      "2005-2015": 0.3,
+      "2016-2026": -0.5
+     },
+     "medExcess": 0.02,
+     "reliable": false
+    },
+    "63": {
+     "n": 4261,
+     "months": 255,
+     "pUp": 62.3,
+     "baseUp": 63.0,
+     "pBeat": 50.6,
+     "baseBeat": 50.7,
+     "beatCI": [
+      49.1,
+      52.1
+     ],
+     "edge": -0.1,
+     "t": -0.86,
+     "halves": {
+      "2005-2015": 0.3,
+      "2016-2026": -0.3
+     },
+     "medExcess": 0.13,
+     "reliable": false
+    }
+   },
+   "below200": {
+    "5": {
+     "n": 2423,
+     "months": 255,
+     "pUp": 52.6,
+     "baseUp": 54.7,
+     "pBeat": 51.2,
+     "baseBeat": 50.3,
+     "beatCI": [
+      49.2,
+      53.2
+     ],
+     "edge": 0.9,
+     "t": -1.16,
+     "halves": {
+      "2005-2015": 2.4,
+      "2016-2026": -0.4
+     },
+     "medExcess": 0.08,
+     "reliable": false
+    },
+    "21": {
+     "n": 2416,
+     "months": 254,
+     "pUp": 59.1,
+     "baseUp": 58.8,
+     "pBeat": 53.8,
+     "baseBeat": 51.7,
+     "beatCI": [
+      51.8,
+      55.8
+     ],
+     "edge": 2.1,
+     "t": 0.66,
+     "halves": {
+      "2005-2015": 1.5,
+      "2016-2026": 2.8
+     },
+     "medExcess": 0.61,
+     "reliable": false
+    },
+    "63": {
+     "n": 2392,
+     "months": 252,
+     "pUp": 64.5,
+     "baseUp": 63.7,
+     "pBeat": 53.2,
+     "baseBeat": 52.7,
+     "beatCI": [
+      51.2,
+      55.2
+     ],
+     "edge": 0.5,
+     "t": 0.07,
+     "halves": {
+      "2005-2015": -0.3,
+      "2016-2026": 1.2
+     },
+     "medExcess": 0.9,
+     "reliable": false
+    }
+   }
+  }
+ },
+ "notes": [
+  "Survivorship: today's large companies only.",
+  "Non-blind: rules chosen after seeing history.",
+  "reliable = |t|>=2 (month-clustered) and both halves (2005-15, 2016-26) agree in sign."
+ ]
+}
