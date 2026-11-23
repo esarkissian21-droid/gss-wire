@@ -1,0 +1,137 @@
+[
+ {
+  "label": "Weekly 2012-01-06 to 2026-11-21",
+  "years": 14.9,
+  "original": 1.617,
+  "originalTrades": 11,
+  "lines": {
+   "beatGold": 1.0,
+   "median": 1.625,
+   "p5": 1.474,
+   "p95": 1.803,
+   "medianPerYear": 3.31
+  },
+  "noise": {
+   "beatGold": 1.0,
+   "median": 1.631,
+   "p5": 1.604,
+   "p95": 1.667,
+   "medianPerYear": 3.34
+  },
+  "both": {
+   "beatGold": 1.0,
+   "median": 1.655,
+   "p5": 1.487,
+   "p95": 1.854,
+   "medianPerYear": 3.44
+  }
+ },
+ {
+  "label": "Monthly 1972-01 to 2026-10",
+  "years": 54.8,
+  "original": 2.369,
+  "originalTrades": 14,
+  "lines": {
+   "beatGold": 1.0,
+   "median": 2.712,
+   "p5": 2.213,
+   "p95": 3.503,
+   "medianPerYear": 1.84
+  },
+  "noise": {
+   "beatGold": 1.0,
+   "median": 2.442,
+   "p5": 2.2,
+   "p95": 2.745,
+   "medianPerYear": 1.64
+  },
+  "both": {
+   "beatGold": 1.0,
+   "median": 2.74,
+   "p5": 2.248,
+   "p95": 3.486,
+   "medianPerYear": 1.86
+  }
+ },
+ {
+  "label": "Monthly 1972-01 to 1991-12",
+  "years": 20,
+  "original": 0.926,
+  "originalTrades": 3,
+  "lines": {
+   "beatGold": 0.0,
+   "median": 0.945,
+   "p5": 0.911,
+   "p95": 0.973,
+   "medianPerYear": -0.28
+  },
+  "noise": {
+   "beatGold": 0.0,
+   "median": 0.943,
+   "p5": 0.918,
+   "p95": 0.967,
+   "medianPerYear": -0.29
+  },
+  "both": {
+   "beatGold": 0.028,
+   "median": 0.948,
+   "p5": 0.909,
+   "p95": 0.991,
+   "medianPerYear": -0.27
+  }
+ },
+ {
+  "label": "Monthly 1992-01 to 2011-12",
+  "years": 20,
+  "original": 1.436,
+  "originalTrades": 6,
+  "lines": {
+   "beatGold": 1.0,
+   "median": 1.415,
+   "p5": 1.251,
+   "p95": 2.072,
+   "medianPerYear": 1.75
+  },
+  "noise": {
+   "beatGold": 1.0,
+   "median": 1.423,
+   "p5": 1.34,
+   "p95": 1.466,
+   "medianPerYear": 1.78
+  },
+  "both": {
+   "beatGold": 1.0,
+   "median": 1.449,
+   "p5": 1.264,
+   "p95": 2.076,
+   "medianPerYear": 1.87
+  }
+ },
+ {
+  "label": "Monthly 2012-01 to 2026-10",
+  "years": 14.8,
+  "original": 1.692,
+  "originalTrades": 8,
+  "lines": {
+   "beatGold": 1.0,
+   "median": 1.819,
+   "p5": 1.59,
+   "p95": 2.13,
+   "medianPerYear": 4.13
+  },
+  "noise": {
+   "beatGold": 1.0,
+   "median": 1.707,
+   "p5": 1.626,
+   "p95": 1.952,
+   "medianPerYear": 3.68
+  },
+  "both": {
+   "beatGold": 1.0,
+   "median": 1.817,
+   "p5": 1.586,
+   "p95": 2.127,
+   "medianPerYear": 4.12
+  }
+ }
+]
