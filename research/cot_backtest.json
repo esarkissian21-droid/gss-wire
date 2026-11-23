@@ -1,0 +1,150 @@
+{
+ "generatedAt": "2026-11-23T02:14:38+00:00",
+ "weeks": {
+  "gold": 1067,
+  "silver": 1067
+ },
+ "first": {
+  "gold": "2006-06-13",
+  "silver": "2006-06-13"
+ },
+ "last": {
+  "gold": "2026-11-17",
+  "silver": "2026-11-17"
+ },
+ "metals": {
+  "gold": {
+   "current": {
+    "date": "2026-11-17",
+    "netPctOI": 25.2,
+    "rank3y": 0.25
+   },
+   "crowdedLong": {
+    "4": {
+     "n": 0
+    },
+    "13": {
+     "n": 0
+    },
+    "26": {
+     "n": 0
+    },
+    "episodes": 8
+   },
+   "crowdedShort": {
+    "4": {
+     "n": 0
+    },
+    "13": {
+     "n": 0
+    },
+    "26": {
+     "n": 0
+    },
+    "episodes": 8
+   },
+   "all": {
+    "4": {
+     "n": 0
+    },
+    "13": {
+     "n": 0
+    },
+    "26": {
+     "n": 0
+    },
+    "episodes": 911
+   },
+   "followsPrice": {
+    "corrWithPrior4wReturn": null,
+    "corrWithNext4wReturn": null,
+    "n": 0
+   }
+  },
+  "silver": {
+   "current": {
+    "date": "2026-11-17",
+    "netPctOI": 1.0,
+    "rank3y": 0.03
+   },
+   "crowdedLong": {
+    "4": {
+     "n": 0
+    },
+    "13": {
+     "n": 0
+    },
+    "26": {
+     "n": 0
+    },
+    "episodes": 13
+   },
+   "crowdedShort": {
+    "4": {
+     "n": 0
+    },
+    "13": {
+     "n": 0
+    },
+    "26": {
+     "n": 0
+    },
+    "episodes": 14
+   },
+   "all": {
+    "4": {
+     "n": 0
+    },
+    "13": {
+     "n": 0
+    },
+    "26": {
+     "n": 0
+    },
+    "episodes": 911
+   },
+   "followsPrice": {
+    "corrWithPrior4wReturn": null,
+    "corrWithNext4wReturn": null,
+    "n": 0
+   }
+  }
+ },
+ "ratio": {
+  "silverMoreCrowdedLong": {
+   "4": {
+    "n": 0
+   },
+   "13": {
+    "n": 0
+   },
+   "26": {
+    "n": 0
+   },
+   "episodes": 4
+  },
+  "silverMoreCrowdedShort": {
+   "4": {
+    "n": 0
+   },
+   "13": {
+    "n": 0
+   },
+   "26": {
+    "n": 0
+   },
+   "episodes": 4
+  },
+  "all": {
+   "4": {
+    "n": 0
+   },
+   "13": {
+    "n": 0
+   },
+   "26": {
+    "n": 0
+   }
+  }
+ }
+}
