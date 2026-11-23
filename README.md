@@ -18,8 +18,9 @@ Every item seen is appended to `wire_log.jsonl`, which Claude's daily analyzer r
 | `SEC_CONTACT` | your name and email, e.g. `Jane Doe jane@example.com`. The SEC asks automated tools to identify themselves. |
 
 ## Insider buys
-The wire opens every new Form 4 for your companies. Open-market purchases (code P) of $10k or more ping you;
-$100k+, a CEO/CFO/president/chair buyer, or two different insiders buying within 30 days raise it to high priority.
+The wire opens every new Form 4 for your companies. Open-market purchases (code P) of $10k or more ping you
+at normal priority. Clusters (several insiders within 30 days) are noted in the alert but not escalated: in a
+backtest of every Form 4 from 2006 to 2025 (research/insider_backtest.py) they did no better than single buys.
 Pre-planned 10b5-1 buys are marked as less informative. Sales, grants and option exercises are logged only.
 TSM, PDD and AEM are foreign filers and don't file Form 4s.
 
