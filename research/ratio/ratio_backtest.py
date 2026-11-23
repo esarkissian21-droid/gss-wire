@@ -15,7 +15,7 @@ import sys
 import numpy as np
 import pandas as pd
 
-D = pd.read_csv("data/merged_weekly.csv", parse_dates=["date"]).sort_values("date").reset_index(drop=True)
+D = pd.read_csv(__import__("os").path.join(__import__("os").path.dirname(__import__("os").path.abspath(__file__)), "merged_weekly.csv"), parse_dates=["date"]).sort_values("date").reset_index(drop=True)
 D["ratio"] = D.gold / D.silver
 
 COSTS = {"etf": 0.0025, "physical": 0.07}  # cost per conversion, each direction
