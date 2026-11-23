@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import wire  # noqa: E402
 
 CFG = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "config.json")))
+CFG["watch"] = {"enabled": False}  # the market watch has its own tests (test_market_watch.py)
 UTC = dt.timezone.utc
 
 

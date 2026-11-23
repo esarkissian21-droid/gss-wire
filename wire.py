@@ -25,6 +25,8 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
+import market_watch
+
 try:
     from zoneinfo import ZoneInfo
 except ImportError:  # pragma: no cover
@@ -460,6 +462,27 @@ def run(cfg, state, fetch, push, ts=None, sec_contact=None, sleep=time.sleep):
         entry = {k: it.get(k) for k in ("id", "date", "kind", "asset", "source", "title", "url", "priority", "form", "items")}
         entry.update(seenAt=stamp, pushed=pushed, note=reason)
         log_lines.append({k: v for k, v in entry.items() if v not in (None, [], "")})
+
+    # Market-hours watch (price moves, volume, trend, Grade A changes) - see market_watch.py
+    if (cfg.get("watch") or {}).get("enabled") and not first:
+        day_old = [it for it in collected if it.get("when") and (ts - it["when"]).total_seconds() < 86400]
+
+        def extra_why(sym, name):
+            q = f'"{name}"' if name else f'"{sym}" stock'
+            got = news_items(sym, fetch(news_url(q), GENERIC_UA), cfg)
+            return [g for g in got if g.get("when") and (ts - g["when"]).total_seconds() < 86400]
+        try:
+            w_pushes, w_logs = market_watch.run_watch(cfg, state, fetch, ts, day_old, extra_why)
+            state["errors"]["watch"] = 0
+        except Exception as e:
+            w_pushes, w_logs = [], []
+            state["errors"]["watch"] = state["errors"].get("watch", 0) + 1
+            if state["errors"]["watch"] == 6:
+                problems.append(f"market watch: {type(e).__name__}: {e}")
+        for title, msg, prio, tags, click in w_pushes:
+            push(title, msg, prio, tags, click)
+            pushes.append({"title": title, "kind": "watch"})
+        log_lines += w_logs
 
     for src in sorted(fetched_ok):
         if src not in state["seeded"]:

@@ -59,6 +59,36 @@
    "name": "PulteGroup",
    "cik": "0000822416",
    "news_query": "\"PulteGroup\""
+  },
+  {
+   "ticker": "CBOE",
+   "name": "Cboe Global Markets",
+   "cik": "0001374310",
+   "news_query": "\"Cboe Global Markets\" OR \"Cboe\""
+  },
+  {
+   "ticker": "SSD",
+   "name": "Simpson Manufacturing",
+   "cik": "0000920371",
+   "news_query": "\"Simpson Manufacturing\""
+  },
+  {
+   "ticker": "TMUS",
+   "name": "T-Mobile US",
+   "cik": "0001283699",
+   "news_query": "\"T-Mobile US\" OR \"T-Mobile\""
+  },
+  {
+   "ticker": "ADBE",
+   "name": "Adobe",
+   "cik": "0000796343",
+   "news_query": "\"Adobe Inc\" OR \"Adobe\""
+  },
+  {
+   "ticker": "MATX",
+   "name": "Matson",
+   "cik": "0000003453",
+   "news_query": "\"Matson Inc\" OR \"Matson shipping\""
   }
  ],
  "topics": [
@@ -121,5 +151,35 @@
    "date": "2027-01-01",
    "what": "HF Sinclair (DINO) CEO/CFO change takes effect"
   }
- ]
+ ],
+ "shortlist": {
+  "TRV": {
+   "tier": "A",
+   "sell": "combined ratio above 95% two quarters in a row with no one-off catastrophe, or P/E above ~16."
+  },
+  "CBOE": {
+   "tier": "A",
+   "sell": "organic net revenue growth below high single digits two quarters running, or regulators restrict zero-day options."
+  },
+  "SSD": {
+   "tier": "A",
+   "sell": "operating margin guidance below 18%, or sales down year over year two quarters while housing starts are flat."
+  },
+  "TMUS": {
+   "tier": "B",
+   "sell": "postpaid account adds turn negative or guidance is cut. Buy only after churn stabilizes and price is back above its 200-day."
+  },
+  "ADBE": {
+   "tier": "B",
+   "sell": "revenue growth below 8% or ARR guidance cut. Buy only if growth holds 10%+ and the stock rises after earnings."
+  },
+  "MATX": {
+   "tier": "C",
+   "sell": "management guides China rates down, or P/E reaches 15. Buy only after a 25%+ pullback."
+  }
+ },
+ "watch": {
+  "enabled": true,
+  "note": "Market-hours watch: see market_watch.py. Shortlist from the January 2027 Stock Shortlist doc (2026-11-22)."
+ }
 }

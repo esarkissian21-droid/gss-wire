@@ -59,6 +59,52 @@ SCREENS = {
 }
 MIN_REVENUE = 500e6  # skip micro-caps: TTM revenue of at least $500M
 
+# Grade A (frozen 2026-11-22): passes Quality, sensibly priced, trend up but not chased, no one-off profits.
+GRADE_A_VERSION = "v1-2026-11-22"
+GRADE_A_RULES = ["passes the Quality screen", "P/E above 0 and at most 25", "debt/equity known and under 0.5",
+                 "price above its 200-day average and up over 52 weeks", "up no more than 60% over 52 weeks",
+                 "no red flags (one-off profits)", "TTM revenue at least $500M"]
+
+
+def grade_a(m):
+    """-> (is_grade_a, reasons it fails). Unknown data counts as a fail."""
+    why = []
+    if (m.get("screens") or {}).get("Quality") != "pass":
+        why.append("Quality screen not passed")
+    pe = m.get("pe")
+    if pe is None or not 0 < pe <= 25:
+        why.append(f"P/E {pe:.1f}" if isinstance(pe, (int, float)) else "P/E unknown")
+    if m.get("de") is None or m["de"] >= 0.5:
+        why.append("debt/equity unknown" if m.get("de") is None else f"debt/equity {m['de']:.2f}")
+    if not m.get("momentum"):
+        why.append("price trend not up")
+    if m.get("chg52") is None or m["chg52"] > 60:
+        why.append("52-week change unknown" if m.get("chg52") is None else f"up {m['chg52']:.0f}% in a year (chasing)")
+    if m.get("oneOff") or m.get("flags"):
+        why.append("red flags: " + ", ".join(m.get("flags") or ["one-off"]))
+    if (m.get("revenue") or 0) < MIN_REVENUE:
+        why.append("revenue under $500M")
+    return not why, why
+
+
+def grade_a_report(rows, prev, today):
+    """Build the Grade A list and what changed since the previous list (prev = last grade_a.json or None)."""
+    keep = ("name", "price", "pe", "roe", "margin", "de", "chg52", "ma200", "mktCap", "cik", "period")
+    now = {}
+    for t, m in rows.items():
+        ok, _ = grade_a(m)
+        if ok:
+            now[t] = {k: m.get(k) for k in keep}
+    before = set((prev or {}).get("list", {}))
+    removed = {}
+    for t in sorted(before - set(now)):
+        _, why = grade_a(rows[t]) if t in rows else (False, ["no longer in the data"])
+        removed[t] = why
+    return {"asOf": today.isoformat(), "version": GRADE_A_VERSION, "rules": GRADE_A_RULES,
+            "list": dict(sorted(now.items(), key=lambda kv: -(kv[1].get("mktCap") or 0))),
+            "added": sorted(set(now) - before) if prev else [], "removed": removed if prev else {},
+            "previousAsOf": (prev or {}).get("asOf")}
+
 
 # ---------------------------------------------------------------- periods
 def quarter_periods(today):
@@ -430,6 +476,12 @@ def main():
     print("strategies:", json.dumps({k: [p["t"] for p in v["picks"]] for k, v in res["strategies"].items()}),
           "new ledger entries:", res.pop("_newEntries"), "outcomes filled:", res.pop("_scored"))
     os.makedirs(out_dir, exist_ok=True)
+    ga_path = os.path.join(out_dir, "grade_a.json")
+    prev = json.load(open(ga_path)) if os.path.exists(ga_path) else None
+    ga = grade_a_report(res["rows"], prev, dt.date.fromisoformat(res["asOf"]))
+    with open(ga_path, "w") as f:
+        json.dump(ga, f, indent=0, sort_keys=True)
+    print(f"Grade A: {len(ga['list'])} -> {', '.join(ga['list'])}; added {ga['added']}; removed {list(ga['removed'])}")
     for name in ("latest.json", f"{res['asOf']}.json"):
         with open(os.path.join(out_dir, name), "w") as f:
             json.dump(res, f, indent=0, sort_keys=True, default=str)

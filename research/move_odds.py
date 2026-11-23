@@ -171,7 +171,7 @@ def summarize(evts, base_by_trend, trend=None):
             "pBeat": round(100 * beat / len(rs), 1), "baseBeat": round(b_beat, 1),
             "beatCI": wilson(beat, len(rs)), "edge": edge, "t": t, "halves": halves,
             "medExcess": round(100 * st.median(r[2] for r in rs), 2),
-            "reliable": bool(t is not None and abs(t) >= 2 and same_way),
+            "reliable": bool(t is not None and abs(t) >= 2 and (t > 0) == (edge > 0) and same_way),
         }
     return out
 

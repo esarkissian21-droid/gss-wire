@@ -40,3 +40,16 @@ Edit `config.json`: add a company with its ticker, name, 10-digit SEC CIK and a 
 ## Turning it off
 
 Actions tab → **wire** → **⋯** → **Disable workflow**.
+
+## Market-hours watch (added Nov 22 2026)
+
+Runs inside every wire pass (every 20 minutes on weekdays) while the US market is open. It follows your
+companies, the shortlist (`config.json` → `shortlist`) and the Grade A list (`history/screens/grade_a.json`,
+rebuilt each Sunday by the screens job). A stock triggers an alert on a move of 3%, 6%, 9%..., volume at 2× a
+normal day's pace, or (shortlist/Grade A) a cross of its 200-day average. Each alert gives what happened, why
+(filings and trusted headlines from the last day), the odds from `research/move_odds.json`, and what your rules
+say. Every alert with odds is logged in `state.json` → `watch.preds` and scored ~3 months later.
+Turn it off with `"watch": {"enabled": false}` in config.json.
+
+Grade A rules (frozen, v1-2026-11-22): passes Quality; P/E 0-25; debt/equity known and under 0.5; price above
+its 200-day average and up over 52 weeks, but up no more than 60%; no one-off-profit flags; revenue at least $500M.
