@@ -189,3 +189,18 @@ class StrategyTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class WeeklyCadenceTests(unittest.TestCase):
+    def test_strategy_logs_once_a_week_even_if_run_daily(self):
+        import datetime as dt
+        import strategies_engine as se
+        spec = {"strategies": [{"id": "s1", "startDate": "2026-11-29", "rank": [], "top": 1,
+                                "filters": [], "maxPerSector": 3, "horizonsWeeks": [13]}]}
+        led = []
+        for day in range(30, 37):  # Nov 30 .. Dec 6 daily
+            d = dt.date(2026, 11, day) if day <= 30 else dt.date(2026, 12, day - 30)
+            led, new, _ = se.log_and_score(spec, {}, d, {}, {}, led)
+        self.assertEqual([e["date"] for e in led], ["2026-11-30"])
+        led, new, _ = se.log_and_score(spec, {}, dt.date(2026, 12, 7), {}, {}, led)
+        self.assertEqual([e["date"] for e in led], ["2026-11-30", "2026-12-07"])

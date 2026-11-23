@@ -118,7 +118,8 @@ def log_and_score(spec, rows, today, histories, spy_hist, ledger):
     for s in spec["strategies"]:
         if today < dt.date.fromisoformat(s["startDate"]):
             continue
-        if any(r["strategy"] == s["id"] and r["date"] == today.isoformat() for r in ledger):
+        # weekly cadence: the screens job may run daily in earnings season, but strategies log once a week
+        if any(r["strategy"] == s["id"] and 0 <= (today - dt.date.fromisoformat(r["date"])).days < 7 for r in ledger):
             continue
         picks = pick(s, rows)
         bench = s.get("benchmark", "SPY")
