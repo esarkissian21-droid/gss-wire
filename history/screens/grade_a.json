@@ -1,6 +1,6 @@
 {
 "added": [],
-"asOf": "2026-11-22",
+"asOf": "2026-11-23",
 "list": {
 "ACGL": {
 "chg52": 18.44,
@@ -237,7 +237,7 @@
 "roe": 40.76
 }
 },
-"previousAsOf": null,
+"previousAsOf": "2026-11-22",
 "removed": {},
 "rules": [
 "passes the Quality screen",
