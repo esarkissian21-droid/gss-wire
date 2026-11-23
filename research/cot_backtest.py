@@ -71,7 +71,7 @@ def cot_rows():
 def weekly_px(sym):
     j = None
     for host in ("query1", "query2"):
-        url = (f"https://{host}.finance.yahoo.com/v8/finance/chart/{urllib.request.quote(sym)}?period1=1136073600"
+        url = (f"https://{host}.finance.yahoo.com/v8/finance/chart/{urllib.request.quote(sym)}?period1=1072915200"
                f"&period2={int(time.time())}&interval=1wk")
         try:
             j = json.loads(get(url, 2))["chart"]["result"][0]
@@ -125,14 +125,17 @@ def episodes(dates, gap_weeks=13):
 def main():
     cot = cot_rows()
     px = {"gold": weekly_px("GC=F"), "silver": weekly_px("SI=F")}
-    if not px["gold"] or not px["silver"]:  # fall back to the ETFs (track the metal less fees)
-        px = {"gold": px["gold"] or weekly_px("GLD"), "silver": px["silver"] or weekly_px("SLV")}
+    if len(px["gold"]) < 300 or len(px["silver"]) < 300:  # fall back to the ETFs (track the metal less fees)
+        px = {"gold": weekly_px("GLD"), "silver": weekly_px("SLV")}
+        out_src = "GLD/SLV ETFs"
+    else:
+        out_src = "GC=F/SI=F futures"
     print("price weeks:", {k: len(v) for k, v in px.items()}, flush=True)
     pm = {k: dict(v) for k, v in px.items()}
     ratio = sorted((d, pm["gold"][d] / pm["silver"][d]) for d in pm["gold"] if d in pm["silver"])
     out = {"generatedAt": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
            "weeks": {k: len(v) for k, v in cot.items()}, "first": {k: v[0][0].isoformat() for k, v in cot.items()},
-           "last": {k: v[-1][0].isoformat() for k, v in cot.items()}, "metals": {}}
+           "last": {k: v[-1][0].isoformat() for k, v in cot.items()}, "metals": {}, "prices": out_src}
     pub = lambda d: d + dt.timedelta(days=3)  # Tuesday data, Friday release
     ranks = {}
     for m, s in cot.items():
