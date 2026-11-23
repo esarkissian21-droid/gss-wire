@@ -268,7 +268,7 @@ class InsiderTests(unittest.TestCase):
         line = self.file("0001127602-26-000001", form4("DOE JANE", "President and CEO", "P", 2000, 250.0))
         self.assertTrue(line["pushed"])
         p = self.pushes[0]
-        self.assertEqual(p["prio"], 4)
+        self.assertEqual(p["prio"], 3)  # big CEO buys aren't escalated: no better than other buys in the backtest
         self.assertIn("moneybag", p["tags"])
         self.assertIn("Doe Jane (President and CEO) bought 2,000 shares", p["msg"])
         self.assertIn("$500k", p["msg"])
@@ -286,7 +286,7 @@ class InsiderTests(unittest.TestCase):
         self.file("0001127602-26-000004", form4("LEE ANN", "", "P", 300, 250.0, director=True))
         self.assertEqual(self.pushes[0]["prio"], 3)
         self.file("0001127602-26-000005", form4("KIM MAX", "", "P", 200, 251.0, director=True), minutes=10)
-        self.assertEqual(self.pushes[1]["prio"], 4)
+        self.assertEqual(self.pushes[1]["prio"], 3)  # clusters noted, not escalated
         self.assertIn("2 insiders buying within 30 days", self.pushes[1]["msg"])
 
     def test_small_and_planned_buys(self):

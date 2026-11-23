@@ -263,11 +263,11 @@ def describe_form4(ticker, f, cluster_n):
         avg = val / sh if sh else 0
         title = f"{ticker} insider buy: {f['owner'].title()} ({f['role']}) bought {sh:,.0f} shares at about ${avg:,.2f} ({money(val)})"
         notes = []
+        # Every open-market buy of $10k+ gets the same normal priority. Backtest of all Form 4s 2006-2025
+        # (research/insider_backtest.py): clusters (2-3+ insiders in a week or month) and $100k+ CEO/CFO buys
+        # did no better than single buys, so they are noted but not escalated.
         prio = 3 if val >= 10_000 else 0
-        if prio and (val >= 100_000 or f["ceoish"]):
-            prio = 4
-        if prio and cluster_n >= 1:
-            prio = 4
+        if cluster_n >= 1:
             notes.append(f"{cluster_n + 1} insiders buying within 30 days")
         if f["planned"]:
             prio = min(prio, 3)
