@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-23T02:14:38+00:00",
+ "generatedAt": "2026-11-23T02:16:37+00:00",
  "weeks": {
   "gold": 1067,
   "silver": 1067
@@ -21,44 +21,71 @@
    },
    "crowdedLong": {
     "4": {
-     "n": 0
+     "n": 8,
+     "mean": -0.0041,
+     "median": 0.0086,
+     "up": 0.625
     },
     "13": {
-     "n": 0
+     "n": 8,
+     "mean": 0.0144,
+     "median": -0.0051,
+     "up": 0.375
     },
     "26": {
-     "n": 0
+     "n": 8,
+     "mean": 0.0452,
+     "median": 0.0312,
+     "up": 0.5
     },
     "episodes": 8
    },
    "crowdedShort": {
     "4": {
-     "n": 0
+     "n": 8,
+     "mean": -0.0129,
+     "median": -0.0143,
+     "up": 0.375
     },
     "13": {
-     "n": 0
+     "n": 8,
+     "mean": -0.0309,
+     "median": -0.0287,
+     "up": 0.25
     },
     "26": {
-     "n": 0
+     "n": 8,
+     "mean": -0.0259,
+     "median": -0.0075,
+     "up": 0.375
     },
     "episodes": 8
    },
    "all": {
     "4": {
-     "n": 0
+     "n": 907,
+     "mean": 0.0073,
+     "median": 0.0056,
+     "up": 0.555
     },
     "13": {
-     "n": 0
+     "n": 898,
+     "mean": 0.0245,
+     "median": 0.0217,
+     "up": 0.61
     },
     "26": {
-     "n": 0
+     "n": 885,
+     "mean": 0.0489,
+     "median": 0.0457,
+     "up": 0.653
     },
     "episodes": 911
    },
    "followsPrice": {
-    "corrWithPrior4wReturn": null,
-    "corrWithNext4wReturn": null,
-    "n": 0
+    "corrWithPrior4wReturn": 0.532,
+    "corrWithNext4wReturn": 0.036,
+    "n": 1059
    }
   },
   "silver": {
@@ -69,81 +96,136 @@
    },
    "crowdedLong": {
     "4": {
-     "n": 0
+     "n": 13,
+     "mean": -0.025,
+     "median": -0.0151,
+     "up": 0.308
     },
     "13": {
-     "n": 0
+     "n": 13,
+     "mean": -0.0232,
+     "median": -0.0077,
+     "up": 0.462
     },
     "26": {
-     "n": 0
+     "n": 13,
+     "mean": -0.0011,
+     "median": -0.0324,
+     "up": 0.462
     },
     "episodes": 13
    },
    "crowdedShort": {
     "4": {
-     "n": 0
+     "n": 14,
+     "mean": -0.0165,
+     "median": -0.0101,
+     "up": 0.5
     },
     "13": {
-     "n": 0
+     "n": 13,
+     "mean": 0.0293,
+     "median": 0.0137,
+     "up": 0.538
     },
     "26": {
-     "n": 0
+     "n": 13,
+     "mean": 0.0057,
+     "median": -0.0096,
+     "up": 0.462
     },
     "episodes": 14
    },
    "all": {
     "4": {
-     "n": 0
+     "n": 907,
+     "mean": 0.0095,
+     "median": 0.0037,
+     "up": 0.518
     },
     "13": {
-     "n": 0
+     "n": 898,
+     "mean": 0.0325,
+     "median": 0.0124,
+     "up": 0.535
     },
     "26": {
-     "n": 0
+     "n": 885,
+     "mean": 0.0669,
+     "median": 0.0138,
+     "up": 0.53
     },
     "episodes": 911
    },
    "followsPrice": {
-    "corrWithPrior4wReturn": null,
-    "corrWithNext4wReturn": null,
-    "n": 0
+    "corrWithPrior4wReturn": 0.473,
+    "corrWithNext4wReturn": 0.024,
+    "n": 1059
    }
   }
  },
+ "prices": "GC=F/SI=F futures",
  "ratio": {
   "silverMoreCrowdedLong": {
    "4": {
-    "n": 0
+    "n": 4,
+    "mean": -0.0196,
+    "median": -0.0159,
+    "up": 0.0
    },
    "13": {
-    "n": 0
+    "n": 4,
+    "mean": 0.0095,
+    "median": 0.037,
+    "up": 0.75
    },
    "26": {
-    "n": 0
+    "n": 4,
+    "mean": 0.018,
+    "median": -0.0057,
+    "up": 0.25
    },
    "episodes": 4
   },
   "silverMoreCrowdedShort": {
    "4": {
-    "n": 0
+    "n": 4,
+    "mean": -0.035,
+    "median": -0.0338,
+    "up": 0.25
    },
    "13": {
-    "n": 0
+    "n": 4,
+    "mean": -0.0308,
+    "median": -0.019,
+    "up": 0.25
    },
    "26": {
-    "n": 0
+    "n": 4,
+    "mean": 0.0497,
+    "median": -0.0008,
+    "up": 0.5
    },
    "episodes": 4
   },
   "all": {
    "4": {
-    "n": 0
+    "n": 907,
+    "mean": 0.0026,
+    "median": 0.0022,
+    "up": 0.526
    },
    "13": {
-    "n": 0
+    "n": 898,
+    "mean": 0.0072,
+    "median": 0.016,
+    "up": 0.568
    },
    "26": {
-    "n": 0
+    "n": 885,
+    "mean": 0.0135,
+    "median": 0.026,
+    "up": 0.605
    }
   }
  }
