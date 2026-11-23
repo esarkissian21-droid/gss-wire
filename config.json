@@ -181,5 +181,13 @@
  "watch": {
   "enabled": true,
   "note": "Market-hours watch: see market_watch.py. Shortlist from the January 2027 Stock Shortlist doc (2026-11-22)."
- }
+ },
+ "snapshot_extra": [
+  "PGR",
+  "TRV",
+  "WRB",
+  "PHM",
+  "NEM",
+  "IWM"
+ ]
 }

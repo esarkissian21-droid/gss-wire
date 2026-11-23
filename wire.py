@@ -463,6 +463,16 @@ def run(cfg, state, fetch, push, ts=None, sec_contact=None, sleep=time.sleep):
         entry.update(seenAt=stamp, pushed=pushed, note=reason)
         log_lines.append({k: v for k, v in entry.items() if v not in (None, [], "")})
 
+    # Price snapshot for the analyzer (every pass, day and night)
+    if (cfg.get("watch") or {}).get("enabled"):
+        try:
+            got, of = market_watch.snapshot(cfg, state, fetch, ts)
+            state["errors"]["quotes"] = 0 if got >= of // 2 else state["errors"].get("quotes", 0) + 1
+        except Exception:
+            state["errors"]["quotes"] = state["errors"].get("quotes", 0) + 1
+        if state["errors"].get("quotes") == 6:
+            problems.append("price snapshot: Yahoo quotes failing for 6 runs in a row")
+
     # Market-hours watch (price moves, volume, trend, Grade A changes) - see market_watch.py
     if (cfg.get("watch") or {}).get("enabled") and not first:
         day_old = [it for it in collected if it.get("when") and (ts - it["when"]).total_seconds() < 86400]

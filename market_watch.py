@@ -293,3 +293,70 @@ def run_watch(cfg, state, fetch, ts, recent_items, extra_why=None, workers=8):
     w["lastScan"] = {"at": stamp, "tickers": len(tickers), "quotes": sum(1 for t in tickers if quotes.get(t)),
                      "alerts": len(logs)}
     return pushes, logs
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# Price snapshot: every wire pass (day and night) saves fresh prices for the analyzer to pick up.
+SNAPSHOT_BASE = ["SPY", "VTI", "GLD", "SLV", "GC=F", "SI=F"]
+
+
+def snapshot_list(cfg):
+    out = []
+    for t in (SNAPSHOT_BASE + [c["ticker"] for c in cfg.get("companies", [])] + list(cfg.get("shortlist", {}))
+              + cfg.get("snapshot_extra", [])):
+        if t not in out:
+            out.append(t)
+    return out
+
+
+def parse_snapshot(raw):
+    j = json.loads(raw)["chart"]["result"][0]
+    meta = j.get("meta", {})
+    ts = j.get("timestamp") or []
+    closes = (j["indicators"]["quote"][0].get("close") or [])
+    rows = [(dt.datetime.fromtimestamp(t, NY or dt.timezone.utc).date().isoformat(), c)
+            for t, c in zip(ts, closes) if c is not None]
+    price = meta.get("regularMarketPrice")
+    if price is None and rows:
+        price = rows[-1][1]
+    if price is None:
+        return None
+    mtime = meta.get("regularMarketTime")
+    as_of = dt.datetime.fromtimestamp(mtime, dt.timezone.utc).isoformat(timespec="minutes") if mtime else None
+    last_day = rows[-1][0] if rows else None
+    prior = [c for d, c in rows if d != (as_of and dt.datetime.fromtimestamp(mtime, NY or dt.timezone.utc).date().isoformat())]
+    prev = prior[-1] if prior else meta.get("chartPreviousClose")
+    week_ago = prior[-5] if len(prior) >= 5 else None
+    return {"price": round(price, 4), "asOf": as_of, "lastBar": last_day,
+            "prevClose": round(prev, 4) if prev else None,
+            "dayPct": round(100 * (price / prev - 1), 2) if prev else None,
+            "weekPct": round(100 * (price / week_ago - 1), 2) if week_ago else None,
+            "currency": meta.get("currency"), "src": "Yahoo Finance chart API"}
+
+
+def snapshot(cfg, state, fetch, ts, workers=8):
+    """Refresh state['quotes'] {sym: {...}}. Keeps the last good value (marked stale) when a fetch fails."""
+    q = state.setdefault("quotes", {})
+
+    def get(sym):
+        try:
+            return sym, parse_snapshot(fetch(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range=1mo&interval=1d", UA))
+        except Exception:
+            return sym, None
+
+    syms = snapshot_list(cfg)
+    ok = 0
+    with ThreadPoolExecutor(workers) as ex:
+        for sym, res in ex.map(get, syms):
+            if res:
+                res["fetchedAt"] = ts.isoformat(timespec="minutes")
+                q[sym] = res
+                ok += 1
+            elif sym in q:
+                q[sym]["stale"] = True
+    gc, si = q.get("GC=F"), q.get("SI=F")
+    if gc and si and si.get("price"):
+        state["quotesRatio"] = {"ratio": round(gc["price"] / si["price"], 2), "asOf": ts.isoformat(timespec="minutes"),
+                                "note": "COMEX front-month futures (usually 0-1.5% above spot)"}
+    state["quotesMeta"] = {"at": ts.isoformat(timespec="minutes"), "ok": ok, "of": len(syms)}
+    return ok, len(syms)

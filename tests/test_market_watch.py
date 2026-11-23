@@ -136,6 +136,32 @@ class WatchTests(unittest.TestCase):
         self.assertEqual((pushes, logs), ([], []))
 
 
+class SnapshotTests(unittest.TestCase):
+    def test_snapshot_prices_week_change_and_stale(self):
+        today = dt.date(2026, 11, 23)
+        closes = [100.0 + i for i in range(20)]
+        raw = chart(closes, [1e6] * 20, today, price=125.0)
+        j = json.loads(raw)
+        j["chart"]["result"][0]["meta"]["regularMarketTime"] = j["chart"]["result"][0]["timestamp"][-1]
+        good = json.dumps(j).encode()
+        state = {}
+        cfg = {"companies": [{"ticker": "TRV"}], "shortlist": {"CBOE": {}}}
+        ok, of = mw.snapshot(cfg, state, lambda url, ua: good, OPEN_TS)
+        self.assertEqual((ok, of), (8, 8))
+        q = state["quotes"]["TRV"]
+        self.assertEqual(q["price"], 125.0)
+        self.assertEqual(q["prevClose"], 118.0)  # today's bar excluded
+        self.assertAlmostEqual(q["weekPct"], round(100 * (125 / 114 - 1), 2))
+        self.assertIn("ratio", state["quotesRatio"])
+
+        def bad(url, ua):
+            raise IOError("down")
+        ok, _ = mw.snapshot(cfg, state, bad, OPEN_TS)
+        self.assertEqual(ok, 0)
+        self.assertTrue(state["quotes"]["TRV"]["stale"])
+        self.assertEqual(state["quotes"]["TRV"]["price"], 125.0)
+
+
 class GradeATests(unittest.TestCase):
     def test_rules(self):
         import screens
