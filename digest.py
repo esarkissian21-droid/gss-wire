@@ -309,9 +309,13 @@ def build_digest(cfg, prices, today, ledger, wire_pushed, failed):
             moves.sort()
             txt = ", ".join(f"{t} {pct(m)}" for m, t in sorted(moves, key=lambda x: -abs(x[0]))[:5])
             lines.append(f"Biggest watchlist moves: {txt}")
-            big = [t for m, t in moves if abs(m) >= 0.15]
-            if big:
-                lines.append(f"15%+ week (chase/review rule): {', '.join(big)}")
+            ups = [t for m, t in moves if m >= 0.15]
+            downs = [t for m, t in moves if m <= -0.15]
+            if ups:  # rule p3 (approved Nov 22 2026): 3-month wait after a 15%+ up week
+                until = (dt.date.fromisoformat(ws[-1]) + dt.timedelta(days=91)).strftime("%b %-d")
+                lines.append(f"15%+ up week, wait list (don't buy until {until}): {', '.join(ups)}")
+            if downs:
+                lines.append(f"15%+ down week (review the story, don't auto-buy): {', '.join(downs)}")
     if wire_pushed:
         kinds = {}
         for l in wire_pushed:
