@@ -69,9 +69,18 @@ def cot_rows():
 
 
 def weekly_px(sym):
-    url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?period1=1136073600&period2={int(time.time())}"
-           f"&interval=1wk")
-    j = json.loads(get(url))["chart"]["result"][0]
+    j = None
+    for host in ("query1", "query2"):
+        url = (f"https://{host}.finance.yahoo.com/v8/finance/chart/{urllib.request.quote(sym)}?period1=1136073600"
+               f"&period2={int(time.time())}&interval=1wk")
+        try:
+            j = json.loads(get(url, 2))["chart"]["result"][0]
+            if j.get("timestamp"):
+                break
+        except Exception as e:
+            print("price fetch", sym, host, type(e).__name__, flush=True)
+    if not j or not j.get("timestamp"):
+        return []
     out = []
     for t, c in zip(j["timestamp"], j["indicators"]["quote"][0]["close"]):
         if c is not None:
@@ -116,6 +125,9 @@ def episodes(dates, gap_weeks=13):
 def main():
     cot = cot_rows()
     px = {"gold": weekly_px("GC=F"), "silver": weekly_px("SI=F")}
+    if not px["gold"] or not px["silver"]:  # fall back to the ETFs (track the metal less fees)
+        px = {"gold": px["gold"] or weekly_px("GLD"), "silver": px["silver"] or weekly_px("SLV")}
+    print("price weeks:", {k: len(v) for k, v in px.items()}, flush=True)
     pm = {k: dict(v) for k, v in px.items()}
     ratio = sorted((d, pm["gold"][d] / pm["silver"][d]) for d in pm["gold"] if d in pm["silver"])
     out = {"generatedAt": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
@@ -146,6 +158,8 @@ def main():
                 continue
             chg.append(s[i][1] - s[i - 4][1]); prior.append(p_prior); nxt.append(p_next)
         def corr(a, b):
+            if len(a) < 3:
+                return None
             ma, mb = st.mean(a), st.mean(b)
             return round(sum((x - ma) * (y - mb) for x, y in zip(a, b)) / (sum((x - ma) ** 2 for x in a) * sum((y - mb) ** 2 for y in b)) ** 0.5, 3)
         res["followsPrice"] = {"corrWithPrior4wReturn": corr(chg, prior), "corrWithNext4wReturn": corr(chg, nxt), "n": len(chg)}
