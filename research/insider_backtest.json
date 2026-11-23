@@ -1,0 +1,199 @@
+{
+ "generatedAt": "2026-11-23T01:47:37+00:00",
+ "quarters": 81,
+ "buyFilings": 304521,
+ "tickersPriced": 4580,
+ "priceFailures": 6260,
+ "summary": {
+  "single": {
+   "events": 34609,
+   "priced": 17553,
+   "coverage": 0.507,
+   "13": {
+    "n": 17212,
+    "meanVsIWM": 0.0029,
+    "medianVsIWM": -0.0097,
+    "beatIWM": 0.471,
+    "meanVsSPY": -0.0005,
+    "tMonths": 0.83,
+    "months": 243,
+    "early2006_15": 0.0112,
+    "late2016_": -0.0033
+   },
+   "26": {
+    "n": 17073,
+    "meanVsIWM": 0.0073,
+    "medianVsIWM": -0.0163,
+    "beatIWM": 0.468,
+    "meanVsSPY": -0.0014,
+    "tMonths": 1.27,
+    "months": 243,
+    "early2006_15": 0.0198,
+    "late2016_": -0.002
+   },
+   "52": {
+    "n": 16520,
+    "meanVsIWM": 0.0243,
+    "medianVsIWM": -0.0248,
+    "beatIWM": 0.467,
+    "meanVsSPY": 0.0075,
+    "tMonths": 3.45,
+    "months": 239,
+    "early2006_15": 0.0368,
+    "late2016_": 0.0146
+   }
+  },
+  "c2_7d": {
+   "events": 22434,
+   "priced": 11047,
+   "coverage": 0.492,
+   "13": {
+    "n": 10810,
+    "meanVsIWM": 0.003,
+    "medianVsIWM": -0.0137,
+    "beatIWM": 0.461,
+    "meanVsSPY": -0.0,
+    "tMonths": 0.45,
+    "months": 243,
+    "early2006_15": 0.012,
+    "late2016_": -0.0032
+   },
+   "26": {
+    "n": 10714,
+    "meanVsIWM": 0.0021,
+    "medianVsIWM": -0.0206,
+    "beatIWM": 0.458,
+    "meanVsSPY": -0.0066,
+    "tMonths": -0.78,
+    "months": 243,
+    "early2006_15": 0.0121,
+    "late2016_": -0.0047
+   },
+   "52": {
+    "n": 10358,
+    "meanVsIWM": 0.021,
+    "medianVsIWM": -0.034,
+    "beatIWM": 0.458,
+    "meanVsSPY": 0.0081,
+    "tMonths": 1.8,
+    "months": 239,
+    "early2006_15": 0.0309,
+    "late2016_": 0.0139
+   }
+  },
+  "c3_7d": {
+   "events": 9886,
+   "priced": 4734,
+   "coverage": 0.479,
+   "13": {
+    "n": 4641,
+    "meanVsIWM": 0.0038,
+    "medianVsIWM": -0.0146,
+    "beatIWM": 0.46,
+    "meanVsSPY": 0.0016,
+    "tMonths": -0.24,
+    "months": 243,
+    "early2006_15": 0.016,
+    "late2016_": -0.0039
+   },
+   "26": {
+    "n": 4592,
+    "meanVsIWM": 0.0005,
+    "medianVsIWM": -0.0277,
+    "beatIWM": 0.449,
+    "meanVsSPY": -0.0065,
+    "tMonths": -1.06,
+    "months": 243,
+    "early2006_15": 0.0176,
+    "late2016_": -0.0102
+   },
+   "52": {
+    "n": 4418,
+    "meanVsIWM": 0.0134,
+    "medianVsIWM": -0.0402,
+    "beatIWM": 0.45,
+    "meanVsSPY": 0.0073,
+    "tMonths": -0.18,
+    "months": 239,
+    "early2006_15": 0.0331,
+    "late2016_": 0.0004
+   }
+  },
+  "c3_30d": {
+   "events": 12588,
+   "priced": 6090,
+   "coverage": 0.484,
+   "13": {
+    "n": 5979,
+    "meanVsIWM": 0.0058,
+    "medianVsIWM": -0.0118,
+    "beatIWM": 0.466,
+    "meanVsSPY": 0.0036,
+    "tMonths": 0.32,
+    "months": 243,
+    "early2006_15": 0.0186,
+    "late2016_": -0.003
+   },
+   "26": {
+    "n": 5920,
+    "meanVsIWM": 0.0034,
+    "medianVsIWM": -0.0232,
+    "beatIWM": 0.459,
+    "meanVsSPY": -0.0033,
+    "tMonths": -0.71,
+    "months": 243,
+    "early2006_15": 0.0198,
+    "late2016_": -0.0078
+   },
+   "52": {
+    "n": 5708,
+    "meanVsIWM": 0.0215,
+    "medianVsIWM": -0.0316,
+    "beatIWM": 0.458,
+    "meanVsSPY": 0.014,
+    "tMonths": 0.8,
+    "months": 239,
+    "early2006_15": 0.0376,
+    "late2016_": 0.0101
+   }
+  },
+  "ceo_100k": {
+   "events": 13556,
+   "priced": 7179,
+   "coverage": 0.53,
+   "13": {
+    "n": 7036,
+    "meanVsIWM": 0.0026,
+    "medianVsIWM": -0.0128,
+    "beatIWM": 0.469,
+    "meanVsSPY": -0.0012,
+    "tMonths": 0.34,
+    "months": 243,
+    "early2006_15": 0.0141,
+    "late2016_": -0.0041
+   },
+   "26": {
+    "n": 6971,
+    "meanVsIWM": 0.0036,
+    "medianVsIWM": -0.0227,
+    "beatIWM": 0.458,
+    "meanVsSPY": -0.0056,
+    "tMonths": 0.21,
+    "months": 243,
+    "early2006_15": 0.0226,
+    "late2016_": -0.0073
+   },
+   "52": {
+    "n": 6694,
+    "meanVsIWM": 0.0208,
+    "medianVsIWM": -0.0364,
+    "beatIWM": 0.457,
+    "meanVsSPY": 0.0051,
+    "tMonths": 1.42,
+    "months": 239,
+    "early2006_15": 0.04,
+    "late2016_": 0.0093
+   }
+  }
+ }
+}
