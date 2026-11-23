@@ -60,17 +60,20 @@ def at_or_after(s, d):
 
 
 def crash_test(s, gld, threshold):
-    peak, last_ep = 0.0, None
+    """A crash = first week a fund closes `threshold` below its trailing 52-week high. A new crash can only
+    start after it recovers to within half that distance of its 52-week high (so one long slump counts once)."""
+    armed = True
     events, all_w = [], {26: [], 52: []}
-    gmap = dict(gld)
     for i, (d, a) in enumerate(s):
-        peak = max(peak, a)
+        peak = max(x for _, x in s[max(0, i - 51):i + 1])
         dd = a / peak - 1
         for h in (26, 52):
             if i + h < len(s):
                 all_w[h].append(s[i + h][1] / a - 1)
-        if dd <= -threshold and (last_ep is None or (d - last_ep).days > 26 * 7):
-            last_ep = d
+        if dd > -threshold / 2:
+            armed = True
+        if dd <= -threshold and armed:
+            armed = False
             ev = {"date": d.isoformat(), "drawdown": round(dd, 3)}
             for h in (26, 52):
                 if i + h < len(s):
@@ -81,8 +84,6 @@ def crash_test(s, gld, threshold):
                     if g0 and g1:
                         ev[f"gld{h}"] = round(g1 / g0 - 1, 4)
             events.append(ev)
-        elif dd > -threshold * 0.5:
-            pass
     def summ(key):
         xs = [e[key] for e in events if key in e]
         return None if not xs else {"n": len(xs), "mean": round(st.mean(xs), 4), "median": round(st.median(xs), 4),
