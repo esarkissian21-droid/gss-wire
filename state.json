@@ -9,11 +9,11 @@
  },
  "insider_buys": [],
  "lastCounts": {
-  "checked": 1190,
-  "new": 37,
+  "checked": 1164,
+  "new": 12,
   "pushed": 1
  },
- "lastRun": "2026-11-24T16:30:14+00:00",
+ "lastRun": "2026-11-24T17:00:19+00:00",
  "news_count": {
   "CBOE": 1,
   "NVDA": 4
@@ -21,257 +21,257 @@
  "news_count_day": "2026-11-24",
  "quotes": {
   "ADBE": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": 3.8,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": 3.63,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 223.98,
-   "price": 232.49,
+   "price": 232.1,
    "src": "Yahoo Finance chart API",
-   "weekPct": -1.3
+   "weekPct": -1.46
   },
   "AEM": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T16:59+00:00",
    "currency": "USD",
-   "dayPct": -1.82,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": -2.14,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 159.7,
-   "price": 156.795,
+   "price": 156.28,
    "src": "Yahoo Finance chart API",
-   "weekPct": -9.37
+   "weekPct": -9.67
   },
   "CBOE": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": 3.03,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": 2.94,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 354.67,
-   "price": 365.4,
+   "price": 365.115,
    "src": "Yahoo Finance chart API",
-   "weekPct": -1.26
+   "weekPct": -1.34
   },
   "DINO": {
-   "asOf": "2026-11-24T16:29+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": -0.09,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": -0.67,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 87.04,
-   "price": 86.96,
+   "price": 86.46,
    "src": "Yahoo Finance chart API",
-   "weekPct": -11.0
+   "weekPct": -11.51
   },
   "GC=F": {
-   "asOf": "2026-11-24T16:20+00:00",
+   "asOf": "2026-11-24T16:50+00:00",
    "currency": "USD",
-   "dayPct": -2.5,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": -2.23,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 3651.3999,
-   "price": 3560.1,
+   "price": 3569.9,
    "src": "Yahoo Finance chart API",
-   "weekPct": -7.87
+   "weekPct": -7.62
   },
   "GLD": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": -1.9,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": -2.01,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 333.02,
-   "price": 326.705,
+   "price": 326.33,
    "src": "Yahoo Finance chart API",
-   "weekPct": -7.31
+   "weekPct": -7.42
   },
   "IWM": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": -0.19,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": 0.03,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 265.74,
-   "price": 265.245,
+   "price": 265.83,
    "src": "Yahoo Finance chart API",
-   "weekPct": -1.41
+   "weekPct": -1.2
   },
   "MATX": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T16:58+00:00",
    "currency": "USD",
-   "dayPct": -4.95,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": -5.16,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 204.14,
-   "price": 194.03,
+   "price": 193.615,
    "src": "Yahoo Finance chart API",
-   "weekPct": -8.71
+   "weekPct": -8.91
   },
   "NEM": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": -1.29,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": -1.56,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 100.73,
-   "price": 99.43,
+   "price": 99.155,
    "src": "Yahoo Finance chart API",
-   "weekPct": -10.63
+   "weekPct": -10.88
   },
   "NVDA": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": -8.24,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": -8.76,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 165.05,
-   "price": 151.45,
+   "price": 150.59,
    "src": "Yahoo Finance chart API",
-   "weekPct": -2.58
+   "weekPct": -3.13
   },
   "PDD": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": -1.58,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": -1.84,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 87.14,
-   "price": 85.76,
+   "price": 85.54,
    "src": "Yahoo Finance chart API",
-   "weekPct": 10.82
+   "weekPct": 10.53
   },
   "PGR": {
-   "asOf": "2026-11-24T16:29+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": 2.18,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": 1.7,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 230.36,
-   "price": 235.385,
+   "price": 234.27,
    "src": "Yahoo Finance chart API",
-   "weekPct": 0.3
+   "weekPct": -0.17
   },
   "PHM": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": 2.56,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": 3.09,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 126.39,
-   "price": 129.625,
+   "price": 130.29,
    "src": "Yahoo Finance chart API",
-   "weekPct": 4.07
+   "weekPct": 4.61
   },
   "SI=F": {
-   "asOf": "2026-11-24T16:20+00:00",
+   "asOf": "2026-11-24T16:50+00:00",
    "currency": "USD",
-   "dayPct": -5.8,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": -5.49,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 43.147,
-   "price": 40.645,
+   "price": 40.78,
    "src": "Yahoo Finance chart API",
-   "weekPct": -14.05
+   "weekPct": -13.76
   },
   "SLV": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": -4.97,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": -5.36,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 38.91,
-   "price": 36.975,
+   "price": 36.825,
    "src": "Yahoo Finance chart API",
-   "weekPct": -13.29
+   "weekPct": -13.64
   },
   "SPY": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": -1.1,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": -1.15,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 722.29,
-   "price": 714.31,
+   "price": 713.95,
    "src": "Yahoo Finance chart API",
-   "weekPct": -2.48
+   "weekPct": -2.52
   },
   "SSD": {
-   "asOf": "2026-11-24T16:29+00:00",
+   "asOf": "2026-11-24T16:54+00:00",
    "currency": "USD",
-   "dayPct": -0.43,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": 0.12,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 194.63,
-   "price": 193.785,
+   "price": 194.855,
    "src": "Yahoo Finance chart API",
-   "weekPct": -0.78
+   "weekPct": -0.23
   },
   "TMUS": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": 2.62,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": 1.67,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 166.36,
-   "price": 170.72,
+   "price": 169.14,
    "src": "Yahoo Finance chart API",
-   "weekPct": 1.68
+   "weekPct": 0.74
   },
   "TRV": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": 1.69,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": 1.27,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 394.71,
-   "price": 401.38,
+   "price": 399.735,
    "src": "Yahoo Finance chart API",
-   "weekPct": 0.96
+   "weekPct": 0.54
   },
   "TSM": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": -5.59,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": -5.24,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 363.6,
-   "price": 343.26,
+   "price": 344.535,
    "src": "Yahoo Finance chart API",
-   "weekPct": -4.57
+   "weekPct": -4.21
   },
   "VTI": {
-   "asOf": "2026-11-24T16:30+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": -1.01,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": -1.03,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 355.27,
-   "price": 351.67,
+   "price": 351.594,
    "src": "Yahoo Finance chart API",
-   "weekPct": -2.37
+   "weekPct": -2.39
   },
   "WRB": {
-   "asOf": "2026-11-24T16:29+00:00",
+   "asOf": "2026-11-24T17:00+00:00",
    "currency": "USD",
-   "dayPct": 1.49,
-   "fetchedAt": "2026-11-24T16:30+00:00",
+   "dayPct": 1.12,
+   "fetchedAt": "2026-11-24T17:00+00:00",
    "lastBar": "2026-11-24",
    "prevClose": 77.9,
-   "price": 79.06,
+   "price": 78.775,
    "src": "Yahoo Finance chart API",
-   "weekPct": 1.92
+   "weekPct": 1.55
   }
  },
  "quotesMeta": {
-  "at": "2026-11-24T16:30+00:00",
+  "at": "2026-11-24T17:00+00:00",
   "of": 22,
   "ok": 22
  },
  "quotesRatio": {
-  "asOf": "2026-11-24T16:30+00:00",
+  "asOf": "2026-11-24T17:00+00:00",
   "note": "COMEX front-month futures (usually 0-1.5% above spot)",
-  "ratio": 87.59
+  "ratio": 87.54
  },
  "recent_titles": [
   {
@@ -955,6 +955,7 @@
   "news:CBMiV0FVX3lxTE9PRExVUHlvcWNEenk3VnVQSDNrMU9vNHVmS211TVhBa0w1czZaTHZudTdKYTlUaXVFOGtJMy1KOU9YQjM1VE9QWEg1MXBzazAyZlRKVlhBYw": "2026-11-24T12:30:14+00:00",
   "news:CBMiV0FVX3lxTE9PaWlPamh4VDRpQmlHRVFvVWNFUUJqLVNIdjFtdXhQdkpfdktQd3lQT2RWckdhU3hLUmo1YjNpVFZYUzhSOWNzclp5U2JwaUZRT0xOMHYwQQ": "2026-11-22T23:33:04+00:00",
   "news:CBMiV0FVX3lxTE9UaERFTVV3SWJqdmE5U0RhVU42NGlhbUp6d3R2TGhEYnZucFBDRDdEMUZJcFpNamhubnhKOGJjaWlJckhvcWY4Z3dOTVNDa0YwSlFKaExDWQ": "2026-11-22T16:11:48+00:00",
+  "news:CBMiV0FVX3lxTFBBQUVtcFFIMHdQSzNVbkV1Y3BEWFd1MWh2aW9fb205QlJRckNsWEVJYkRvMUtBazVjNXJWbC01Um1YMFF3TS1aMFhva0Qxd25oSEFFN2ZwWQ": "2026-11-24T17:00:19+00:00",
   "news:CBMiV0FVX3lxTFBhTjBxdDhodXZKTURQQ3N3MVo3dXVrSWgtTlpjM1RMSnkxMHZiX2hoRlJnTmVlWV8yT2F6ZnlvdEg2WnRMdXNyRXJVWV9DN2RRQ0VtTzhKbw": "2026-11-23T08:55:22+00:00",
   "news:CBMiVEFVX3lxTE0wOXJjdTJmVUZRQ3hrc1o2LXZaSmpmWkZOTUEtYlI0UjFOTFN0dkdlUnlhVTBXa1pOa1hTTW5sbTJVY0ZVN1J4UjZ4SEkxemJ1b2cxTg": "2026-11-24T15:00:19+00:00",
   "news:CBMiVEFVX3lxTE1ERUlxampzUFBIVF9xMnVNUnBXNGE3R0p5cG5LM2dhTDg4OVgwT3k0N2h0OVlHVm1TVFVlaGoyRHhQd2o5NWZWUEJrMG9aT29udEdPVg": "2026-11-23T08:55:22+00:00",
@@ -1073,6 +1074,7 @@
   "news:CBMiZkFVX3lxTE9BVUl5ejhQZmtna3g1aHMxdnZfWmc2aTJMSXc0RE5TenZMZWVoUi1tc290OXd2YXRlTW44QWVkb21sYkg4aWE2QThibXRDN09rVm15NlV6UFlEQUk1SUloYjFoc0UxUQ": "2026-11-22T02:50:59+00:00",
   "news:CBMiZkFVX3lxTE9Dc2hCelQ5VFpTTlZXR3BnbmZhSDV0VzdXRTZ0QzJaZFlsOFZ2b0wweFJGYUVvemx0Y3J5ZXNPSXgyODhFbnJ2UktHZy1hQlRfY0RDVTNsRUdYc2J2aFZFaWt3dFpoUQ": "2026-11-24T11:30:13+00:00",
   "news:CBMiZkFVX3lxTFA4OG9lUDZpeHYyMV84dWhOeWNXV1BqM2pZOUV1bUZKYUM4Mmwtc2JuMHhxVllWcHgwZ1pQNjZjNWdzWUlRbldsOVY2b2NyVm1WR3pQSWZ1amJTbC15M0N5QlM2cjh0UQ": "2026-11-23T04:39:43+00:00",
+  "news:CBMia0FVX3lxTE5Dek1ULWNFNXJOanZJdXJoS05uTkZTM3VOZ2RHT1FzelZEZS1ianNYR1lGNzFTRjJjM3JlaElQYnUtOTg2RjB0T3F6SUJaN1VTUVdVQTI2MERWbFJpNHhfY3R5OWFYdzBVUk9J": "2026-11-24T17:00:19+00:00",
   "news:CBMia0FVX3lxTE5qT0VQbzVlV3hDNHhMNEpYcVYtQ2lvWnVWSXQ1YzVxS3hQQ3NtaXJhZENudUV1eFpMXzNSelJwSFRYRzAxTXpNVmNOUmF2YnRFcVlwbTc4dWVzOG9mRjRqQm1IMjhjWVh6QUVv": "2026-11-23T08:55:22+00:00",
   "news:CBMia0FVX3lxTE8wdmRPNWxYcF9kSmZPVlNnbUEwbEtnX2ZLOUtGaXA3RGNidXJuOExDQlFfUGVLSkwwTDNaYmM2VnMxMUYtZFpfaUhIMnN6eU5rU1NsXzNMMTdxOGpYekZ5MmFSODFfbF9vUU1v": "2026-11-24T04:30:14+00:00",
   "news:CBMia0FVX3lxTFBLUWRlcnk3LWl1d2NIZFgzeEM4dUROQ3F1clpyMWtXeVIweUlwbG5GdFJ5Y2RlNF9iZGV6NWYxWDU1RkZOUlZ0Si1zV0czeGlndXJOaktzQlN2ang0WnVFSWF2X1JYS203ZUtN": "2026-11-23T04:39:43+00:00",
@@ -1116,6 +1118,7 @@
   "news:CBMibkFVX3lxTE5RQjkyMzNNMWIwY05fOE9pOTJQQXAxTVl1cjVvcVN4YUJxM09hSS1RWWRqUGwwZUtlQXVGT2g3N3hFOGFPZzBiWi0tMXlDNG1wS2hycTVWcTI2ZkZmMXl0Wkt4YkFkckgySENUUnpB": "2026-11-23T06:20:25+00:00",
   "news:CBMibkFVX3lxTE5UYjdtRHNQWDdUYU4tUk1VSkRqeUVoTWhXTjZQMlQ4SmFNLVloZzV4UlRobF9LYmpqM1h2RUlSaWljYy1wX3J5Ym1iaGtnMWhDSjhzTnJDR1czU3l5T2ZpZTZKSkdKUDRjUG1HZHN3": "2026-11-23T18:03:30+00:00",
   "news:CBMibkFVX3lxTE5hcWNjYS1HTUgwd2h3MDQxb3A2elhJMlE3NWFzMUt5d2NDUFlkemlZaGlqcHhmZmtnRW9qSXhhRFFaUGpORm5kYjBhRFR1SW5EaTFwdGZQRVB4UDNDX1V0WjlZbnlpZzRsXzZSUGRn": "2026-11-24T11:30:13+00:00",
+  "news:CBMibkFVX3lxTE5rUjRUWHJCQnpwR1ZsZ1hBNi16THllYmFVM2YxOTdiOUNNOHZsUVcyYXVhUXNtY3JZSzRjRXpnWENidzZMSWpONXBVcGs2R0ZzZ0loa2RfdnFvdmh1dUpXRUl4QzJNTnRYNVRvUkxR": "2026-11-24T17:00:19+00:00",
   "news:CBMibkFVX3lxTE5uYVZCX3ZaRjJYUUVzOEUwOWZULUQzV0dfWXV0WFJpd3l3amZRUVBNM3g3VmdSanNLV1hDZF9uRmRmbFc0ZnZVVzloelJNSV9JeUktMDBRMzY1d29LZEJsX3g5QzJtWW51RU5IcmNB": "2026-11-23T04:39:43+00:00",
   "news:CBMibkFVX3lxTE9KZ180RktIWnAzZmw3SDlyWHRhWHhpS0RWMUU5c0JMZTNnbnJxVEFkTHVKekJac2NpVDlVb1pnVVVzTWVOWl9yV243a3NYZEwxRlJOVC03Q3RBNjZmUFlTLXlTWmsxRHNTZXF0bTVn": "2026-11-24T14:00:20+00:00",
   "news:CBMibkFVX3lxTE9McEZUME5LS0xCdFpNWEZwcTc1THY5cVRDeXZaaUpUbHVoM29vbnc0U3hIS0pRdTA3ZEhMMnZONUQxNXJQNDZMVDFNbkVhUnVmdzhOeUVqZFN5Uk55akNGTU1kNXktZktpeGR2aFRn": "2026-11-23T04:39:43+00:00",
@@ -2002,6 +2005,7 @@
   "news:WVZlZTdvOUx1ZVB2OFJiTXRmdFpwN1NET29tMWhCOWxxY29WeGJoSlNXXzVUaXRPOFFiOFlUcnpHTUxPd2VwTGYwU1hQMGZ1YkZvbko2V0RFU1hEVHpDbnVIMmg3Y1FSX2U3enNUNlB6ZHM1bmJxUTg4X1RIeGZK": "2026-11-22T23:33:04+00:00",
   "news:WWtjX19Ld05NYkdaQ21TTjZWRWtfOV9Qc2tBYU9laTJOM1lzQUJia0RRMW10THQwWTZQN0dSUTVxa0UtOWFzRlRRTjUxZnkwWkZTWDZEVXV1ekZDWURScXVYMWVHXzdvSDNqdXo2TjZiV2ZTX2pJZGZQdXljZnln": "2026-11-24T07:00:16+00:00",
   "news:WXR1cGJFS1NSblp3LW1fYkZ0TlNzRGwtUkVWcno5MFl2aEk1SUY4Tm5ZRWVKcU1ma2ZvbnptMU55TEVFREpMdzlPZXRLWnNRd1dzQ0lJS2JsS21xLVpLMnRUdzBNNWtuN2hta1V1WFpoTWpfZm44VnloOWlfbkxB": "2026-11-22T23:33:04+00:00",
+  "news:WjF1MVZzamNhbmZBUTMtdUpjU1lubEh3YW9yX045NHItTEtieUNnYU4zRFM1SFVNWExNYmVrVWJrbVFoeU9USUlxa3ZoT21RN04tS0wwbV91UmtiZjAzTDZKTFdLUEZWc002UVRxcE9pRk5RMGNOaDktUS1kU0RE": "2026-11-24T17:00:19+00:00",
   "news:WjRVTXplUzdPX3dZV1RKcXMwaVU3ODdmcklYMjVBNVd3al9mMmg2bThKLU5OQm9wOHdLS2tBcFVKdTF5UjVaWHJzX2wyTGo5X19jN3RBS2ZVdTJuRjdYeXRvMDcwb3l1eTRZQkNoakd3N2hJSGxwV0YxZkRhQVpn": "2026-11-24T03:00:16+00:00",
   "news:Wk5JRWlEMFk0TU1QVUJiVXpxbFdaZ05weFo0R0F5NGNVYXl0bWNBUzRsMTIzZzRiazQzX1c2UlhNN2ZmaWs2Tndwdkd4bkdvbHNPa05rcDlTYmtSenRzLVpBQXRNcnNpZmZ3QnhIN0Y4ZUpqeVBQWEtXZWxCSldE": "2026-11-24T08:00:16+00:00",
   "news:WkpYc3gzMzdhWWpGVWxsei11RVhLTVBOclFXVFZ5NnpvZXZqWUNyQXpzUEMzNlJmbXJZWkhSQU5XRjNFZ1lSSGNoQ2JLS01pLVBfRFZhTl82UjltQ2xnWjBmeG9La0NuUWVVVTdvSkZfQ0thbEhSQ19xYmZjcjBx": "2026-11-23T04:39:43+00:00",
@@ -2093,6 +2097,7 @@
   "news:Ym5DenI5TVA4OHFnY19ER2pyaE5fajBsLTNjamhFLTFycU83UnE4UEoyWEhqRGxVdHE4dDc1UGplQlVPcWt2QnRZX2VUZlpwU1pCWTNEd1R2eEQybHlGdVRyb1h2VlpHZFNSNkM1V1B5QW9HdUtXMi1QQzhKMWw4": "2026-11-23T19:45:32+00:00",
   "news:YmlNblJGWTRncVdWVEdRUmJQVW5wWTkzczlYRTd4QnhEUjJzcmdZUHl4QS1ONUV6QWJFME9tdDZQbi1PUXJhZUhXcFctUHhqVUwyMkRmeTZmbFB1dWFkR1dKX05VU3VNWEZfbjh3MzlkRVhtOGo2dE5lMDlPdmFn": "2026-11-22T16:11:48+00:00",
   "news:YmxzRkptSGZLTGVRT3ZjdWVpa0JYbWdwNzMtcEd5ZV9iZm1iTVNZM0pCbm1rRk85eDVCVGVod1htbmdoOUtFa3hudnAtWUhwdmg5aS1pdmtwa3FONS1sb0FEMnNGWHlPSHRFYmFha3UzamhhT3Vub1NZSVJzaVVa": "2026-11-24T11:30:13+00:00",
+  "news:YnV3MUpwWDdTSHVoRHFOVjNZMzBXYmxGckxuYkgtQy15aklKQ3lHSlUyQmtXLVl6V3Rsc1piUHFmRUwwQWp4aXQ5elltREVuMV9TN2dTWll6cXNmQXpqZWl5Y2JYbk1qT1Rwbzl5U19PZDBONjlxdHBjaTF5YnJQ": "2026-11-24T17:00:19+00:00",
   "news:YzFHTWNaeVpzcEdHV0hEcFYtWnNuSlFhVjV1ZjN3dVR6QkhsQ3YzVE54YzExZUNaSThLYWs0OGEtWnU5QzlYOVdCZWZiUnVEek5wQWFwMWRLd0RIOFF2TEE3WjgyTFBwY0FYXzhNZGd0d3FXOTREajlBRVZuT2pR": "2026-11-24T13:00:20+00:00",
   "news:YzNWNUl0RFNEM0o4T0lmSXRlNVpLdG9hVVp5UXZFbC13R0dFa21Ibk9hMk1BdUNIZTB1Yl9RcjVBWkxpeDRoYWNySjlqQkRFZGJXQk95ZDd2SEV2UHplR05xN1ZqZjVLT3dQQTdERGU4RTdvQVZ2aDRBU3VUeVlB": "2026-11-22T02:50:59+00:00",
   "news:Z0RPVlFQVTEyQXY2Zm16VHVhSkdFMC1fdXpLS1BBakpfZk9md0g1bXZsdWlxcF94c19FekpTQzZpSVdBaWxLTWlSMFBQQ3RGanhGN3oxaTdsVFM5X3licHZLZkZISnBnanJic0dSMjJsYXFyVE9oYWNGamdobjB3": "2026-11-24T12:30:14+00:00",
@@ -2305,6 +2310,7 @@
   "news:czAtaTVtQ3hvLVlRWFpHa29RYVA3RU1XZXFuaVlUQnpoVHBJek1RdHBrVW9jNDV5amx6dXJzVGQ1VkgwUHpDaUY1Sko4ZGJJUWRDakZNeTd4dlV2eGxyd3Z4dlN6Sk55elFLeWhYVjV2YXVjWUhpWEc3eFhRMGZ1": "2026-11-23T18:03:30+00:00",
   "news:d0FVX3lxTE1CY0ItMHY4WmRzQkduY093d2ZrQXc1QnVkWWc1eHQyRzgtdXFWVUxCV2JnOWRWdG1JTGpWNDZqejQzWml2cXU3RkUxOUhLbTdOeGtHQ0t5dWt6SUVYV2MxX2dUaGVjQ3BRSnliOE1Yam1oSTltTUxJ": "2026-11-23T18:03:30+00:00",
   "news:d0FVX3lxTE1HX1JJUGdfTEQxWnd0Nmw0U2l0T1BCVTljd3N5NWs1Slc1Wlc1b2tPemFfWXVpNHg4XzA1S050OThlZktCVzJscXlVZGRFSV85cmI5SnNpZEtlSHRLcE53Ymx2NDRsai1Pd09vcU1aR25Wd0hFNXVN": "2026-11-23T23:00:22+00:00",
+  "news:d0FVX3lxTE1VeXVOcUtpRGh3YllhazVIclJ6QWJWR3VteHpUamxFcG5vVHk1S1JIdFJHN0trbTZaOHdTejNxVUNkUzZ3amotbG10WUJQXzRaeUlxSkRuLTBnbTBnOWhhZ09MSndCVzJJUy1BVEN1T0RpY3BCSVhv": "2026-11-24T17:00:19+00:00",
   "news:d0FVX3lxTE1kMy1QeUVJdWdBWXRRWldaQ1JKUGlhYzd6NlctSjVqb2xPeTZsVmxTdDJOS3k1NmZWbzQydTdFdzZBRFh2VWpYOHpPcFhWcFRERDZiVHl1U29KSFhiZnhWcW1JMzduQks4RkNMaEdCT0F2a3ZLSE9B": "2026-11-24T01:00:15+00:00",
   "news:d0FVX3lxTE1tU3R4c3hjMS0tb0ttU25EX3gxR3h1V2hra2U5U1hEWVlzTk5INUJSemQ5cjRxS2tISDNMaXE2QVIwZlZ5VVMyNkVJaTYzMldPcktGOVpHUUZvMmNJeXNZNkVLUU15a1NhSjhLQmRkTzZqRzZfbk5V": "2026-11-24T06:00:19+00:00",
   "news:d0FVX3lxTE5INVNuU2E4Z3Bsa0FYa0RqbHNYM3ZlS1lZV3BlODA2Q2F2ejlxMllHQnl2YzhmMm5IeW5RdU9tUzhGUUdlVTJtMUozbkJYZGZOMFpnMmRaWWxpRDY0OVF3a1JiTVBrZmNWMkJsTVotRERzWUZvQVNV": "2026-11-22T02:50:59+00:00",
@@ -2468,6 +2474,7 @@
   "news:hdDFMcEZpVzBvNm5HQnpRRGRWUk9DS1M0Uk1ua1Q0ODNqTFBIblNHb1FCdlFHWlRBV1hhdXNZN015QlppRUNHSEhTM1VNQWYtZVpQcXU1WjM0dnN3ZmUxSXp2SDUxS0oweEMyMC1WZ1I3ZUI3V25sd0ZGc1RURHE": "2026-11-24T14:00:20+00:00",
   "news:hfdDM4RHFLWUxGaVhvVmdTUFRyM1NwTUYzTlVUZ1dJMW1WUXFsTVdvR0dDWnhoZVhTdkdXTjA0VVdHZktLS2UyOWFEZmJ5RElQOVJhZzN0dF9xRDJpSXQxUnVma2NXUUhBSHVDOEZVbXVDVVFTV1R1Rm85c3k1Zw": "2026-11-24T13:30:14+00:00",
   "news:hhWTNmNWFYU1FJS0JQNmk4bk1WYjM2V2xRMk1weXIxWG9aaFV6WkpzWnVob3RHV21qM0xwR1FwOGhYN2JyY0VNQXZLUkxOcjBEQlVYVHBjUTlpNVNWQmxZSmh0MXJjSnY1Uy03SXBRODJYMklaNXZOZXRXcnliSg": "2026-11-23T04:39:43+00:00",
+  "news:hiM1BLdWtXWnN2QWhabzliQzBSYjI1UFBMV3gxYUlqMnBfTjhqWTBDb0Z0SUFCeTBxdVRvTjBNVEF2ZFVmeWFXSXQyZ0RNbTZpb0dlYmhLT2Yzc2hzam5ENVVzZzJOSC1kWWN3cjI5WTh0Nm1xVWlGSlVsR2NIWQ": "2026-11-24T17:00:19+00:00",
   "news:hieG5XcEpNbUwwYkMtTHJYRHZYVWtXWDJfZ1J6aWlHM0RaeExtVVVlZjRPQ3ZIWW54SmM0bFlxWU9tZFJmYVFiTWFxRXlKVWpBOTg1TUZRUF9ReFBFU3NkSUZlX3Yzc2ptNnEyZWN6TWIyamdvcUdiMlUyZjJOTg": "2026-11-22T02:50:59+00:00",
   "news:hlNjlnXzRFaDF0S1QzTlRJWWhUTzBVZ1pqdTJ5Wm4wWUtKODVlNmhGUHJFT21qbVJjSDdPRUwwQlFEY1dGMFhleDhZTjNpdmtMb0t1OGR3MzZpTFdxOGFRZERKTk5EbFYyVEpXcWk2Z1dsRlp2NEpQQUExbHo4MA": "2026-11-23T04:39:43+00:00",
   "news:hmcTBTdUZXWGp3NjhfNVhQS2gzWFJuSVphNzBydDZmb0c5V3prS2VIRi1mdVpIREVNT3BUel9wa19iSE1UX2xkdkFZQ2tMVUpwWko3WDNaYjd4aHJmUy1iTXRnSjdBQ1JjRVgzcVZSNUJyVFhiM3VnYlpVbjAwUQ": "2026-11-22T16:11:48+00:00",
@@ -2486,11 +2493,13 @@
   "news:iN3lTd1hsREhMcW1KdmpKTnVBYmJ6eHQxbzZPU0hFaFpKOU9lcmhJc1NGOTRwTE5CakxzZG5ZVGcwMDBQdjlJX0dZNjZhanhxTEI3c09ORW93cmVOUTZvdndzS1lNdDc1aDlaazFVZkFSRklvQVRKRzJhU3VyeVE": "2026-11-22T23:33:04+00:00",
   "news:iNy14b3YtSVdFWHpRYl9ZQTNmOFE2ZUdjaEtDRUNva1UxeHJFSVJfSWhHU2hJUHFrNUNWekRGSzBqbU1kRFVxQk52bDVGRUVEUGEtR0MyMDRGM0dacjdmNDNEMEFDaGNTMTVlU2JfUEVrTGVCYkJkb0otSVpyd2c": "2026-11-24T12:30:14+00:00",
   "news:iTTh0RnFxNk1DVzdmWWdtQ2RSZkZObm1KcDdZTkdURDFHRDBsQ21Odk1fUGNtODhJUjBaMFk5MEp3NE1hdnpzLWdvMDludjhuS1F3Uy1iVEFkb2lLdHJvUlF1SmlVTF9YR3d0VDg5cE5Jck1BQzRJaWlETVNxVkE": "2026-11-23T18:03:30+00:00",
+  "news:iUU1YWkVxdjQyMW9xRkpPeXBjRlJKTFBHZ3l2NE9zcnFHZUxzU3FOZkRaQ25KUGZ4SUxweEQ3aU5Lb3ZYUWV0UFliSURBV2VwUm1EcVB2VFdMdWpqUXBpMkk3UDFLNnRKNWFoZDVnNVJlN1ZCZGJnMVMxVmN5UDg": "2026-11-24T17:00:19+00:00",
   "news:iUXVMRklUSnlkb3N6NmJ4YWU2MHBMSkt4RkY3MDlCWkh4bHNuRHRFaXEwN21LN2wxd1IzSWwzSnhMVXFRRkNib2xlc1R2TXdKc3MwTy05dGs3dGtKbEpyZlMzRG5Rdmt5MWdZVzBLVElUdWpFU2VRLVo5V3B3NzM": "2026-11-24T12:30:14+00:00",
   "news:iV3BNVFV5dndQODg1RHlULWUyLXhZeEs2MENER1lvOWd5NVJDcG9yX3FXYjY1Y1Y2V1I1UG81NHF4bjBzSEJtajY4RHhTamowQ2h1WDFIVExwWXk5S2FvcmN5Zms3TWlNTDJoaFdnN09IZU15SFpYMUp3MC1ESGY": "2026-11-23T18:03:30+00:00",
   "news:iWHJYNFRhdEpjUzhHeUc0UnJ4M0FoMFJHWExrYnMwQU12c29tVzJJXzYxLXBTTy1GbldPSWQ3bTEwSndFWmhNbWstLVNxNlJkQWVTdnFGOHVyN1F1cXlCSUxZbTM3ajdiRGNBaUF2ZG9uelFrYkhnVnlEbmtFcFE": "2026-11-24T16:30:14+00:00",
   "news:iYmdFdWFpRi1nNTBCeEdOS3gwM2pCVVRfV1piel9SdXJ1RzdMcmRNWkJwbDduQWVEbFFnOUlBTDBPdll3cEp1WUJUaDR6S25HOFRVR2V2LUVQUi1FSlFEWXZVVHQ1MHEyeEZoV3BSWGhINGRkYmFIbjFCNEdGT3c": "2026-11-24T03:30:13+00:00",
   "news:iajJEclcxQ0tuOTAwdXk0R2RXa0pIaVZGMFVYZzlEWjR0ejM0MkgyLUFPdG82VzBjb2ZjeG1mcEppeEc4RERRV04zUWctbE5laGR3SlRqbXlsQjEzbUJkS010dW5wQ08zTlhRRTVIbnYzbDlUQkV0SUlFTHRjX2c": "2026-11-23T08:55:22+00:00",
+  "news:ib0JnZjFjMDJ0NTBPMEpKRmZndWtBNG1MTTdsQmFZWTNldm9uOXdMU2EzSFJxWWZnZHozVmo2WFljZml1ekRnRUxNVm9oQ09yeEZRdHlEWjRrcktZWXhocl9RODhHb1dWU21veldIeVkyNWV5NURwZlRQQXoyZEk": "2026-11-24T17:00:19+00:00",
   "news:idkFVX3lxTE02X19EYjVTMGRvYXZkNlJZYU5EZjRsakc2eUJ1Yi1jckNEZjZBUUZWYW00SW5qT0hHZ3hXYWxWV1MxejRiNjBXLXY5UW0wbW1OUTJHNkIzNlRYbm9PNVU1UTl6bVA5SlhpOW0tMkVQRGpvVml4clE": "2026-11-23T18:03:30+00:00",
   "news:idkFVX3lxTE11d3RSeXR5YjdVdktKb0x2VjBFWTR6Q3YzMjRKUG45cWphODQ0ZlV5aUFJcWpyS0VKNDFBa1EtYksxTHUwaTBDbVNnVEF3eGdLWTdtd2Q0dklMRnl6bHdUWW03MWJtel94MmZjMTNUazd6QkxJaWc": "2026-11-24T13:00:20+00:00",
   "news:idkFVX3lxTE16RmpGdnRyZFpuM1hhZ1pXWnI0VENjNGhhVk56RW9yR3Vka3dtcVVhR3FpeS1veEpBM05lTlNQRXNxcXFyVzlIU0p1cWJuOG5HYVdxTHNGbzR0c19Tb0hEUHdVT19oSWNXVHphOEpmOE54d1oyTHc": "2026-11-23T06:20:25+00:00",
@@ -2761,6 +2770,7 @@
   "news:taMkJCbnVWR2JPdzlLaXQtSFVZeFh2RkRHLU1IMDNSeEJodXgwcjdTY0RmeHczS0Y2OGVwYWpxdmtSR3BOQk1EZHJMWWlmRXFYcGUzbUtsYU1ZeXREbkc1d1BJblhFRmZpU1ZCd2F1Ui1UNzM0NDFyeS03QlJMQg": "2026-11-24T00:00:16+00:00",
   "news:taRXZzdXlGT3NkR1VBS2d1NHV0eFRlVEhIWlBYLWpGdG9RdVFlWW5sSTlQS05INWhEZ2pxZEhnWWlPblpEbEIxVDBGalBkSi13b3R2aDZfVk5CVUtwdndwLWpEamtPcXllOElLR1l0RXFkWFJrczF3VEE2Y2RWMg": "2026-11-22T02:50:59+00:00",
   "news:talNoZllSc093UjVGNENnXzRoTWFxU2ZTWTFzMmxTdFE0dHBjOHhSQk9PZTBtaWFSb1M4aGs3Umx6c2hpbFFQUlIxQ0R0SFh4b0xXMnB3MDVnTkpHNTJvNk1OQWl0V2VLR2w1SkMyeGN5S0x1dkYtVWRqc2V2cWI": "2026-11-24T13:30:14+00:00",
+  "news:tanQ2X3Rza2JFd1J3YzU0TTVSTGk3ZDI3ZHhGTGV0VVgxaWxLbDUxWnZXNlVMT0Vsc2pHSnFsVnllTXBlejY5cHpya2xwOHlSRnlCeGg0RXN3cXExODIyTmZRSXpfZnZSWHVyTXpqTzk1YWF3ZFFMSXJNa3hTZ1Y": "2026-11-24T17:00:19+00:00",
   "news:tbVlHUThzZGl3aUIyVTdOV2NoSElQbDFCT2tfbk43ZGJhWTU4WmtlZmlfMGdCcHRwYUNWejVUQ2RwalNpOTBCaTZublJDMFhCcnJ2MjY3UnIyMDdLS0tHNmRDUlZkYlJXRzNRS1JqNFpHLTAzN2FJX2xzcUtKSjg": "2026-11-23T18:03:30+00:00",
   "news:tcGdSVzlWeFc1SGJqZjdwcWZrTENJLVVrVVZlQVo2SFJLUUNoS3d0bmhabmtObGFXc29teXF6bG5iRERIcWFZQjlfdjd3NWlweXZGQUtwVVFzR3NJbWtxazU1eWc0RWNkUEpESUNsbmpDZnZwRXZFVldwcXZsdkE": "2026-11-23T04:39:43+00:00",
   "news:tcVFyajJGdWxNbFBSTDB0VXBMQnhqMW5saVY5N3JpTVJmWnRhd25aQ1M3S0o4S2swZVRfY0pRSmM4bXJtTjc0c1lLUkM4TEtHX3FkSVVzd3QyeEpnRUxiUUdXdm4yUFhtMW9Rd1hxNVE5NkRsZ0JiR0xNLXdoSng": "2026-11-22T16:11:48+00:00",
@@ -2884,6 +2894,7 @@
   "news:yQzFaRVNwcHlaM1kzMmc2Tmgxbm1oQjBUYUc2QnVEQ0RzcFd4azZDTTJySG4tQllISm1weTdFM2hRajl3TFd5aFA1c2JRUEhVNUc2ZEZTTE1IbUdIQTE5YkJDTFVIcmJkQ3ozMzRrTXd6MzlkYTdod0g1eE9MQkE": "2026-11-24T04:30:14+00:00",
   "news:yRGJlLVR3MFNxN3Y1YlhYSUJHbElGVmJZR05Rc1Y4S2o1RmJQb2MwUXFoUVRyTEREeFVaVnJRYV82N29XenlSUlZBdFFGWmFmOVdYTzdMQ3JKUnlhNVN0UENzQUxtY1l2ZTd6c1NsOGVUNGZieUx0YVg1ZlRITWc": "2026-11-23T18:03:30+00:00",
   "news:yTkVhOVNrcGROWnh6WEhWQ2xLSW53QXZVdXdialViRWl2WXFHcUxET1N6cDRkR0hHZnZXLVBJbndPSV9mbkhRZWtsN1ZLWUx0LWFWTkJRNXhwYndoeEZXVmN1MkI5NDNFbWk2QzJzU3VwMVdaLVV2QTd5Sk9hNGc": "2026-11-23T18:18:52+00:00",
+  "news:yU29xWXJMekpWQzNHeTJBU1VoMlJMckRKUkNOVnhSMGdYT0Vya1hWckJuTVJBR215WTd1Qld5Rks1cHRrOTVuQWwzcDFhdnpNcDhWZVlSN3hyTHJhWkg2WFRaZUphZ2lHSG5UeHhuXzMtcksxUDR1MmEzSk1WN2k": "2026-11-24T17:00:19+00:00",
   "news:yUUk3UUpFdnl5cDhVTnVsRmQ2ejNOMUpUSkMySUpzYVRrWXpORW10cUdsNmd0NDhveGpmR0hlSVg0NzRjZU1rNHRVeFREYTVFRTN6Vl9fdm4wc0c4UWk3U3ROX1FtRzdNUG93OFNqTUd3c3doVUtkUHY5VnNob1E": "2026-11-22T02:50:59+00:00",
   "news:yV3E2bHhiNmZCY2tIM1lCZnJTUUdWekR6OTBaSXJoYWFrckk2VGVBdXJYWWVXQUZjeG9xSDYxQ2RsQnFvT3J3dG1XMWxxNjRFYzk5ZXNkclUxNDZ0c0FER0ZYcWs5YmpySHpkYy1XLTd1MW5fQXhFN25VVkw3cDY": "2026-11-22T02:50:59+00:00",
   "news:yY2FhU1FaWnFnbzNtTWctSVlyUHJFeWZ6YlI2SDZxYTB2YTRaLUFHYVN2VmJuSDhubXljMzZ3NXFyM1hLanVMYWd4RVlzeVBGTTE1NTY2UGs2dmZ0T1FsU1dpa1FHWnp5dk4zNnJ2NkQzaWZHOHBIVUo5QTc3clI": "2026-11-24T10:50:02+00:00",
@@ -3512,7 +3523,9 @@
    },
    "PDD": {},
    "PGR": {},
-   "PHM": {},
+   "PHM": {
+    "move": 3
+   },
    "PLMR": {},
    "SEIC": {},
    "SPNT": {},
@@ -3529,7 +3542,7 @@
   "gradeSeen": "2026-11-24",
   "lastScan": {
    "alerts": 1,
-   "at": "2026-11-24T16:30:14+00:00",
+   "at": "2026-11-24T17:00:19+00:00",
    "quotes": 29,
    "tickers": 29
   },
@@ -3741,6 +3754,18 @@
     "reliable": true,
     "spy": 714.31,
     "t": "CBOE"
+   },
+   {
+    "base": 0.507,
+    "bucket": "jump3",
+    "d": "2026-11-24",
+    "due": "2027-02-24",
+    "id": "PHM-2026-11-24-jump3",
+    "p": 0.525,
+    "px": 130.29,
+    "reliable": true,
+    "spy": 714.11,
+    "t": "PHM"
    }
   ]
  }
