@@ -70,7 +70,10 @@ GRADE_A_RULES = ["passes the Quality screen", "P/E above 0 and at most 25", "deb
 
 # Options paper practice (rules set 2026-11-22/23): which allowed stocks currently pass the stock rules,
 # with a rough cost for a 3-month at-the-money call (about 0.4 x volatility x sqrt(time) x price).
-OPTION_EXCLUDE = {"CB", "ACGL", "SPNT", "AMZN", "NVDA", "TSM", "PDD", "AEM", "FIX", "NUTX"}
+# User preference (2026-11-24): AI stocks allowed under the same rules; foreign companies excluded.
+# Foreign = SEC business address outside the US (the "us" flag), plus the known foreign filers below
+# in case a row lacks the flag. NUTX stays out: its first look said no.
+OPTION_EXCLUDE = {"TSM", "PDD", "AEM", "CB", "ACGL", "SPNT", "NUTX"}
 OPTION_TIER_A = ("TRV", "CBOE", "SSD")
 
 
@@ -79,6 +82,8 @@ def option_setups(rows, grade_list, today):
     for t in list(OPTION_TIER_A) + [g for g in grade_list if g not in OPTION_TIER_A]:
         m = rows.get(t)
         if t in OPTION_EXCLUDE or not m or not m.get("price") or not m.get("vol3m"):
+            continue
+        if m.get("us") is False:  # foreign company
             continue
         if not m.get("momentum") or (m.get("chg52") or 0) > 60:
             continue
@@ -116,7 +121,7 @@ def grade_a(m):
 
 def grade_a_report(rows, prev, today):
     """Build the Grade A list and what changed since the previous list (prev = last grade_a.json or None)."""
-    keep = ("name", "price", "pe", "roe", "margin", "de", "chg52", "ma200", "mktCap", "cik", "period")
+    keep = ("name", "price", "pe", "roe", "margin", "de", "chg52", "ma200", "mktCap", "cik", "period", "us", "loc")
     now = {}
     for t, m in rows.items():
         ok, _ = grade_a(m)

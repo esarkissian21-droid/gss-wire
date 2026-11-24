@@ -41,7 +41,8 @@ GRADE = {"asOf": "2026-11-22", "version": "v1", "list": {"SSD": {"name": "Simpso
 class WatchTests(unittest.TestCase):
     def setUp(self):
         self.dir = tempfile.mkdtemp()
-        self.old = (mw.ODDS_PATH, mw.GRADE_PATH)
+        self.old = (mw.ODDS_PATH, mw.GRADE_PATH, mw.EARN_PATH)
+        mw.EARN_PATH = os.path.join(self.dir, "earn.json")
         mw.ODDS_PATH = os.path.join(self.dir, "odds.json")
         mw.GRADE_PATH = os.path.join(self.dir, "grade.json")
         mw_dump(ODDS, mw.ODDS_PATH)
@@ -57,7 +58,7 @@ class WatchTests(unittest.TestCase):
         }
 
     def tearDown(self):
-        mw.ODDS_PATH, mw.GRADE_PATH = self.old
+        mw.ODDS_PATH, mw.GRADE_PATH, mw.EARN_PATH = self.old
 
     def fetch(self, url, ua):
         sym = url.split("/chart/")[1].split("?")[0]
@@ -109,11 +110,15 @@ class WatchTests(unittest.TestCase):
         today = OPEN_TS.astimezone(NY).date()
         state = {"watch": {"gradeSeen": "2026-11-22", "preds": [
             {"id": "x", "t": "TRV", "d": "2026-06-01", "px": 100.0, "spy": 100.0, "bucket": "drop3", "p": 0.6,
-             "due": "2026-09-01"}]}}
+             "base": 0.5, "due": "2026-09-01"}]}}
         mw.run_watch(self.cfg, state, self.fetch, OPEN_TS, [])
         p = state["watch"]["preds"][0]
         self.assertIn("out", p)
-        self.assertEqual(state["watch"]["score"]["n"], 1)
+        sc = state["watch"]["score"]
+        self.assertEqual(sc["n"], 1)
+        self.assertEqual(sc["brierBase"], 0.25)  # base 0.5 always scores 0.25
+        self.assertEqual(sc["brierVsBaseN"], 1)
+        self.assertAlmostEqual(sc["brierSameSet"], 0.16 if p["out"]["beat"] else 0.36)
         self.assertLessEqual(p["out"]["end"], today.isoformat())
 
     def test_grade_changes_announced(self):
@@ -134,6 +139,29 @@ class WatchTests(unittest.TestCase):
         state = {"watch": {"gradeSeen": "2026-11-22"}}
         pushes, logs = mw.run_watch(self.cfg, state, self.fetch, OPEN_TS, [])
         self.assertEqual((pushes, logs), ([], []))
+
+
+    def test_earnings_alert_once_within_three_days(self):
+        mw_dump({"list": [{"t": "TRV", "date": "2026-11-26", "timeUTC": "14:00", "period": "Q4", "confirmed": True},
+                          {"t": "SSD", "date": "2026-12-10", "period": "Q4"}]}, mw.EARN_PATH)
+        sat = dt.datetime(2026, 11, 24, 3, 0, tzinfo=dt.timezone.utc)  # Mon night NY, market closed
+        state = {"watch": {"gradeSeen": GRADE["asOf"]}}
+        pushes, logs = mw.run_watch(self.cfg, state, self.fetch, sat, [])
+        earn = [p for p in pushes if "reports" in p[0]]
+        self.assertEqual(len(earn), 1)
+        self.assertIn("TRV reports Q4 in 3 days", earn[0][0])
+        self.assertIn("6:00 AM PT", earn[0][0])
+        self.assertIn("two sources", earn[0][1])
+        pushes, _ = mw.run_watch(self.cfg, state, self.fetch, sat, [])
+        self.assertFalse([p for p in pushes if "reports" in p[0]])
+
+
+class OddsTests(unittest.TestCase):
+    def test_odds_returns_base(self):
+        self.assertEqual(mw.odds_for({}, "drop3", "above200")[2], None)
+        p, _, base = mw.odds_for(ODDS, "drop3", "above200")
+        if p is not None:
+            self.assertIsNotNone(base)
 
 
 class SnapshotTests(unittest.TestCase):

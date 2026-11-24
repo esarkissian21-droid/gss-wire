@@ -327,6 +327,15 @@ def build_digest(cfg, prices, today, ledger, wire_pushed, failed):
     else:
         lines.append("Wire alerts this week: none")
     soon = [e for e in cfg.get("calendar", []) if today.isoformat() <= e["date"] <= (today + dt.timedelta(days=14)).isoformat()]
+    try:
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "earnings.json")) as f:
+            earn = json.load(f)
+    except (OSError, ValueError):
+        earn = {}
+    for e in earn.get("list", []):
+        if today.isoformat() <= e.get("date", "") <= (today + dt.timedelta(days=14)).isoformat():
+            soon.append({"date": e["date"], "what": f"{e['t']} earnings ({e.get('period', '')})"})
+    soon.sort(key=lambda e: e["date"])
     if soon:
         lines.append("Coming up: " + "; ".join(f"{dt.date.fromisoformat(e['date']).strftime('%a %b %-d')} {e['what']}" for e in soon))
     fs = forward_summary(ledger)

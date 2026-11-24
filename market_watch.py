@@ -23,6 +23,37 @@ except Exception:  # pragma: no cover
 HERE = os.path.dirname(os.path.abspath(__file__))
 ODDS_PATH = os.path.join(HERE, "research", "move_odds.json")
 GRADE_PATH = os.path.join(HERE, "history", "screens", "grade_a.json")
+EARN_PATH = os.path.join(HERE, "earnings.json")
+EARN_LEAD_DAYS = 3
+
+
+def earnings_due(earn, today, lead=EARN_LEAD_DAYS):
+    """Earnings reports from today through `lead` days ahead. earn = earnings.json contents."""
+    out = []
+    for e in (earn or {}).get("list", []):
+        try:
+            d = dt.date.fromisoformat(e["date"])
+        except (KeyError, ValueError):
+            continue
+        if 0 <= (d - today).days <= lead:
+            out.append(e)
+    return out
+
+
+def earnings_message(e, today):
+    d = dt.date.fromisoformat(e["date"])
+    days = (d - today).days
+    when = "today" if days == 0 else ("tomorrow" if days == 1 else f"in {days} days")
+    hhmm = e.get("timeUTC")
+    if hhmm:
+        h, m = (int(x) for x in hhmm.split(":"))
+        utc = dt.datetime.combine(d, dt.time(h, m), tzinfo=dt.timezone.utc)
+        when += " (call " + utc.astimezone(ZoneInfo("America/Los_Angeles")).strftime("%-I:%M %p PT") + ")"
+    src = ("Date confirmed by two sources." if e.get("confirmed") else
+           "Date from one source; companies sometimes move it, so check their investor page.")
+    return (f"{e['t']} reports {e.get('period', 'earnings')} {when}, {d.strftime('%a %b %-d')}.",
+            "Prices often jump on earnings day. Your rules: don't open a new position or a paper option right "
+            "before the report; after it, re-check the thesis and sell rule. " + src)
 UA = "Mozilla/5.0 (gss-wire watch; personal use)"
 MAX_TICKERS = 45
 HORIZON_DAYS = 63  # trading days for predictions (about 3 months)
@@ -88,14 +119,14 @@ def chart_url(sym):
 
 
 def odds_for(odds, bucket, trend):
-    """-> (p_beat or None, sentence)."""
+    """-> (p_beat or None, sentence, base rate or None)."""
     b = ((odds or {}).get("buckets") or {}).get(bucket) or {}
     r = (b.get(trend) or {}).get(str(HORIZON_DAYS)) or {}
     if not r.get("pBeat"):
         r = (b.get("all") or {}).get(str(HORIZON_DAYS)) or {}
         trend = None
     if not r.get("pBeat"):
-        return None, "Odds: no history for this yet (base-rate study still running)."
+        return None, "Odds: no history for this yet (base-rate study still running).", None
     where = {"above200": " in an uptrend", "below200": " in a downtrend", None: ""}[trend]
     span = "-".join(s[2:4] for s in (odds.get("span") or ["2005", "2026"]))
     line = (f"Odds (~{odds.get('universe', 100)} big US stocks, 20{span}): after {BUCKET_TEXT[bucket]}{where}, "
@@ -112,7 +143,7 @@ def odds_for(odds, bucket, trend):
         if s.get("reliable"):
             line += (f" Shorter term, the {words} it beat the market {s['pBeat']:.0f}% of the time vs "
                      f"{s['baseBeat']:.0f}% (reliable).")
-    return r["pBeat"] / 100, line
+    return r["pBeat"] / 100, line, (r["baseBeat"] / 100 if r.get("baseBeat") else None)
 
 
 def why_lines(items, limit=3):
@@ -153,6 +184,19 @@ def run_watch(cfg, state, fetch, ts, recent_items, extra_why=None, workers=8):
 
     sess, ny = session(ts)
     today = ny.date().isoformat()
+
+    # Earnings in the next 3 days (earnings.json, refreshed weekly). One alert per company per report.
+    seen = w.setdefault("earnSeen", [])
+    for e in earnings_due(load(EARN_PATH, {}), ny.date()):
+        key = f"{e['t']}-{e['date']}"
+        if key in seen:
+            continue
+        title, msg = earnings_message(e, ny.date())
+        pushes.append((title, msg, 3, ["calendar"], f"https://finance.yahoo.com/quote/{e['t']}"))
+        logs.append({"id": f"earn-{key}", "date": stamp, "kind": "earnings", "asset": e["t"], "source": "earnings",
+                     "title": title, "priority": 3, "seenAt": stamp, "pushed": True})
+        seen.append(key)
+    w["earnSeen"] = seen[-200:]
     if w.get("day") != today:
         w["day"], w["fired"] = today, {}
     shortlist = cfg.get("shortlist", {})
@@ -194,8 +238,17 @@ def run_watch(cfg, state, fetch, ts, recent_items, extra_why=None, workers=8):
     scored = [p for p in w["preds"] if "out" in p]
     if scored:
         brier = sum((p["p"] - (1 if p["out"]["beat"] else 0)) ** 2 for p in scored) / len(scored)
+        # Fair test: the odds must beat simply guessing the ordinary-day rate (base), not just a coin flip.
+        based = [p for p in scored if p.get("base") is not None]
+        brier_base = (sum((p["base"] - (1 if p["out"]["beat"] else 0)) ** 2 for p in based) / len(based)
+                      if based else None)
+        brier_same = (sum((p["p"] - (1 if p["out"]["beat"] else 0)) ** 2 for p in based) / len(based)
+                      if based else None)
         w["score"] = {"n": len(scored), "beat": sum(p["out"]["beat"] for p in scored),
-                      "brier": round(brier, 4), "coinFlip": 0.25}
+                      "brier": round(brier, 4), "coinFlip": 0.25,
+                      "brierBase": round(brier_base, 4) if brier_base is not None else None,
+                      "brierVsBaseN": len(based),
+                      "brierSameSet": round(brier_same, 4) if brier_same is not None else None}
 
     if sess != "open" or not spy or not spy["tradedToday"]:
         return pushes, logs  # closed, or a market holiday
@@ -256,7 +309,7 @@ def run_watch(cfg, state, fetch, ts, recent_items, extra_why=None, workers=8):
             bucket = ("drop6" if pct <= -6 else "drop3") if pct < 0 else ("jump6" if pct >= 6 else "jump3")
         elif "volume" in triggers:
             bucket = "vol2dn" if pct < 0 else "vol2up"
-        p_beat, odds_line = odds_for(odds, bucket, "above200" if prev_above else "below200") if bucket else (None, "")
+        p_beat, odds_line, p_base = odds_for(odds, bucket, "above200" if prev_above else "below200") if bucket else (None, "", None)
 
         rules = []
         if t in shortlist:
@@ -272,6 +325,7 @@ def run_watch(cfg, state, fetch, ts, recent_items, extra_why=None, workers=8):
             if not any(p["id"] == pid for p in w["preds"]):
                 w["preds"].append({"id": pid, "t": t, "d": today, "px": round(q["price"], 4),
                                    "spy": round(spy["price"], 4), "bucket": bucket, "p": round(p_beat, 3),
+                                   "base": round(p_base, 3) if p_base is not None else None,
                                    "reliable": "reliable edge" in odds_line, "due": due})
                 pred_note = f"Logged as a prediction; scored around {due}."
 

@@ -211,10 +211,12 @@ class OptionSetupTests(unittest.TestCase):
         import datetime as dt
         import screens
         base = {"name": "X", "price": 100.0, "vol3m": 0.2, "momentum": True, "chg52": 20, "jump5d63": 0.05}
-        rows = {"TRV": dict(base), "NVDA": dict(base), "SSD": dict(base, momentum=False),
-                "CBOE": dict(base, jump5d63=0.18), "SEIC": dict(base)}
-        out = screens.option_setups(rows, ["NVDA", "SEIC"], dt.date(2026, 11, 30))
-        self.assertEqual([x["t"] for x in out["list"]], ["TRV", "SEIC"])
+        rows = {"TRV": dict(base), "NVDA": dict(base, us=True), "SSD": dict(base, momentum=False),
+                "CBOE": dict(base, jump5d63=0.18), "SEIC": dict(base), "XFOR": dict(base, us=False),
+                "TSM": dict(base)}
+        out = screens.option_setups(rows, ["NVDA", "SEIC", "XFOR", "TSM"], dt.date(2026, 11, 30))
+        # AI (NVDA) now allowed; foreign by flag (XFOR) or known list (TSM) excluded
+        self.assertEqual([x["t"] for x in out["list"]], ["TRV", "NVDA", "SEIC"])
         trv = out["list"][0]
         self.assertEqual(trv["move3m"], 10.0)      # 20% vol x sqrt(1/4)
         self.assertEqual(trv["callPct"], 4.0)      # 0.4 x 10%
