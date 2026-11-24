@@ -204,3 +204,18 @@ class WeeklyCadenceTests(unittest.TestCase):
         self.assertEqual([e["date"] for e in led], ["2026-11-30"])
         led, new, _ = se.log_and_score(spec, {}, dt.date(2026, 12, 7), {}, {}, led)
         self.assertEqual([e["date"] for e in led], ["2026-11-30", "2026-12-07"])
+
+
+class OptionSetupTests(unittest.TestCase):
+    def test_setups_respect_rules(self):
+        import datetime as dt
+        import screens
+        base = {"name": "X", "price": 100.0, "vol3m": 0.2, "momentum": True, "chg52": 20, "jump5d63": 0.05}
+        rows = {"TRV": dict(base), "NVDA": dict(base), "SSD": dict(base, momentum=False),
+                "CBOE": dict(base, jump5d63=0.18), "SEIC": dict(base)}
+        out = screens.option_setups(rows, ["NVDA", "SEIC"], dt.date(2026, 11, 30))
+        self.assertEqual([x["t"] for x in out["list"]], ["TRV", "SEIC"])
+        trv = out["list"][0]
+        self.assertEqual(trv["move3m"], 10.0)      # 20% vol x sqrt(1/4)
+        self.assertEqual(trv["callPct"], 4.0)      # 0.4 x 10%
+        self.assertEqual(trv["contractCost"], 400)  # 4% of $100 x 100 shares

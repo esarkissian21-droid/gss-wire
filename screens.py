@@ -21,6 +21,7 @@ Env: SEC_CONTACT ("Name email", required by the SEC), OUT_DIR (default history/s
 """
 import datetime as dt
 import json
+import math
 import os
 import statistics as st
 import sys
@@ -65,6 +66,32 @@ GRADE_A_RULES = ["passes the Quality screen", "P/E above 0 and at most 25", "deb
                  "price above its 200-day average and up over 52 weeks", "up no more than 60% over 52 weeks",
                  "no red flags (one-off profits)", "TTM revenue at least $500M"]
 
+
+
+# Options paper practice (rules set 2026-11-22/23): which allowed stocks currently pass the stock rules,
+# with a rough cost for a 3-month at-the-money call (about 0.4 x volatility x sqrt(time) x price).
+OPTION_EXCLUDE = {"CB", "ACGL", "SPNT", "AMZN", "NVDA", "TSM", "PDD", "AEM", "FIX", "NUTX"}
+OPTION_TIER_A = ("TRV", "CBOE", "SSD")
+
+
+def option_setups(rows, grade_list, today):
+    out = []
+    for t in list(OPTION_TIER_A) + [g for g in grade_list if g not in OPTION_TIER_A]:
+        m = rows.get(t)
+        if t in OPTION_EXCLUDE or not m or not m.get("price") or not m.get("vol3m"):
+            continue
+        if not m.get("momentum") or (m.get("chg52") or 0) > 60:
+            continue
+        if (m.get("jump5d63") or 0) >= 0.15:
+            continue  # on the 3-month wait list after a 15%+ week
+        vol = m["vol3m"]
+        call_pct = 0.4 * vol * math.sqrt(0.25) * 100
+        out.append({"t": t, "name": m.get("name", ""), "price": round(m["price"], 2),
+                    "move3m": round(vol * math.sqrt(0.25) * 100, 1), "callPct": round(call_pct, 1),
+                    "contractCost": round(call_pct / 100 * m["price"] * 100),
+                    "note": ("Tier A. " if t in OPTION_TIER_A else "Grade A. ") +
+                            "Check the earnings date first; one contract is 100 shares."})
+    return {"asOf": today.isoformat(), "list": out}
 
 def grade_a(m):
     """-> (is_grade_a, reasons it fails). Unknown data counts as a fail."""
@@ -317,8 +344,12 @@ def yahoo_daily(sym, fetch):
     closes = [c for c in raw if c is not None]
     if len(closes) < 210:
         return None
+    rets = [math.log(b / a) for a, b in zip(closes[-64:-1], closes[-63:]) if a > 0 and b > 0]
+    vol = st.pstdev(rets) * math.sqrt(252) if len(rets) > 20 else None
+    jump = max((closes[i] / closes[i - 5] - 1 for i in range(len(closes) - 63, len(closes)) if i >= 5), default=0)
     return {"price": closes[-1], "ma200": st.mean(closes[-200:]),
-            "chg52": 100 * (closes[-1] / closes[-252] - 1) if len(closes) >= 252 else None, "hist": hist}
+            "chg52": 100 * (closes[-1] / closes[-252] - 1) if len(closes) >= 252 else None, "hist": hist,
+            "vol3m": vol, "jump5d63": jump}
 
 
 def run(fetch_sec, fetch_px, today, always=(), sleep=time.sleep, spec=None, ledger=None):
@@ -481,6 +512,8 @@ def main():
     ga = grade_a_report(res["rows"], prev, dt.date.fromisoformat(res["asOf"]))
     with open(ga_path, "w") as f:
         json.dump(ga, f, indent=0, sort_keys=True)
+    with open(os.path.join(out_dir, "option_setups.json"), "w") as f:
+        json.dump(option_setups(res["rows"], list(ga["list"]), dt.date.fromisoformat(res["asOf"])), f, indent=0)
     print(f"Grade A: {len(ga['list'])} -> {', '.join(ga['list'])}; added {ga['added']}; removed {list(ga['removed'])}")
     for name in ("latest.json", f"{res['asOf']}.json"):
         with open(os.path.join(out_dir, name), "w") as f:
