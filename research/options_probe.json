@@ -1,0 +1,14 @@
+{
+ "TRV": {
+  "cboe_error": "HTTPError: HTTP Error 403: Forbidden"
+ },
+ "CBOE": {
+  "cboe_error": "HTTPError: HTTP Error 403: Forbidden"
+ },
+ "SSD": {
+  "cboe_error": "HTTPError: HTTP Error 403: Forbidden"
+ },
+ "yahoo": {
+  "error": "HTTPError: HTTP Error 401: Unauthorized"
+ }
+}
