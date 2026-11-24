@@ -1,0 +1,131 @@
+{
+"asOf": "2026-11-24",
+"list": [
+{
+"t": "TRV",
+"name": "TRAVELERS COMPANIES, INC.",
+"price": 394.71,
+"move3m": 9.5,
+"callPct": 3.8,
+"contractCost": 1500,
+"note": "Tier A. Check the earnings date first; one contract is 100 shares."
+},
+{
+"t": "CBOE",
+"name": "Cboe Global Markets, Inc.",
+"price": 354.67,
+"move3m": 19.0,
+"callPct": 7.6,
+"contractCost": 2695,
+"note": "Tier A. Check the earnings date first; one contract is 100 shares."
+},
+{
+"t": "SSD",
+"name": "Simpson Manufacturing Co., Inc.",
+"price": 194.63,
+"move3m": 14.5,
+"callPct": 5.8,
+"contractCost": 1129,
+"note": "Tier A. Check the earnings date first; one contract is 100 shares."
+},
+{
+"t": "PGR",
+"name": "PROGRESSIVE CORP/OH/",
+"price": 230.36,
+"move3m": 11.5,
+"callPct": 4.6,
+"contractCost": 1060,
+"note": "Grade A. Check the earnings date first; one contract is 100 shares."
+},
+{
+"t": "ALL",
+"name": "ALLSTATE CORP",
+"price": 265.28,
+"move3m": 13.5,
+"callPct": 5.4,
+"contractCost": 1433,
+"note": "Grade A. Check the earnings date first; one contract is 100 shares."
+},
+{
+"t": "HIG",
+"name": "HARTFORD INSURANCE GROUP, INC.",
+"price": 137.01,
+"move3m": 10.5,
+"callPct": 4.2,
+"contractCost": 575,
+"note": "Grade A. Check the earnings date first; one contract is 100 shares."
+},
+{
+"t": "CINF",
+"name": "CINCINNATI FINANCIAL CORP",
+"price": 187.73,
+"move3m": 9.0,
+"callPct": 3.6,
+"contractCost": 676,
+"note": "Grade A. Check the earnings date first; one contract is 100 shares."
+},
+{
+"t": "SEIC",
+"name": "SEI INVESTMENTS CO",
+"price": 103.87,
+"move3m": 11.0,
+"callPct": 4.4,
+"contractCost": 457,
+"note": "Grade A. Check the earnings date first; one contract is 100 shares."
+},
+{
+"t": "KNSL",
+"name": "Kinsale Capital Group, Inc.",
+"price": 396.34,
+"move3m": 15.5,
+"callPct": 6.2,
+"contractCost": 2457,
+"note": "Grade A. Check the earnings date first; one contract is 100 shares."
+},
+{
+"t": "THG",
+"name": "HANOVER INSURANCE GROUP, INC.",
+"price": 244.28,
+"move3m": 10.0,
+"callPct": 4.0,
+"contractCost": 977,
+"note": "Grade A. Check the earnings date first; one contract is 100 shares."
+},
+{
+"t": "PLMR",
+"name": "Palomar Holdings, Inc.",
+"price": 164.44,
+"move3m": 16.0,
+"callPct": 6.4,
+"contractCost": 1052,
+"note": "Grade A. Check the earnings date first; one contract is 100 shares."
+},
+{
+"t": "HCI",
+"name": "HCI Group, Inc.",
+"price": 191.91,
+"move3m": 12.0,
+"callPct": 4.8,
+"contractCost": 921,
+"note": "Grade A. Check the earnings date first; one contract is 100 shares."
+},
+{
+"t": "UVE",
+"name": "UNIVERSAL INSURANCE HOLDINGS, INC.",
+"price": 49.29,
+"move3m": 12.0,
+"callPct": 4.8,
+"contractCost": 237,
+"note": "Grade A. Check the earnings date first; one contract is 100 shares."
+},
+{
+"t": "HRTG",
+"name": "Heritage Insurance Holdings, Inc.",
+"price": 32.54,
+"move3m": 13.0,
+"callPct": 5.2,
+"contractCost": 169,
+"note": "Grade A. Check the earnings date first; one contract is 100 shares."
+}
+]
+}
