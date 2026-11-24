@@ -1,0 +1,136 @@
+{
+ "universe": [
+  "AAPL",
+  "XOM",
+  "MSFT",
+  "IBM",
+  "CVX",
+  "GE",
+  "PG",
+  "JNJ",
+  "T",
+  "PFE",
+  "WMT",
+  "KO",
+  "GOOGL",
+  "ORCL",
+  "WFC",
+  "JPM",
+  "INTC",
+  "PM",
+  "MRK",
+  "VZ"
+ ],
+ "horizonWeeks": 52,
+ "costPerTrade": 0.001,
+ "overlapping_every4w": {
+  "hold": {
+   "trades": 3440,
+   "meanPct": 15.2,
+   "medianPct": 10.82,
+   "worst5pctPct": -22.9,
+   "lossOver30Pct": 2.9,
+   "stoppedPct": 0.0,
+   "stoppedThenRecoveredPct": null,
+   "beatsHoldPct": 0.0
+  },
+  "stop -8%": {
+   "trades": 3440,
+   "meanPct": 14.96,
+   "medianPct": 9.82,
+   "worst5pctPct": -13.7,
+   "lossOver30Pct": 0.1,
+   "stoppedPct": 45.9,
+   "stoppedThenRecoveredPct": 73.8,
+   "beatsHoldPct": 24.1
+  },
+  "stop -15%": {
+   "trades": 3440,
+   "meanPct": 15.51,
+   "medianPct": 10.64,
+   "worst5pctPct": -16.1,
+   "lossOver30Pct": 0.4,
+   "stoppedPct": 23.2,
+   "stoppedThenRecoveredPct": 70.5,
+   "beatsHoldPct": 12.2
+  },
+  "stop -25%": {
+   "trades": 3440,
+   "meanPct": 15.64,
+   "medianPct": 11.01,
+   "worst5pctPct": -20.0,
+   "lossOver30Pct": 1.1,
+   "stoppedPct": 9.5,
+   "stoppedThenRecoveredPct": 63.2,
+   "beatsHoldPct": 6.1
+  },
+  "-25% only if trend broken": {
+   "trades": 3440,
+   "meanPct": 15.64,
+   "medianPct": 11.01,
+   "worst5pctPct": -20.0,
+   "lossOver30Pct": 1.1,
+   "stoppedPct": 9.5,
+   "stoppedThenRecoveredPct": 63.2,
+   "beatsHoldPct": 6.1
+  }
+ },
+ "nonOverlapping_every52w": {
+  "hold": {
+   "trades": 280,
+   "meanPct": 15.64,
+   "medianPct": 11.39,
+   "worst5pctPct": -25.1,
+   "lossOver30Pct": 3.9,
+   "stoppedPct": 0.0,
+   "stoppedThenRecoveredPct": null,
+   "beatsHoldPct": 0.0
+  },
+  "stop -8%": {
+   "trades": 280,
+   "meanPct": 16.96,
+   "medianPct": 11.38,
+   "worst5pctPct": -11.1,
+   "lossOver30Pct": 0.4,
+   "stoppedPct": 41.4,
+   "stoppedThenRecoveredPct": 67.2,
+   "beatsHoldPct": 22.9
+  },
+  "stop -15%": {
+   "trades": 280,
+   "meanPct": 16.89,
+   "medianPct": 11.28,
+   "worst5pctPct": -15.2,
+   "lossOver30Pct": 0.7,
+   "stoppedPct": 21.4,
+   "stoppedThenRecoveredPct": 63.3,
+   "beatsHoldPct": 14.3
+  },
+  "stop -25%": {
+   "trades": 280,
+   "meanPct": 16.37,
+   "medianPct": 11.39,
+   "worst5pctPct": -19.4,
+   "lossOver30Pct": 1.8,
+   "stoppedPct": 8.2,
+   "stoppedThenRecoveredPct": 43.5,
+   "beatsHoldPct": 5.7
+  },
+  "-25% only if trend broken": {
+   "trades": 280,
+   "meanPct": 16.37,
+   "medianPct": 11.39,
+   "worst5pctPct": -19.4,
+   "lossOver30Pct": 1.8,
+   "stoppedPct": 8.2,
+   "stoppedThenRecoveredPct": 43.5,
+   "beatsHoldPct": 5.7
+  }
+ },
+ "notes": [
+  "Weekly closes; real stops fill intraweek, usually slightly better or worse.",
+  "After a stop the money sits in SPY for the rest of the year (not cash).",
+  "Taxes ignored; stops in taxable accounts add short-term gains/losses.",
+  "20 large 2011 leaders only; small or speculative stocks may behave differently (more momentum in losers)."
+ ]
+}
