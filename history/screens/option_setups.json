@@ -29,6 +29,15 @@
 "note": "Tier A. Check the earnings date first; one contract is 100 shares."
 },
 {
+"t": "AMZN",
+"name": "AMAZON COM INC",
+"price": 255.39,
+"move3m": 17.5,
+"callPct": 7.0,
+"contractCost": 1788,
+"note": "Grade A. Check the earnings date first; one contract is 100 shares."
+},
+{
 "t": "PGR",
 "name": "PROGRESSIVE CORP/OH/",
 "price": 230.36,
