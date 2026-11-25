@@ -1,21 +1,31 @@
 {
  "errors": {
-  "News CBOE": 0,
-  "News METALS": 0,
-  "News NVDA": 0,
-  "News SSD": 0,
-  "News TRV": 0,
-  "News TSM": 0,
+  "News ADBE": 1,
+  "News AEM": 1,
+  "News AVGO": 1,
+  "News CBOE": 1,
+  "News DINO": 1,
+  "News MATX": 1,
+  "News METALS": 1,
+  "News NVDA": 1,
+  "News PDD": 1,
+  "News PGR": 1,
+  "News PHM": 1,
+  "News SSD": 1,
+  "News TMUS": 1,
+  "News TRV": 1,
+  "News TSM": 1,
+  "News WRB": 1,
   "quotes": 0,
   "watch": 0
  },
  "insider_buys": [],
  "lastCounts": {
-  "checked": 1356,
-  "new": 38,
-  "pushed": 1
+  "checked": 615,
+  "new": 0,
+  "pushed": 0
  },
- "lastRun": "2026-11-25T17:00:17+00:00",
+ "lastRun": "2026-11-25T17:30:20+00:00",
  "news_count": {
   "ADBE": 1,
   "METALS": 1,
@@ -26,268 +36,268 @@
  "news_count_day": "2026-11-25",
  "quotes": {
   "ADBE": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:31+00:00",
    "currency": "USD",
-   "dayPct": 0.53,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": 1.18,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 232.08,
-   "price": 233.3,
+   "price": 234.825,
    "src": "Yahoo Finance chart API",
-   "weekPct": 3.14
+   "weekPct": 3.81
   },
   "AEM": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:32+00:00",
    "currency": "USD",
-   "dayPct": -2.85,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -1.21,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 156.46,
-   "price": 152.005,
+   "price": 154.57,
    "src": "Yahoo Finance chart API",
-   "weekPct": -6.09
+   "weekPct": -4.5
   },
   "AVGO": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:31+00:00",
    "currency": "USD",
-   "dayPct": -6.02,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -4.49,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 301.08,
-   "price": 282.94,
+   "price": 287.55,
    "src": "Yahoo Finance chart API",
-   "weekPct": -20.08
+   "weekPct": -18.78
   },
   "CBOE": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:31+00:00",
    "currency": "USD",
-   "dayPct": -1.91,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -2.28,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 362.52,
-   "price": 355.59,
+   "price": 354.27,
    "src": "Yahoo Finance chart API",
-   "weekPct": -1.2
+   "weekPct": -1.57
   },
   "DINO": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:32+00:00",
    "currency": "USD",
-   "dayPct": -1.6,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -1.31,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 86.32,
-   "price": 84.94,
+   "price": 85.193,
    "src": "Yahoo Finance chart API",
-   "weekPct": -6.29
+   "weekPct": -6.01
   },
   "GC=F": {
-   "asOf": "2026-11-25T16:50+00:00",
+   "asOf": "2026-11-25T17:22+00:00",
    "currency": "USD",
-   "dayPct": -2.36,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -0.51,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 3561.8999,
-   "price": 3478.0,
+   "price": 3543.7,
    "src": "Yahoo Finance chart API",
-   "weekPct": -7.05
+   "weekPct": -5.3
   },
   "GLD": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:32+00:00",
    "currency": "USD",
-   "dayPct": -2.27,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -1.53,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 325.45,
-   "price": 318.07,
+   "price": 320.46,
    "src": "Yahoo Finance chart API",
-   "weekPct": -6.78
+   "weekPct": -6.08
   },
   "IWM": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:32+00:00",
    "currency": "USD",
-   "dayPct": -1.3,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -0.47,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 267.14,
-   "price": 263.66,
+   "price": 265.88,
    "src": "Yahoo Finance chart API",
-   "weekPct": -2.39
+   "weekPct": -1.57
   },
   "MATX": {
-   "asOf": "2026-11-25T16:58+00:00",
+   "asOf": "2026-11-25T17:31+00:00",
    "currency": "USD",
-   "dayPct": -1.22,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -0.78,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 190.68,
-   "price": 188.35,
+   "price": 189.2,
    "src": "Yahoo Finance chart API",
-   "weekPct": -8.89
+   "weekPct": -8.48
   },
   "NEM": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:32+00:00",
    "currency": "USD",
-   "dayPct": -2.83,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -1.42,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 99.69,
-   "price": 96.87,
+   "price": 98.275,
    "src": "Yahoo Finance chart API",
-   "weekPct": -7.33
+   "weekPct": -5.98
   },
   "NVDA": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:32+00:00",
    "currency": "USD",
-   "dayPct": -8.53,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -7.1,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 155.38,
-   "price": 142.125,
+   "price": 144.355,
    "src": "Yahoo Finance chart API",
-   "weekPct": -5.85
+   "weekPct": -4.38
   },
   "PDD": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:32+00:00",
    "currency": "USD",
-   "dayPct": -0.83,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": 0.24,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 87.22,
-   "price": 86.5,
+   "price": 87.425,
    "src": "Yahoo Finance chart API",
-   "weekPct": 11.68
+   "weekPct": 12.88
   },
   "PGR": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:31+00:00",
    "currency": "USD",
-   "dayPct": 1.24,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": 1.78,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 235.68,
-   "price": 238.595,
+   "price": 239.885,
    "src": "Yahoo Finance chart API",
-   "weekPct": 4.43
+   "weekPct": 5.0
   },
   "PHM": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:32+00:00",
    "currency": "USD",
-   "dayPct": 1.98,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": 2.88,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 130.23,
-   "price": 132.81,
+   "price": 133.985,
    "src": "Yahoo Finance chart API",
-   "weekPct": 6.24
+   "weekPct": 7.18
   },
   "SI=F": {
-   "asOf": "2026-11-25T16:50+00:00",
+   "asOf": "2026-11-25T17:22+00:00",
    "currency": "USD",
-   "dayPct": -4.78,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -1.32,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 40.76,
-   "price": 38.81,
+   "price": 40.22,
    "src": "Yahoo Finance chart API",
-   "weekPct": -13.75
+   "weekPct": -10.62
   },
   "SLV": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:32+00:00",
    "currency": "USD",
-   "dayPct": -4.32,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -2.95,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 36.84,
-   "price": 35.25,
+   "price": 35.755,
    "src": "Yahoo Finance chart API",
-   "weekPct": -13.39
+   "weekPct": -12.15
   },
   "SPY": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:32+00:00",
    "currency": "USD",
-   "dayPct": -2.4,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -1.48,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 718.78,
-   "price": 701.54,
+   "price": 708.14,
    "src": "Yahoo Finance chart API",
-   "weekPct": -3.92
+   "weekPct": -3.02
   },
   "SSD": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:28+00:00",
    "currency": "USD",
-   "dayPct": 0.83,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": 1.39,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 194.46,
-   "price": 196.08,
+   "price": 197.17,
    "src": "Yahoo Finance chart API",
-   "weekPct": -0.46
+   "weekPct": 0.1
   },
   "TMUS": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:31+00:00",
    "currency": "USD",
-   "dayPct": -0.21,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -0.16,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 167.3,
-   "price": 166.95,
+   "price": 167.03,
    "src": "Yahoo Finance chart API",
-   "weekPct": 1.79
+   "weekPct": 1.84
   },
   "TRV": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:31+00:00",
    "currency": "USD",
-   "dayPct": 1.49,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": 1.87,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 400.87,
-   "price": 406.85,
+   "price": 408.349,
    "src": "Yahoo Finance chart API",
-   "weekPct": 3.9
+   "weekPct": 4.28
   },
   "TSM": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:32+00:00",
    "currency": "USD",
-   "dayPct": -6.93,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -5.26,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 349.2,
-   "price": 324.99,
+   "price": 330.83,
    "src": "Yahoo Finance chart API",
-   "weekPct": -10.38
+   "weekPct": -8.77
   },
   "VTI": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:32+00:00",
    "currency": "USD",
-   "dayPct": -2.26,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": -1.36,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 353.84,
-   "price": 345.845,
+   "price": 349.025,
    "src": "Yahoo Finance chart API",
-   "weekPct": -3.79
+   "weekPct": -2.91
   },
   "WRB": {
-   "asOf": "2026-11-25T17:00+00:00",
+   "asOf": "2026-11-25T17:31+00:00",
    "currency": "USD",
-   "dayPct": 0.9,
-   "fetchedAt": "2026-11-25T17:00+00:00",
+   "dayPct": 1.06,
+   "fetchedAt": "2026-11-25T17:30+00:00",
    "lastBar": "2026-11-25",
    "prevClose": 78.72,
-   "price": 79.43,
+   "price": 79.555,
    "src": "Yahoo Finance chart API",
-   "weekPct": 3.25
+   "weekPct": 3.41
   }
  },
  "quotesMeta": {
-  "at": "2026-11-25T17:00+00:00",
+  "at": "2026-11-25T17:30+00:00",
   "of": 23,
   "ok": 23
  },
  "quotesRatio": {
-  "asOf": "2026-11-25T17:00+00:00",
+  "asOf": "2026-11-25T17:30+00:00",
   "note": "COMEX front-month futures (usually 0-1.5% above spot)",
-  "ratio": 89.62
+  "ratio": 88.11
  },
  "recent_titles": [
   {
@@ -4871,7 +4881,7 @@
   "gradeSeen": "2026-11-24",
   "lastScan": {
    "alerts": 0,
-   "at": "2026-11-25T17:00:17+00:00",
+   "at": "2026-11-25T17:30:20+00:00",
    "quotes": 30,
    "tickers": 30
   },
