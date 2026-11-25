@@ -2,17 +2,96 @@
  "asOf": "2026-11-24",
  "source": "Bigdata.com corporate calendar (Quartr data, https://bigdata.com); ADBE cross-checked with Alpha Vantage EARNINGS_CALENDAR. Refreshed weekly by the Sunday run. Dates more than ~4 weeks out are often the company's expected date, not yet announced.",
  "list": [
-  {"t": "ADBE", "date": "2026-12-09", "timeUTC": "22:00", "period": "Q4 2026", "confirmed": true},
-  {"t": "TRV", "date": "2027-01-20", "timeUTC": "14:00", "period": "Q4 2026", "confirmed": false},
-  {"t": "WRB", "date": "2027-01-25", "timeUTC": "22:00", "period": "Q4 2026", "confirmed": false},
-  {"t": "PGR", "date": "2027-01-26", "timeUTC": "17:30", "period": "Q4 2026", "confirmed": false},
-  {"t": "TMUS", "date": "2027-01-28", "timeUTC": "11:30", "period": "Q4 2026", "confirmed": false},
-  {"t": "PHM", "date": "2027-01-28", "timeUTC": "13:30", "period": "Q4 2026", "confirmed": false},
-  {"t": "CBOE", "date": "2027-02-05", "timeUTC": "13:30", "period": "Q4 2026", "confirmed": false},
-  {"t": "SSD", "date": "2027-02-08", "timeUTC": "21:15", "period": "Q4 2026", "confirmed": false},
-  {"t": "DINO", "date": "2027-02-17", "timeUTC": "13:30", "period": "Q4 2026", "confirmed": false},
-  {"t": "NEM", "date": "2027-02-18", "timeUTC": "22:30", "period": "Q4 2026", "confirmed": false},
-  {"t": "MATX", "date": "2027-02-23", "timeUTC": "21:30", "period": "Q4 2026", "confirmed": false},
-  {"t": "NVDA", "date": "2027-02-24", "timeUTC": "22:00", "period": "Q4 FY2027", "confirmed": false}
+  {
+   "t": "ADBE",
+   "date": "2026-12-09",
+   "timeUTC": "22:00",
+   "period": "Q4 2026",
+   "confirmed": true
+  },
+  {
+   "t": "AVGO",
+   "date": "2026-12-09",
+   "timeUTC": "22:00",
+   "period": "Q4 FY2026",
+   "confirmed": true
+  },
+  {
+   "t": "TRV",
+   "date": "2027-01-20",
+   "timeUTC": "14:00",
+   "period": "Q4 2026",
+   "confirmed": false
+  },
+  {
+   "t": "WRB",
+   "date": "2027-01-25",
+   "timeUTC": "22:00",
+   "period": "Q4 2026",
+   "confirmed": false
+  },
+  {
+   "t": "PGR",
+   "date": "2027-01-26",
+   "timeUTC": "17:30",
+   "period": "Q4 2026",
+   "confirmed": false
+  },
+  {
+   "t": "PHM",
+   "date": "2027-01-28",
+   "timeUTC": "13:30",
+   "period": "Q4 2026",
+   "confirmed": false
+  },
+  {
+   "t": "TMUS",
+   "date": "2027-01-28",
+   "timeUTC": "11:30",
+   "period": "Q4 2026",
+   "confirmed": false
+  },
+  {
+   "t": "CBOE",
+   "date": "2027-02-05",
+   "timeUTC": "13:30",
+   "period": "Q4 2026",
+   "confirmed": false
+  },
+  {
+   "t": "SSD",
+   "date": "2027-02-08",
+   "timeUTC": "21:15",
+   "period": "Q4 2026",
+   "confirmed": false
+  },
+  {
+   "t": "DINO",
+   "date": "2027-02-17",
+   "timeUTC": "13:30",
+   "period": "Q4 2026",
+   "confirmed": false
+  },
+  {
+   "t": "NEM",
+   "date": "2027-02-18",
+   "timeUTC": "22:30",
+   "period": "Q4 2026",
+   "confirmed": false
+  },
+  {
+   "t": "MATX",
+   "date": "2027-02-23",
+   "timeUTC": "21:30",
+   "period": "Q4 2026",
+   "confirmed": false
+  },
+  {
+   "t": "NVDA",
+   "date": "2027-02-24",
+   "timeUTC": "22:00",
+   "period": "Q4 FY2027",
+   "confirmed": false
+  }
  ]
 }
