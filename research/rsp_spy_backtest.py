@@ -44,7 +44,8 @@ def weekly(sym):
     out = {}
     for t, a in zip(j["timestamp"], adj):
         if a is not None:
-            out[dt.datetime.fromtimestamp(t, dt.timezone.utc).date()] = a
+            d = dt.datetime.fromtimestamp(t, dt.timezone.utc).date()
+            out[d - dt.timedelta(days=d.weekday())] = a  # key by week start, so both funds line up
     return out
 
 
@@ -83,6 +84,9 @@ def run_rule(weights, rsp_r, spy_r):
 def main():
     rsp, spy = weekly("RSP"), weekly("SPY")
     days = sorted(set(rsp) & set(spy))
+    print("weeks RSP", len(rsp), "SPY", len(spy), "common", len(days), flush=True)
+    if len(days) < 300:
+        raise RuntimeError("not enough overlapping weekly data")
     px_r = [rsp[d] for d in days]
     px_s = [spy[d] for d in days]
     ratio = [a / b for a, b in zip(px_r, px_s)]
