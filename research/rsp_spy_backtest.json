@@ -1,0 +1,163 @@
+{
+ "benchmarks": {
+  "50/50": {
+   "cagr": 10.85,
+   "vol": 15.6,
+   "maxDD": -54.9
+  },
+  "SPY": {
+   "cagr": 10.81,
+   "vol": 16.0,
+   "maxDD": -53.9
+  },
+  "RSP": {
+   "cagr": 10.08,
+   "vol": 19.3,
+   "maxDD": -59.6
+  }
+ },
+ "wave": {
+  "N=10": {
+   "cagr": -11.49,
+   "vol": 17.7,
+   "maxDD": -94.9,
+   "excessVs5050PerYr": -22.02,
+   "yearsBeat5050": "0/21",
+   "t": -8.33,
+   "firstHalfExcess": -25.29,
+   "secondHalfExcess": -18.75,
+   "switchesPerYr": 20.6
+  },
+  "N=20": {
+   "cagr": -8.87,
+   "vol": 17.3,
+   "maxDD": -90.1,
+   "excessVs5050PerYr": -19.19,
+   "yearsBeat5050": "0/21",
+   "t": -8.26,
+   "firstHalfExcess": -21.15,
+   "secondHalfExcess": -17.23,
+   "switchesPerYr": 16.2
+  },
+  "N=26": {
+   "cagr": -5.96,
+   "vol": 17.1,
+   "maxDD": -83.4,
+   "excessVs5050PerYr": -16.1,
+   "yearsBeat5050": "1/21",
+   "t": -7.91,
+   "firstHalfExcess": -18.41,
+   "secondHalfExcess": -13.81,
+   "switchesPerYr": 13.8
+  },
+  "N=40": {
+   "cagr": -3.19,
+   "vol": 17.1,
+   "maxDD": -76.1,
+   "excessVs5050PerYr": -13.22,
+   "yearsBeat5050": "1/21",
+   "t": -6.37,
+   "firstHalfExcess": -14.66,
+   "secondHalfExcess": -11.78,
+   "switchesPerYr": 10.9
+  },
+  "N=52": {
+   "cagr": -2.17,
+   "vol": 17.2,
+   "maxDD": -74.9,
+   "excessVs5050PerYr": -12.16,
+   "yearsBeat5050": "4/21",
+   "t": -5.44,
+   "firstHalfExcess": -13.74,
+   "secondHalfExcess": -10.59,
+   "switchesPerYr": 9.3
+  }
+ },
+ "edges": {
+  "L=26,T=0.1": {
+   "cagr": 19.52,
+   "vol": 16.4,
+   "maxDD": -39.6,
+   "excessVs5050PerYr": 7.64,
+   "yearsBeat5050": "20/21",
+   "t": 5.53,
+   "firstHalfExcess": 8.81,
+   "secondHalfExcess": 6.46,
+   "switchesPerYr": null
+  },
+  "L=26,T=0.2": {
+   "cagr": 21.07,
+   "vol": 16.5,
+   "maxDD": -37.6,
+   "excessVs5050PerYr": 8.94,
+   "yearsBeat5050": "21/21",
+   "t": 5.63,
+   "firstHalfExcess": 10.86,
+   "secondHalfExcess": 7.03,
+   "switchesPerYr": null
+  },
+  "L=52,T=0.1": {
+   "cagr": 18.73,
+   "vol": 16.2,
+   "maxDD": -40.9,
+   "excessVs5050PerYr": 6.95,
+   "yearsBeat5050": "21/21",
+   "t": 5.42,
+   "firstHalfExcess": 8.54,
+   "secondHalfExcess": 5.36,
+   "switchesPerYr": null
+  },
+  "L=52,T=0.2": {
+   "cagr": 20.24,
+   "vol": 16.5,
+   "maxDD": -39.1,
+   "excessVs5050PerYr": 8.25,
+   "yearsBeat5050": "20/21",
+   "t": 5.71,
+   "firstHalfExcess": 10.07,
+   "secondHalfExcess": 6.44,
+   "switchesPerYr": null
+  },
+  "L=104,T=0.1": {
+   "cagr": 17.04,
+   "vol": 16.4,
+   "maxDD": -46.1,
+   "excessVs5050PerYr": 5.54,
+   "yearsBeat5050": "20/21",
+   "t": 5.48,
+   "firstHalfExcess": 6.94,
+   "secondHalfExcess": 4.14,
+   "switchesPerYr": null
+  },
+  "L=104,T=0.2": {
+   "cagr": 19.18,
+   "vol": 16.4,
+   "maxDD": -36.0,
+   "excessVs5050PerYr": 7.36,
+   "yearsBeat5050": "21/21",
+   "t": 4.48,
+   "firstHalfExcess": 8.94,
+   "secondHalfExcess": 5.78,
+   "switchesPerYr": null
+  }
+ },
+ "persistence13w": {
+  "pairs": 93,
+  "corr": -0.1,
+  "note": "non-overlapping 13-week blocks; |corr| under ~0.2 with this n is noise"
+ },
+ "ratioNow": {
+  "date": "2026-11-16",
+  "ratio": 0.2886,
+  "pos52w": 0.59,
+  "above26wAvg": true
+ },
+ "meta": {
+  "from": "2005-05-02",
+  "to": "2026-11-16",
+  "weeks": 1125,
+  "costPerSwitch": 0.001,
+  "label": "non-blind",
+  "generatedAt": "2026-11-25T06:15:28+00:00"
+ }
+}
