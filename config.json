@@ -186,8 +186,8 @@
    "sell": "revenue growth below 8% or ARR guidance cut. Buy only if growth holds 10%+ and the stock rises after earnings."
   },
   "MATX": {
-   "tier": "C",
-   "sell": "management guides China rates down, or P/E reaches 15. Buy only after a 25%+ pullback."
+   "tier": "watch",
+   "sell": "not a candidate since Nov 24 (below its 200-day average). Back on the list only if the price recovers above the 200-day and China rates hold in the Q4 report (Feb 23)."
   }
  },
  "watch": {
