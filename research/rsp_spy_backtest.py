@@ -28,12 +28,15 @@ COST = 0.001
 
 
 def weekly(sym):
+    """Friday (last trading day of each week) dividend-adjusted closes, built from DAILY bars.
+    Weekly bars with events can carry extra mid-week rows (dividend dates) that look like price
+    glitches and create fake mean reversion, so daily data is used and resampled here."""
     url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?period1=1041379200&period2={int(time.time())}"
-           "&interval=1wk&events=div%2Csplit")
+           "&interval=1d")
     for k in range(4):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=30) as r:
+            with urllib.request.urlopen(req, timeout=60) as r:
                 j = json.loads(r.read())["chart"]["result"][0]
             break
         except Exception:
@@ -43,9 +46,10 @@ def weekly(sym):
     adj = j["indicators"]["adjclose"][0]["adjclose"]
     out = {}
     for t, a in zip(j["timestamp"], adj):
-        if a is not None:
-            d = dt.datetime.fromtimestamp(t, dt.timezone.utc).date()
-            out[d - dt.timedelta(days=d.weekday())] = a  # key by week start, so both funds line up
+        if a is None:
+            continue
+        d = dt.datetime.fromtimestamp(t, dt.timezone.utc).date()
+        out[d - dt.timedelta(days=d.weekday())] = a  # later days overwrite: last close of the week
     return out
 
 
