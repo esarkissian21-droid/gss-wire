@@ -1,0 +1,1357 @@
+{
+ "generatedAt": "2026-11-25T04:52:37+00:00",
+ "label": "non-blind (rule written in 2026 after seeing one case)",
+ "proposedK": 1.25,
+ "secCalls": 2027,
+ "tickersPriced": 800,
+ "priceFailures": 2,
+ "avgGradeAPerCohort": 5.5,
+ "summary": {
+  "all": {
+   "1.1": {
+    "broadCohorts": 27,
+    "broadAvgFlaggedPerCohort": 21.2,
+    "broadFlaggedMinusUnflagged": 0.0052,
+    "broadCohortsFlaggedWorse": 14,
+    "broadT": 0.35,
+    "gaCohortsWithRemovals": 8,
+    "gaNamesRemoved": 10,
+    "gaRemovedAvgExcess": -0.0771,
+    "gaKeptMinusAll": 0.0058
+   },
+   "1.25": {
+    "broadCohorts": 27,
+    "broadAvgFlaggedPerCohort": 16.5,
+    "broadFlaggedMinusUnflagged": 0.012,
+    "broadCohortsFlaggedWorse": 14,
+    "broadT": 0.78,
+    "gaCohortsWithRemovals": 8,
+    "gaNamesRemoved": 10,
+    "gaRemovedAvgExcess": -0.0771,
+    "gaKeptMinusAll": 0.0058
+   },
+   "1.5": {
+    "broadCohorts": 25,
+    "broadAvgFlaggedPerCohort": 12.4,
+    "broadFlaggedMinusUnflagged": -0.0009,
+    "broadCohortsFlaggedWorse": 14,
+    "broadT": -0.05,
+    "gaCohortsWithRemovals": 7,
+    "gaNamesRemoved": 9,
+    "gaRemovedAvgExcess": -0.1125,
+    "gaKeptMinusAll": 0.0064
+   },
+   "2.0": {
+    "broadCohorts": 20,
+    "broadAvgFlaggedPerCohort": 8.1,
+    "broadFlaggedMinusUnflagged": -0.0025,
+    "broadCohortsFlaggedWorse": 11,
+    "broadT": -0.15,
+    "gaCohortsWithRemovals": 3,
+    "gaNamesRemoved": 4,
+    "gaRemovedAvgExcess": -0.0808,
+    "gaKeptMinusAll": 0.0032
+   }
+  },
+  "2012-2018": {
+   "1.1": {
+    "broadCohorts": 14,
+    "broadAvgFlaggedPerCohort": 17.1,
+    "broadFlaggedMinusUnflagged": 0.0051,
+    "broadCohortsFlaggedWorse": 7,
+    "broadT": 0.25,
+    "gaCohortsWithRemovals": 4,
+    "gaNamesRemoved": 4,
+    "gaRemovedAvgExcess": -0.1032,
+    "gaKeptMinusAll": 0.0146
+   },
+   "1.25": {
+    "broadCohorts": 14,
+    "broadAvgFlaggedPerCohort": 13.9,
+    "broadFlaggedMinusUnflagged": 0.006,
+    "broadCohortsFlaggedWorse": 7,
+    "broadT": 0.31,
+    "gaCohortsWithRemovals": 4,
+    "gaNamesRemoved": 4,
+    "gaRemovedAvgExcess": -0.1032,
+    "gaKeptMinusAll": 0.0146
+   },
+   "1.5": {
+    "broadCohorts": 12,
+    "broadAvgFlaggedPerCohort": 9.9,
+    "broadFlaggedMinusUnflagged": -0.0227,
+    "broadCohortsFlaggedWorse": 8,
+    "broadT": -1.32,
+    "gaCohortsWithRemovals": 3,
+    "gaNamesRemoved": 3,
+    "gaRemovedAvgExcess": -0.1945,
+    "gaKeptMinusAll": 0.0159
+   },
+   "2.0": {
+    "broadCohorts": 9,
+    "broadAvgFlaggedPerCohort": 5.9,
+    "broadFlaggedMinusUnflagged": -0.0117,
+    "broadCohortsFlaggedWorse": 5,
+    "broadT": -0.57,
+    "gaCohortsWithRemovals": 2,
+    "gaNamesRemoved": 2,
+    "gaRemovedAvgExcess": -0.1671,
+    "gaKeptMinusAll": 0.0121
+   }
+  },
+  "2019-2025": {
+   "1.1": {
+    "broadCohorts": 13,
+    "broadAvgFlaggedPerCohort": 25.6,
+    "broadFlaggedMinusUnflagged": 0.0052,
+    "broadCohortsFlaggedWorse": 7,
+    "broadT": 0.24,
+    "gaCohortsWithRemovals": 4,
+    "gaNamesRemoved": 6,
+    "gaRemovedAvgExcess": -0.051,
+    "gaKeptMinusAll": -0.0023
+   },
+   "1.25": {
+    "broadCohorts": 13,
+    "broadAvgFlaggedPerCohort": 19.4,
+    "broadFlaggedMinusUnflagged": 0.0185,
+    "broadCohortsFlaggedWorse": 7,
+    "broadT": 0.75,
+    "gaCohortsWithRemovals": 4,
+    "gaNamesRemoved": 6,
+    "gaRemovedAvgExcess": -0.051,
+    "gaKeptMinusAll": -0.0023
+   },
+   "1.5": {
+    "broadCohorts": 13,
+    "broadAvgFlaggedPerCohort": 15,
+    "broadFlaggedMinusUnflagged": 0.0193,
+    "broadCohortsFlaggedWorse": 6,
+    "broadT": 0.7,
+    "gaCohortsWithRemovals": 4,
+    "gaNamesRemoved": 6,
+    "gaRemovedAvgExcess": -0.051,
+    "gaKeptMinusAll": -0.0023
+   },
+   "2.0": {
+    "broadCohorts": 11,
+    "broadAvgFlaggedPerCohort": 10.5,
+    "broadFlaggedMinusUnflagged": 0.0051,
+    "broadCohortsFlaggedWorse": 6,
+    "broadT": 0.19,
+    "gaCohortsWithRemovals": 1,
+    "gaNamesRemoved": 2,
+    "gaRemovedAvgExcess": 0.0919,
+    "gaKeptMinusAll": -0.005
+   }
+  }
+ },
+ "gradeAExamplesFlagged": [
+  {
+   "date": "2014-06-15",
+   "t": "OIS",
+   "ni": 390573000.0,
+   "opi": 160043000.0,
+   "excess": -0.4612
+  },
+  {
+   "date": "2017-06-15",
+   "t": "BAX",
+   "ni": 1857000000.0,
+   "opi": 910000000.0,
+   "excess": 0.1269
+  },
+  {
+   "date": "2017-12-15",
+   "t": "RVTY",
+   "ni": 398599000.0,
+   "opi": 282474000.0,
+   "excess": 0.1705
+  },
+  {
+   "date": "2018-06-15",
+   "t": "TRN",
+   "ni": 696700000.0,
+   "opi": 365800000.0,
+   "excess": -0.2492
+  },
+  {
+   "date": "2023-06-15",
+   "t": "ROP",
+   "ni": 2807300000.0,
+   "opi": 1569600000.0,
+   "excess": -0.0388
+  },
+  {
+   "date": "2023-12-15",
+   "t": "ROP",
+   "ni": 2923600000.0,
+   "opi": 1694900000.0,
+   "excess": -0.2263
+  },
+  {
+   "date": "2024-06-15",
+   "t": "GPOR",
+   "ni": 999981000.0,
+   "opi": 534026000.0,
+   "excess": 0.1552
+  },
+  {
+   "date": "2025-06-15",
+   "t": "ABT",
+   "ni": 13502000000.0,
+   "opi": 7132000000.0,
+   "excess": -0.4663
+  },
+  {
+   "date": "2025-06-15",
+   "t": "EW",
+   "ni": 4180700000.0,
+   "opi": 1424500000.0,
+   "excess": -0.069
+  },
+  {
+   "date": "2025-06-15",
+   "t": "INVX",
+   "ni": 138665000.0,
+   "opi": 48614000.0,
+   "excess": 0.2527
+  }
+ ],
+ "cohorts": [
+  {
+   "date": "2012-06-15",
+   "spy": 0.2435,
+   "broadN": 230,
+   "gaN": 0,
+   "1.1": {
+    "broadFlaggedN": 8,
+    "broadFlagged": 0.2323,
+    "broadUnflagged": 0.0605,
+    "gaAll": null,
+    "gaKept": null,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 7,
+    "broadFlagged": 0.1845,
+    "broadUnflagged": 0.0627,
+    "gaAll": null,
+    "gaKept": null,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 2,
+    "broadFlagged": 0.5586,
+    "broadUnflagged": 0.0621,
+    "gaAll": null,
+    "gaKept": null,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 1,
+    "broadFlagged": 0.6472,
+    "broadUnflagged": 0.0639,
+    "gaAll": null,
+    "gaKept": null,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2012-12-15",
+   "spy": 0.2993,
+   "broadN": 231,
+   "gaN": 0,
+   "1.1": {
+    "broadFlaggedN": 9,
+    "broadFlagged": 0.0881,
+    "broadUnflagged": 0.0505,
+    "gaAll": null,
+    "gaKept": null,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 5,
+    "broadFlagged": 0.0958,
+    "broadUnflagged": 0.051,
+    "gaAll": null,
+    "gaKept": null,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 2,
+    "broadFlagged": -0.0111,
+    "broadUnflagged": 0.0525,
+    "gaAll": null,
+    "gaKept": null,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 2,
+    "broadFlagged": -0.0111,
+    "broadUnflagged": 0.0525,
+    "gaAll": null,
+    "gaKept": null,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2013-06-15",
+   "spy": 0.2566,
+   "broadN": 238,
+   "gaN": 1,
+   "1.1": {
+    "broadFlaggedN": 9,
+    "broadFlagged": -0.0168,
+    "broadUnflagged": 0.0659,
+    "gaAll": 0.0306,
+    "gaKept": 0.0306,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 9,
+    "broadFlagged": -0.0168,
+    "broadUnflagged": 0.0659,
+    "gaAll": 0.0306,
+    "gaKept": 0.0306,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 6,
+    "broadFlagged": -0.011,
+    "broadUnflagged": 0.0646,
+    "gaAll": 0.0306,
+    "gaKept": 0.0306,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 6,
+    "broadFlagged": -0.011,
+    "broadUnflagged": 0.0646,
+    "gaAll": 0.0306,
+    "gaKept": 0.0306,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2013-12-15",
+   "spy": 0.1596,
+   "broadN": 249,
+   "gaN": 3,
+   "1.1": {
+    "broadFlaggedN": 11,
+    "broadFlagged": 0.0258,
+    "broadUnflagged": 0.0009,
+    "gaAll": -0.0618,
+    "gaKept": -0.0618,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 8,
+    "broadFlagged": 0.0396,
+    "broadUnflagged": 0.0008,
+    "gaAll": -0.0618,
+    "gaKept": -0.0618,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 7,
+    "broadFlagged": 0.0304,
+    "broadUnflagged": 0.0012,
+    "gaAll": -0.0618,
+    "gaKept": -0.0618,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 5,
+    "broadFlagged": 0.0566,
+    "broadUnflagged": 0.0009,
+    "gaAll": -0.0618,
+    "gaKept": -0.0618,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2014-06-15",
+   "spy": 0.097,
+   "broadN": 266,
+   "gaN": 4,
+   "1.1": {
+    "broadFlaggedN": 12,
+    "broadFlagged": -0.0095,
+    "broadUnflagged": -0.0051,
+    "gaAll": -0.1353,
+    "gaKept": -0.0266,
+    "gaRemovedN": 1,
+    "gaRemoved": -0.4612
+   },
+   "1.25": {
+    "broadFlaggedN": 9,
+    "broadFlagged": 0.0102,
+    "broadUnflagged": -0.0059,
+    "gaAll": -0.1353,
+    "gaKept": -0.0266,
+    "gaRemovedN": 1,
+    "gaRemoved": -0.4612
+   },
+   "1.5": {
+    "broadFlaggedN": 7,
+    "broadFlagged": -0.0236,
+    "broadUnflagged": -0.0048,
+    "gaAll": -0.1353,
+    "gaKept": -0.0266,
+    "gaRemovedN": 1,
+    "gaRemoved": -0.4612
+   },
+   "2.0": {
+    "broadFlaggedN": 6,
+    "broadFlagged": 0.0224,
+    "broadUnflagged": -0.0059,
+    "gaAll": -0.1353,
+    "gaKept": -0.0266,
+    "gaRemovedN": 1,
+    "gaRemoved": -0.4612
+   }
+  },
+  {
+   "date": "2014-12-15",
+   "spy": -0.0119,
+   "broadN": 266,
+   "gaN": 3,
+   "1.1": {
+    "broadFlaggedN": 8,
+    "broadFlagged": -0.0392,
+    "broadUnflagged": -0.0348,
+    "gaAll": -0.1085,
+    "gaKept": -0.1085,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 8,
+    "broadFlagged": -0.0392,
+    "broadUnflagged": -0.0348,
+    "gaAll": -0.1085,
+    "gaKept": -0.1085,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 6,
+    "broadFlagged": -0.0176,
+    "broadUnflagged": -0.0353,
+    "gaAll": -0.1085,
+    "gaKept": -0.1085,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 4,
+    "broadFlagged": -0.0077,
+    "broadUnflagged": -0.0353,
+    "gaAll": -0.1085,
+    "gaKept": -0.1085,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2015-06-15",
+   "spy": 0.0006,
+   "broadN": 265,
+   "gaN": 5,
+   "1.1": {
+    "broadFlaggedN": 11,
+    "broadFlagged": -0.1058,
+    "broadUnflagged": -0.0034,
+    "gaAll": 0.049,
+    "gaKept": 0.049,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 9,
+    "broadFlagged": -0.1491,
+    "broadUnflagged": -0.0027,
+    "gaAll": 0.049,
+    "gaKept": 0.049,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 5,
+    "broadFlagged": -0.0906,
+    "broadUnflagged": -0.0061,
+    "gaAll": 0.049,
+    "gaKept": 0.049,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 4,
+    "broadFlagged": -0.0754,
+    "broadUnflagged": -0.0066,
+    "gaAll": 0.049,
+    "gaKept": 0.049,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2015-12-15",
+   "spy": 0.1493,
+   "broadN": 263,
+   "gaN": 3,
+   "1.1": {
+    "broadFlaggedN": 14,
+    "broadFlagged": 0.0364,
+    "broadUnflagged": 0.0956,
+    "gaAll": 0.0069,
+    "gaKept": 0.0069,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 13,
+    "broadFlagged": 0.0395,
+    "broadUnflagged": 0.0952,
+    "gaAll": 0.0069,
+    "gaKept": 0.0069,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 10,
+    "broadFlagged": -0.0123,
+    "broadUnflagged": 0.0966,
+    "gaAll": 0.0069,
+    "gaKept": 0.0069,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 6,
+    "broadFlagged": 0.0758,
+    "broadUnflagged": 0.0928,
+    "gaAll": 0.0069,
+    "gaKept": 0.0069,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2016-06-15",
+   "spy": 0.1992,
+   "broadN": 260,
+   "gaN": 2,
+   "1.1": {
+    "broadFlaggedN": 14,
+    "broadFlagged": 0.1579,
+    "broadUnflagged": 0.0269,
+    "gaAll": 0.247,
+    "gaKept": 0.247,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 13,
+    "broadFlagged": 0.1392,
+    "broadUnflagged": 0.0285,
+    "gaAll": 0.247,
+    "gaKept": 0.247,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 11,
+    "broadFlagged": 0.1112,
+    "broadUnflagged": 0.0306,
+    "gaAll": 0.247,
+    "gaKept": 0.247,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 6,
+    "broadFlagged": 0.0648,
+    "broadUnflagged": 0.0333,
+    "gaAll": 0.247,
+    "gaKept": 0.247,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2016-12-15",
+   "spy": 0.2082,
+   "broadN": 263,
+   "gaN": 7,
+   "1.1": {
+    "broadFlaggedN": 10,
+    "broadFlagged": 0.0518,
+    "broadUnflagged": 0.0215,
+    "gaAll": 0.1372,
+    "gaKept": 0.1372,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 7,
+    "broadFlagged": 0.0958,
+    "broadUnflagged": 0.0206,
+    "gaAll": 0.1372,
+    "gaKept": 0.1372,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 5,
+    "broadFlagged": 0.0823,
+    "broadUnflagged": 0.0215,
+    "gaAll": 0.1372,
+    "gaKept": 0.1372,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 2,
+    "broadFlagged": 0.0484,
+    "broadUnflagged": 0.0224,
+    "gaAll": 0.1372,
+    "gaKept": 0.1372,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2017-06-15",
+   "spy": 0.1639,
+   "broadN": 283,
+   "gaN": 4,
+   "1.1": {
+    "broadFlaggedN": 15,
+    "broadFlagged": -0.0102,
+    "broadUnflagged": 0.0255,
+    "gaAll": 0.2374,
+    "gaKept": 0.2743,
+    "gaRemovedN": 1,
+    "gaRemoved": 0.1269
+   },
+   "1.25": {
+    "broadFlaggedN": 12,
+    "broadFlagged": 0.0294,
+    "broadUnflagged": 0.0233,
+    "gaAll": 0.2374,
+    "gaKept": 0.2743,
+    "gaRemovedN": 1,
+    "gaRemoved": 0.1269
+   },
+   "1.5": {
+    "broadFlaggedN": 11,
+    "broadFlagged": -0.0082,
+    "broadUnflagged": 0.0249,
+    "gaAll": 0.2374,
+    "gaKept": 0.2743,
+    "gaRemovedN": 1,
+    "gaRemoved": 0.1269
+   },
+   "2.0": {
+    "broadFlaggedN": 7,
+    "broadFlagged": 0.081,
+    "broadUnflagged": 0.0221,
+    "gaAll": 0.2374,
+    "gaKept": 0.2743,
+    "gaRemovedN": 1,
+    "gaRemoved": 0.1269
+   }
+  },
+  {
+   "date": "2017-12-15",
+   "spy": -0.0048,
+   "broadN": 296,
+   "gaN": 8,
+   "1.1": {
+    "broadFlaggedN": 16,
+    "broadFlagged": -0.0157,
+    "broadUnflagged": -0.0332,
+    "gaAll": 0.0608,
+    "gaKept": 0.0452,
+    "gaRemovedN": 1,
+    "gaRemoved": 0.1705
+   },
+   "1.25": {
+    "broadFlaggedN": 14,
+    "broadFlagged": -0.0464,
+    "broadUnflagged": -0.0315,
+    "gaAll": 0.0608,
+    "gaKept": 0.0452,
+    "gaRemovedN": 1,
+    "gaRemoved": 0.1705
+   },
+   "1.5": {
+    "broadFlaggedN": 11,
+    "broadFlagged": -0.0493,
+    "broadUnflagged": -0.0316,
+    "gaAll": 0.0608,
+    "gaKept": 0.0608,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 7,
+    "broadFlagged": -0.037,
+    "broadUnflagged": -0.0321,
+    "gaAll": 0.0608,
+    "gaKept": 0.0608,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2018-06-15",
+   "spy": 0.064,
+   "broadN": 363,
+   "gaN": 6,
+   "1.1": {
+    "broadFlaggedN": 50,
+    "broadFlagged": -0.0465,
+    "broadUnflagged": -0.0507,
+    "gaAll": -0.0223,
+    "gaKept": 0.0231,
+    "gaRemovedN": 1,
+    "gaRemoved": -0.2492
+   },
+   "1.25": {
+    "broadFlaggedN": 40,
+    "broadFlagged": -0.0519,
+    "broadUnflagged": -0.0499,
+    "gaAll": -0.0223,
+    "gaKept": 0.0231,
+    "gaRemovedN": 1,
+    "gaRemoved": -0.2492
+   },
+   "1.5": {
+    "broadFlaggedN": 29,
+    "broadFlagged": -0.102,
+    "broadUnflagged": -0.0456,
+    "gaAll": -0.0223,
+    "gaKept": 0.0231,
+    "gaRemovedN": 1,
+    "gaRemoved": -0.2492
+   },
+   "2.0": {
+    "broadFlaggedN": 13,
+    "broadFlagged": -0.1534,
+    "broadUnflagged": -0.0463,
+    "gaAll": -0.0223,
+    "gaKept": -0.0223,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2018-12-15",
+   "spy": 0.359,
+   "broadN": 379,
+   "gaN": 1,
+   "1.1": {
+    "broadFlaggedN": 53,
+    "broadFlagged": -0.0589,
+    "broadUnflagged": -0.0015,
+    "gaAll": -0.1414,
+    "gaKept": -0.1414,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 40,
+    "broadFlagged": -0.031,
+    "broadUnflagged": -0.007,
+    "gaAll": -0.1414,
+    "gaKept": -0.1414,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 27,
+    "broadFlagged": -0.0704,
+    "broadUnflagged": -0.0049,
+    "gaAll": -0.1414,
+    "gaKept": -0.1414,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 13,
+    "broadFlagged": -0.0821,
+    "broadUnflagged": -0.007,
+    "gaAll": -0.1414,
+    "gaKept": -0.1414,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2019-06-15",
+   "spy": 0.0712,
+   "broadN": 400,
+   "gaN": 4,
+   "1.1": {
+    "broadFlaggedN": 22,
+    "broadFlagged": -0.1127,
+    "broadUnflagged": -0.1106,
+    "gaAll": -0.0571,
+    "gaKept": -0.0571,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 15,
+    "broadFlagged": -0.1201,
+    "broadUnflagged": -0.1103,
+    "gaAll": -0.0571,
+    "gaKept": -0.0571,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 10,
+    "broadFlagged": -0.1779,
+    "broadUnflagged": -0.109,
+    "gaAll": -0.0571,
+    "gaKept": -0.0571,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 4,
+    "broadFlagged": 0.0121,
+    "broadUnflagged": -0.1119,
+    "gaAll": -0.0571,
+    "gaKept": -0.0571,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2019-12-15",
+   "spy": 0.1733,
+   "broadN": 403,
+   "gaN": 7,
+   "1.1": {
+    "broadFlaggedN": 22,
+    "broadFlagged": 0.0135,
+    "broadUnflagged": -0.0284,
+    "gaAll": -0.068,
+    "gaKept": -0.068,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 17,
+    "broadFlagged": -0.0165,
+    "broadUnflagged": -0.0265,
+    "gaAll": -0.068,
+    "gaKept": -0.068,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 13,
+    "broadFlagged": -0.0031,
+    "broadUnflagged": -0.0268,
+    "gaAll": -0.068,
+    "gaKept": -0.068,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 6,
+    "broadFlagged": -0.0853,
+    "broadUnflagged": -0.0252,
+    "gaAll": -0.068,
+    "gaKept": -0.068,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2020-06-15",
+   "spy": 0.3659,
+   "broadN": 378,
+   "gaN": 1,
+   "1.1": {
+    "broadFlaggedN": 28,
+    "broadFlagged": 0.1236,
+    "broadUnflagged": 0.1068,
+    "gaAll": 0.2153,
+    "gaKept": 0.2153,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 21,
+    "broadFlagged": 0.1814,
+    "broadUnflagged": 0.1037,
+    "gaAll": 0.2153,
+    "gaKept": 0.2153,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 16,
+    "broadFlagged": 0.2439,
+    "broadUnflagged": 0.1021,
+    "gaAll": 0.2153,
+    "gaKept": 0.2153,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 12,
+    "broadFlagged": 0.2595,
+    "broadUnflagged": 0.1031,
+    "gaAll": 0.2153,
+    "gaKept": 0.2153,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2020-12-15",
+   "spy": 0.2632,
+   "broadN": 338,
+   "gaN": 5,
+   "1.1": {
+    "broadFlaggedN": 23,
+    "broadFlagged": -0.0412,
+    "broadUnflagged": -0.0028,
+    "gaAll": -0.0952,
+    "gaKept": -0.0952,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 20,
+    "broadFlagged": -0.042,
+    "broadUnflagged": -0.0031,
+    "gaAll": -0.0952,
+    "gaKept": -0.0952,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 18,
+    "broadFlagged": -0.0384,
+    "broadUnflagged": -0.0035,
+    "gaAll": -0.0952,
+    "gaKept": -0.0952,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 14,
+    "broadFlagged": -0.0304,
+    "broadUnflagged": -0.0043,
+    "gaAll": -0.0952,
+    "gaKept": -0.0952,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2021-06-15",
+   "spy": -0.1066,
+   "broadN": 374,
+   "gaN": 5,
+   "1.1": {
+    "broadFlaggedN": 16,
+    "broadFlagged": -0.0263,
+    "broadUnflagged": -0.0094,
+    "gaAll": -0.1202,
+    "gaKept": -0.1202,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 12,
+    "broadFlagged": -0.0149,
+    "broadUnflagged": -0.01,
+    "gaAll": -0.1202,
+    "gaKept": -0.1202,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 9,
+    "broadFlagged": -0.0511,
+    "broadUnflagged": -0.0092,
+    "gaAll": -0.1202,
+    "gaKept": -0.1202,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 5,
+    "broadFlagged": -0.1513,
+    "broadUnflagged": -0.0083,
+    "gaAll": -0.1202,
+    "gaKept": -0.1202,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2021-12-15",
+   "spy": -0.154,
+   "broadN": 396,
+   "gaN": 1,
+   "1.1": {
+    "broadFlaggedN": 22,
+    "broadFlagged": -0.0628,
+    "broadUnflagged": 0.0867,
+    "gaAll": -0.0585,
+    "gaKept": -0.0585,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 18,
+    "broadFlagged": -0.0571,
+    "broadUnflagged": 0.0849,
+    "gaAll": -0.0585,
+    "gaKept": -0.0585,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 14,
+    "broadFlagged": -0.0608,
+    "broadUnflagged": 0.0835,
+    "gaAll": -0.0585,
+    "gaKept": -0.0585,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 8,
+    "broadFlagged": 0.029,
+    "broadUnflagged": 0.0794,
+    "gaAll": -0.0585,
+    "gaKept": -0.0585,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2022-06-15",
+   "spy": 0.2215,
+   "broadN": 429,
+   "gaN": 2,
+   "1.1": {
+    "broadFlaggedN": 36,
+    "broadFlagged": -0.062,
+    "broadUnflagged": -0.0087,
+    "gaAll": -0.0214,
+    "gaKept": -0.0214,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 24,
+    "broadFlagged": -0.0441,
+    "broadUnflagged": -0.0113,
+    "gaAll": -0.0214,
+    "gaKept": -0.0214,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 20,
+    "broadFlagged": -0.028,
+    "broadUnflagged": -0.0124,
+    "gaAll": -0.0214,
+    "gaKept": -0.0214,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 15,
+    "broadFlagged": 0.0164,
+    "broadUnflagged": -0.0142,
+    "gaAll": -0.0214,
+    "gaKept": -0.0214,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2022-12-15",
+   "spy": 0.2438,
+   "broadN": 451,
+   "gaN": 11,
+   "1.1": {
+    "broadFlaggedN": 29,
+    "broadFlagged": 0.0282,
+    "broadUnflagged": -0.0482,
+    "gaAll": -0.0945,
+    "gaKept": -0.0945,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 22,
+    "broadFlagged": 0.0495,
+    "broadUnflagged": -0.0481,
+    "gaAll": -0.0945,
+    "gaKept": -0.0945,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 17,
+    "broadFlagged": 0.0017,
+    "broadUnflagged": -0.0451,
+    "gaAll": -0.0945,
+    "gaKept": -0.0945,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 15,
+    "broadFlagged": -0.0061,
+    "broadUnflagged": -0.0446,
+    "gaAll": -0.0945,
+    "gaKept": -0.0945,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2023-06-15",
+   "spy": 0.253,
+   "broadN": 452,
+   "gaN": 21,
+   "1.1": {
+    "broadFlaggedN": 17,
+    "broadFlagged": -0.1084,
+    "broadUnflagged": -0.0852,
+    "gaAll": -0.0889,
+    "gaKept": -0.0914,
+    "gaRemovedN": 1,
+    "gaRemoved": -0.0388
+   },
+   "1.25": {
+    "broadFlaggedN": 12,
+    "broadFlagged": -0.097,
+    "broadUnflagged": -0.0857,
+    "gaAll": -0.0889,
+    "gaKept": -0.0914,
+    "gaRemovedN": 1,
+    "gaRemoved": -0.0388
+   },
+   "1.5": {
+    "broadFlaggedN": 7,
+    "broadFlagged": -0.0603,
+    "broadUnflagged": -0.0864,
+    "gaAll": -0.0889,
+    "gaKept": -0.0914,
+    "gaRemovedN": 1,
+    "gaRemoved": -0.0388
+   },
+   "2.0": {
+    "broadFlaggedN": 4,
+    "broadFlagged": -0.0941,
+    "broadUnflagged": -0.086,
+    "gaAll": -0.0889,
+    "gaKept": -0.0889,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2023-12-15",
+   "spy": 0.3048,
+   "broadN": 456,
+   "gaN": 13,
+   "1.1": {
+    "broadFlaggedN": 30,
+    "broadFlagged": -0.0165,
+    "broadUnflagged": -0.0802,
+    "gaAll": -0.0524,
+    "gaKept": -0.0379,
+    "gaRemovedN": 1,
+    "gaRemoved": -0.2263
+   },
+   "1.25": {
+    "broadFlaggedN": 20,
+    "broadFlagged": -0.0203,
+    "broadUnflagged": -0.0785,
+    "gaAll": -0.0524,
+    "gaKept": -0.0379,
+    "gaRemovedN": 1,
+    "gaRemoved": -0.2263
+   },
+   "1.5": {
+    "broadFlaggedN": 14,
+    "broadFlagged": 0.0067,
+    "broadUnflagged": -0.0786,
+    "gaAll": -0.0524,
+    "gaKept": -0.0379,
+    "gaRemovedN": 1,
+    "gaRemoved": -0.2263
+   },
+   "2.0": {
+    "broadFlaggedN": 11,
+    "broadFlagged": 0.0624,
+    "broadUnflagged": -0.0794,
+    "gaAll": -0.0524,
+    "gaKept": -0.0524,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2024-06-15",
+   "spy": 0.1053,
+   "broadN": 452,
+   "gaN": 11,
+   "1.1": {
+    "broadFlaggedN": 30,
+    "broadFlagged": 0.0953,
+    "broadUnflagged": -0.0585,
+    "gaAll": 0.0531,
+    "gaKept": 0.0428,
+    "gaRemovedN": 1,
+    "gaRemoved": 0.1552
+   },
+   "1.25": {
+    "broadFlaggedN": 24,
+    "broadFlagged": 0.1568,
+    "broadUnflagged": -0.0598,
+    "gaAll": 0.0531,
+    "gaKept": 0.0428,
+    "gaRemovedN": 1,
+    "gaRemoved": 0.1552
+   },
+   "1.5": {
+    "broadFlaggedN": 20,
+    "broadFlagged": 0.1894,
+    "broadUnflagged": -0.0593,
+    "gaAll": 0.0531,
+    "gaKept": 0.0428,
+    "gaRemovedN": 1,
+    "gaRemoved": 0.1552
+   },
+   "2.0": {
+    "broadFlaggedN": 13,
+    "broadFlagged": -0.0659,
+    "broadUnflagged": -0.0478,
+    "gaAll": 0.0531,
+    "gaKept": 0.0531,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2024-12-15",
+   "spy": 0.1653,
+   "broadN": 465,
+   "gaN": 11,
+   "1.1": {
+    "broadFlaggedN": 30,
+    "broadFlagged": -0.0092,
+    "broadUnflagged": -0.0907,
+    "gaAll": -0.0638,
+    "gaKept": -0.0638,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.25": {
+    "broadFlaggedN": 23,
+    "broadFlagged": -0.0076,
+    "broadUnflagged": -0.0895,
+    "gaAll": -0.0638,
+    "gaKept": -0.0638,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "1.5": {
+    "broadFlaggedN": 16,
+    "broadFlagged": -0.0567,
+    "broadUnflagged": -0.0865,
+    "gaAll": -0.0638,
+    "gaKept": -0.0638,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   },
+   "2.0": {
+    "broadFlaggedN": 14,
+    "broadFlagged": -0.079,
+    "broadUnflagged": -0.0857,
+    "gaAll": -0.0638,
+    "gaKept": -0.0638,
+    "gaRemovedN": 0,
+    "gaRemoved": null
+   }
+  },
+  {
+   "date": "2025-06-15",
+   "spy": 0.271,
+   "broadN": 474,
+   "gaN": 10,
+   "1.1": {
+    "broadFlaggedN": 28,
+    "broadFlagged": -0.0586,
+    "broadUnflagged": 0.024,
+    "gaAll": -0.1679,
+    "gaKept": -0.1996,
+    "gaRemovedN": 3,
+    "gaRemoved": -0.0942
+   },
+   "1.25": {
+    "broadFlaggedN": 24,
+    "broadFlagged": -0.0397,
+    "broadUnflagged": 0.0223,
+    "gaAll": -0.1679,
+    "gaKept": -0.1996,
+    "gaRemovedN": 3,
+    "gaRemoved": -0.0942
+   },
+   "1.5": {
+    "broadFlaggedN": 21,
+    "broadFlagged": -0.0248,
+    "broadUnflagged": 0.0212,
+    "gaAll": -0.1679,
+    "gaKept": -0.1996,
+    "gaRemovedN": 3,
+    "gaRemoved": -0.0942
+   },
+   "2.0": {
+    "broadFlaggedN": 15,
+    "broadFlagged": -0.0009,
+    "broadUnflagged": 0.0198,
+    "gaAll": -0.1679,
+    "gaKept": -0.2329,
+    "gaRemovedN": 2,
+    "gaRemoved": 0.0919
+   }
+  }
+ ]
+}
